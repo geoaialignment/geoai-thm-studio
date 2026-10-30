@@ -1,0 +1,72 @@
+[
+ {
+  "run_id": "7a730da61090",
+  "model_name": "box_head_mid",
+  "created": "2026-10-30 18:37",
+  "rows": [
+   {
+    "label": "head at block centre",
+    "quantity": "head",
+    "aggregation": "value",
+    "location": "(10.0, 2.5, 2.5) m",
+    "time": "1.00 s",
+    "value": "9.50",
+    "unit": "m",
+    "value_si": 9.49999999999999,
+    "unit_si": "m"
+   },
+   {
+    "label": "head at left face centre",
+    "quantity": "head",
+    "aggregation": "value",
+    "location": "(0.0, 2.5, 2.5) m",
+    "time": "1.00 s",
+    "value": "10.0",
+    "unit": "m",
+    "value_si": 10.0,
+    "unit_si": "m"
+   },
+   {
+    "label": "head at right face centre",
+    "quantity": "head",
+    "aggregation": "value",
+    "location": "(20.0, 2.5, 2.5) m",
+    "time": "1.00 s",
+    "value": "9.00",
+    "unit": "m",
+    "value_si": 9.0,
+    "unit_si": "m"
+   }
+  ],
+  "verification": {
+   "configuration": "H-3D",
+   "title": "groundwater flow in a 3D box",
+   "demonstration": false,
+   "cases": [
+    {
+     "case": "V1c",
+     "status": "passed",
+     "worst_normalised_error": 3.552713678800501e-15,
+     "source": "release record",
+     "date": "2026-10-30 18:31"
+    },
+    {
+     "case": "V1c-flow",
+     "status": "passed",
+     "worst_normalised_error": 8.881784197001252e-15,
+     "source": "release record",
+     "date": "2026-10-30 18:31"
+    }
+   ]
+  },
+  "run_checks": {
+   "reached_end_time": true,
+   "finite_values": true,
+   "time_steps": 1,
+   "rejected_steps": 0,
+   "max_nonlinear_iterations": 1,
+   "energy_balance": "not checked"
+  },
+  "table": "Results of run 7a730da61090 (model box_head_mid)\n\n| quantity | where | when | how | value |\n|---|---|---|---|---|\n| head at block centre | (10.0, 2.5, 2.5) m | 1.00 s | value | 9.50 m |\n| head at left face centre | (0.0, 2.5, 2.5) m | 1.00 s | value | 10.0 m |\n| head at right face centre | (20.0, 2.5, 2.5) m | 1.00 s | value | 9.00 m |\n\nVerified configuration H-3D: V1c passed (max error 3.6e-13 %), V1c-flow passed (max error 8.9e-13 %).\nThis run: reached end time True, finite values True, time steps 1, rejected steps 0, max nonlinear iterations 1, energy balance not checked."
+ }
+]

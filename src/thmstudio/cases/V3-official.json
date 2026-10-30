@@ -1,0 +1,44 @@
+{
+ "id": "V3-official",
+ "kind": "official",
+ "configuration": "TH-2D",
+ "title": "Official HeatTransportInStationaryFlow input against its published output",
+ "official": "Parabolic/HT/HeatTransportInStationaryFlow/HeatTransportInStationaryFlow.prj",
+ "t_end": 50000.0,
+ "source": "OpenGeoSys benchmark Parabolic/HT/HeatTransportInStationaryFlow, run unchanged; compared with the published output at t = 50000 s",
+ "reference": {
+  "type": "official_field",
+  "file": "Parabolic/HT/HeatTransportInStationaryFlow/HT_HeatTransportInStationaryFlow_ts_50_t_50000.000000.vtu",
+  "field": "temperature",
+  "axes": [
+   0,
+   1
+  ]
+ },
+ "normalization": {
+  "type": "scale",
+  "scale": 1.0
+ },
+ "tolerance": {
+  "max_norm": 0.001
+ },
+ "note": "an engine baseline like V2a-official and V6b-official: it does not exercise the translator; V3 and V3-water do.",
+ "observations": [
+  {
+   "field": "temperature",
+   "time": 50000.0,
+   "line": {
+    "from": [
+     0,
+     0.05
+    ],
+    "to": [
+     1.0,
+     0.05
+    ],
+    "n": 101
+   },
+   "label": "temperature along the strip at t = 50000 s"
+  }
+ ]
+}

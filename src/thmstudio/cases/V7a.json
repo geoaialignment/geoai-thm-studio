@@ -1,0 +1,156 @@
+{
+ "id": "V7a",
+ "configuration": "TM-2D",
+ "title": "Free thermal expansion of a heated block (plane strain)",
+ "source": "linear thermoelasticity, uniform temperature change (exact for the element type)",
+ "model": {
+  "name": "v7a",
+  "geometry": {
+   "kind": "rect",
+   "width": 2.0,
+   "layers": [
+    {
+     "name": "rock",
+     "thickness": 1
+    }
+   ]
+  },
+  "physics": {
+   "process": "TM"
+  },
+  "materials": {
+   "rock": {
+    "thermal_conductivity": 2.5,
+    "density": 2600,
+    "specific_heat": 900,
+    "youngs_modulus": 10000000000.0,
+    "poissons_ratio": 0.25,
+    "thermal_expansion": 1e-05
+   }
+  },
+  "boundary_conditions": [
+   {
+    "boundary": "left",
+    "variable": "displacement",
+    "kind": "roller"
+   },
+   {
+    "boundary": "bottom",
+    "variable": "displacement",
+    "kind": "roller"
+   },
+   {
+    "boundary": "left",
+    "variable": "temperature",
+    "value": 343.15
+   },
+   {
+    "boundary": "right",
+    "variable": "temperature",
+    "value": 343.15
+   },
+   {
+    "boundary": "bottom",
+    "variable": "temperature",
+    "value": 343.15
+   },
+   {
+    "boundary": "top",
+    "variable": "temperature",
+    "value": 343.15
+   }
+  ],
+  "initial": {
+   "temperature": 293.15
+  },
+  "mesh": {
+   "size": 0.25
+  },
+  "study": {
+   "kind": "steady"
+  }
+ },
+ "reference": {
+  "type": "constant"
+ },
+ "normalization": {
+  "type": "scale",
+  "scale": 1.0
+ },
+ "tolerance": {
+  "max_norm": 1e-06
+ },
+ "observations": [
+  {
+   "field": "displacement",
+   "component": 0,
+   "line": {
+    "from": [
+     0,
+     0.5
+    ],
+    "to": [
+     2,
+     0.5
+    ],
+    "n": 21
+   },
+   "label": "u_x = (1 + nu) alpha dT x",
+   "reference": {
+    "type": "uniform_strain",
+    "axis": 0,
+    "strain": 0.000625
+   },
+   "normalization": {
+    "type": "scale",
+    "scale": 0.00125
+   }
+  },
+  {
+   "field": "sigma",
+   "component": 2,
+   "points": [
+    [
+     1,
+     0.5
+    ],
+    [
+     0.3,
+     0.2
+    ]
+   ],
+   "label": "sigma_zz = -E alpha dT",
+   "reference": {
+    "type": "constant",
+    "base": -5000000.000000001
+   },
+   "normalization": {
+    "type": "scale",
+    "scale": 5000000.000000001
+   }
+  },
+  {
+   "field": "sigma",
+   "component": 0,
+   "points": [
+    [
+     1,
+     0.5
+    ],
+    [
+     0.3,
+     0.2
+    ]
+   ],
+   "label": "sigma_xx = 0",
+   "reference": {
+    "type": "constant",
+    "base": 0.0
+   },
+   "normalization": {
+    "type": "scale",
+    "scale": 5000000.000000001
+   }
+  }
+ ]
+}

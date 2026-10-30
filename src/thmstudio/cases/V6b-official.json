@@ -1,0 +1,76 @@
+{
+ "id": "V6b-official",
+ "kind": "official",
+ "configuration": "HC-2D",
+ "title": "Official AdvectionDiffusionSorptionDecay input against the analytical solution",
+ "official": "Parabolic/ComponentTransport/AdvectionDiffusionSorptionDecay/1D_AdvectionDiffusionSorptionDecay.prj",
+ "t_end": 31536000000000.0,
+ "reference": {
+  "type": "advection_dispersion",
+  "axis": 0,
+  "params": {
+   "v": 1.6666666666666666e-10,
+   "D": 8.333333333333333e-11,
+   "R": 9976.0,
+   "decay": 9.556327352038599e-15
+  }
+ },
+ "normalization": {
+  "type": "scale",
+  "scale": 1.0
+ },
+ "tolerance": {
+  "max_norm": 0.02,
+  "l2_rel": 0.03
+ },
+ "observations": [
+  {
+   "field": "Cs",
+   "time": 315360000000.0,
+   "line": {
+    "from": [
+     0,
+     0
+    ],
+    "to": [
+     2.0,
+     0
+    ],
+    "n": 101
+   },
+   "label": "profile at t = 3.1536e+11 s"
+  },
+  {
+   "field": "Cs",
+   "time": 3153600000000.0,
+   "line": {
+    "from": [
+     0,
+     0
+    ],
+    "to": [
+     2.0,
+     0
+    ],
+    "n": 101
+   },
+   "label": "profile at t = 3.1536e+12 s"
+  },
+  {
+   "field": "Cs",
+   "time": 31536000000000.0,
+   "line": {
+    "from": [
+     0,
+     0
+    ],
+    "to": [
+     2.0,
+     0
+    ],
+    "n": 101
+   },
+   "label": "profile at t = 3.1536e+13 s"
+  }
+ ]
+}

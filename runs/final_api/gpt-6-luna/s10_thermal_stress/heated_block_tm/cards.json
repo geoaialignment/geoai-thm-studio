@@ -1,0 +1,68 @@
+[
+ {
+  "run_id": "3f47d03bcae2",
+  "model_name": "heated_block_tm",
+  "created": "2026-10-30 19:31",
+  "rows": [
+   {
+    "label": "most compressive xx stress at 1 yr",
+    "quantity": "sigma (xx)",
+    "aggregation": "min",
+    "location": "whole model",
+    "time": "1.00 yr",
+    "value": "-22.1",
+    "unit": "MPa",
+    "value_si": -22117041.565130934,
+    "unit_si": "Pa"
+   },
+   {
+    "label": "largest xx-stress difference when solid thermal expansion is removed",
+    "quantity": "sigma (xx)",
+    "aggregation": "largest difference",
+    "location": "centre_line",
+    "time": "1.00 yr",
+    "value": "22.1",
+    "unit": "MPa",
+    "value_si": 22117041.565130558,
+    "unit_si": "Pa"
+   }
+  ],
+  "verification": {
+   "configuration": "TM-2D",
+   "title": "thermal expansion and thermal stress in rock (plane strain)",
+   "demonstration": false,
+   "cases": [
+    {
+     "case": "V7a",
+     "status": "passed",
+     "worst_normalised_error": 2.6320451358513407e-14,
+     "source": "release record",
+     "date": "2026-10-30 19:14"
+    },
+    {
+     "case": "V7b",
+     "status": "passed",
+     "worst_normalised_error": 2.6077032089233393e-15,
+     "source": "release record",
+     "date": "2026-10-30 19:14"
+    },
+    {
+     "case": "V7c",
+     "status": "passed",
+     "worst_normalised_error": 3.352761268615722e-15,
+     "source": "release record",
+     "date": "2026-10-30 19:14"
+    }
+   ]
+  },
+  "run_checks": {
+   "reached_end_time": true,
+   "finite_values": true,
+   "time_steps": 35,
+   "rejected_steps": 0,
+   "max_nonlinear_iterations": 2,
+   "energy_balance": "not checked"
+  },
+  "table": "Results of run 3f47d03bcae2 (model heated_block_tm)\n\n| quantity | where | when | how | value |\n|---|---|---|---|---|\n| most compressive xx stress at 1 yr | whole model | 1.00 yr | min | -22.1 MPa |\n| largest xx-stress difference when solid thermal expansion is removed | centre_line | 1.00 yr | largest difference | 22.1 MPa |\n\nVerified configuration TM-2D: V7a passed (max error 2.6e-12 %), V7b passed (max error 2.6e-13 %), V7c passed (max error 3.4e-13 %).\nThis run: reached end time True, finite values True, time steps 35, rejected steps 0, max nonlinear iterations 2, energy balance not checked."
+ }
+]

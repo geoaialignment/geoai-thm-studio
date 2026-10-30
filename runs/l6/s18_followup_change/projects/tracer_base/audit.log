@@ -1,0 +1,7 @@
+{"time": "2026-10-30T18:38:40", "tool": "start_from_example", "ok": true, "state": "DRAFT", "version": 1, "args": "{\"example_id\": \"solute_front\", \"project_name\": \"tracer_base\"}", "note": ""}
+{"time": "2026-10-30T18:38:42", "tool": "build_mesh", "ok": true, "state": "DRAFT", "version": 1, "args": "{}", "note": ""}
+{"time": "2026-10-30T18:38:42", "tool": "show_model", "ok": false, "state": "DRAFT", "version": 1, "args": "{}", "note": "'show_model' is not available in state DRAFT (step mesh). Next step: call check_model (or set_mesh and build_mesh again to change the mesh). Available now: set_mesh, build_mesh, show_mesh, check_model, go_to_step, ask_user."}
+{"time": "2026-10-30T18:38:43", "tool": "check_model", "ok": true, "state": "CHECKED", "version": 1, "args": "{}", "note": ""}
+{"time": "2026-10-30T18:38:43", "tool": "run", "ok": true, "state": "RUNNING", "version": 1, "args": "{}", "note": ""}
+{"time": "2026-10-30T18:38:44", "tool": "run_status", "ok": true, "state": "COMPUTED", "version": 1, "args": "{}", "note": ""}
+{"time": "2026-10-30T18:38:45", "tool": "show_model", "ok": true, "state": "COMPUTED", "version": 1, "args": "{}", "note": ""}

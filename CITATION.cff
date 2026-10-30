@@ -1,0 +1,26 @@
+cff-version: 1.2.0
+message: "If you use GeoAI-THM Studio, please cite it as below."
+title: "GeoAI-THM Studio: an agent for subsurface thermo-hydro-mechanical and transport models, built on OpenGeoSys"
+version: 0.1.0
+doi: 10.5281/zenodo.23806977
+date-released: 2026-10-31
+authors:
+  - family-names: Park
+    given-names: Eungyu
+    affiliation: "GeoAI Alignment, Inc."
+    orcid: "https://orcid.org/0000-0002-2293-4686"
+  - family-names: Kim
+    given-names: Taeyu
+    affiliation: "GeoAI Alignment, Inc."
+  - family-names: Park
+    given-names: Jangwon
+    affiliation: "GeoAI Alignment, Inc."
+license: "PolyForm-Noncommercial-1.0.0"
+repository-code: "https://github.com/geoaialignment/geoai-thm-studio"
+url: "https://geoaialign.ai"
+references:
+  - type: software
+    title: OpenGeoSys
+    version: 6.5.8
+    doi: 10.5281/zenodo.20269146
+    url: "https://www.opengeosys.org"

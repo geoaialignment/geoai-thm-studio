@@ -1,0 +1,73 @@
+[
+ {
+  "run_id": "9d88e21b0a56",
+  "model_hash": "94bfd643dd8101d4",
+  "model_name": "consol_clay_1yr",
+  "created": "2026-10-30 18:27",
+  "rows": [
+   {
+    "label": "surface settlement after 1 yr",
+    "quantity": "displacement",
+    "aggregation": "change since start",
+    "location": "surface (0.5, 10.0) m",
+    "time": "1.00 yr",
+    "value": "-18.6",
+    "unit": "mm",
+    "value_si": -0.018571427938345687,
+    "unit_si": "m"
+   },
+   {
+    "label": "surface settlement after 36.5 d",
+    "quantity": "displacement",
+    "aggregation": "change since start",
+    "location": "surface (0.5, 10.0) m",
+    "time": "36.5 d",
+    "value": "-16.4",
+    "unit": "mm",
+    "value_si": -0.016449877605418103,
+    "unit_si": "m"
+   },
+   {
+    "label": "maximum excess pore pressure in clay after 1 yr",
+    "quantity": "pressure",
+    "aggregation": "max",
+    "location": "along column",
+    "time": "1.00 yr",
+    "value": "2.68e-09",
+    "unit": "MPa",
+    "value_si": 0.002677685159881739,
+    "unit_si": "Pa"
+   }
+  ],
+  "verification": {
+   "configuration": "HM-2D",
+   "title": "consolidation of saturated ground under load (plane strain; verified with a 1D column)",
+   "demonstration": false,
+   "cases": [
+    {
+     "case": "V4",
+     "status": "passed",
+     "worst_normalised_error": 0.008110210488268203,
+     "source": "release record",
+     "date": "2026-10-30 17:37"
+    },
+    {
+     "case": "V4b",
+     "status": "passed",
+     "worst_normalised_error": 0.008136143440429237,
+     "source": "release record",
+     "date": "2026-10-30 18:18"
+    }
+   ]
+  },
+  "run_checks": {
+   "reached_end_time": true,
+   "finite_values": true,
+   "time_steps": 70,
+   "rejected_steps": 0,
+   "max_nonlinear_iterations": 2,
+   "energy_balance": "not checked"
+  },
+  "table": "Results of run 9d88e21b0a56 (model consol_clay_1yr, version 94bfd643dd8101d4)\n\n| quantity | where | when | how | value |\n|---|---|---|---|---|\n| surface settlement after 1 yr | surface (0.5, 10.0) m | 1.00 yr | change since start | -18.6 mm |\n| surface settlement after 36.5 d | surface (0.5, 10.0) m | 36.5 d | change since start | -16.4 mm |\n| maximum excess pore pressure in clay after 1 yr | along column | 1.00 yr | max | 2.68e-09 MPa |\n\nVerified configuration HM-2D: V4 passed (max error 0.81 %), V4b passed (max error 0.81 %).\nThis run: reached end time True, finite values True, time steps 70, rejected steps 0, max nonlinear iterations 2, energy balance not checked."
+ }
+]

@@ -1,0 +1,94 @@
+[
+ {
+  "run_id": "aa77ed487a86",
+  "model_hash": "733433c2d843bd42",
+  "model_name": "surface_heating_5m",
+  "created": "2026-10-30 18:23",
+  "rows": [
+   {
+    "label": "5 m 깊이 온도 상승(10년 후)",
+    "quantity": "temperature",
+    "aggregation": "change since start",
+    "location": "at_5m (50.0, 45.0) m",
+    "time": "10.0 yr",
+    "value": "8.63",
+    "unit": "K",
+    "value_si": 8.634801286014408,
+    "unit_si": "K"
+   },
+   {
+    "label": "5 m 깊이 온도(10년 후)",
+    "quantity": "temperature",
+    "aggregation": "value",
+    "location": "at_5m (50.0, 45.0) m",
+    "time": "10.0 yr",
+    "value": "23.6",
+    "unit": "°C",
+    "value_si": 296.7848012860144,
+    "unit_si": "K"
+   },
+   {
+    "label": "지표 온도 상승(10년 후)",
+    "quantity": "temperature",
+    "aggregation": "change since start",
+    "location": "(50.0, 50.0) m",
+    "time": "10.0 yr",
+    "value": "10.0",
+    "unit": "K",
+    "value_si": 10.000000000000057,
+    "unit_si": "K"
+   }
+  ],
+  "verification": {
+   "configuration": "T-2D",
+   "title": "heat conduction in 2D",
+   "demonstration": false,
+   "cases": [
+    {
+     "case": "V2a",
+     "status": "passed",
+     "worst_normalised_error": 0.002114665788383263,
+     "source": "release record",
+     "date": "2026-10-30 17:37"
+    },
+    {
+     "case": "V2a-tri",
+     "status": "passed",
+     "worst_normalised_error": 0.001141043320785684,
+     "source": "release record",
+     "date": "2026-10-30 17:37"
+    },
+    {
+     "case": "V2b",
+     "status": "passed",
+     "worst_normalised_error": 6.912159733474254e-14,
+     "source": "release record",
+     "date": "2026-10-30 17:37"
+    },
+    {
+     "case": "V2b-power",
+     "status": "passed",
+     "worst_normalised_error": 6.912159733474254e-14,
+     "source": "release record",
+     "date": "2026-10-30 17:37"
+    },
+    {
+     "case": "V2d",
+     "status": "passed",
+     "worst_normalised_error": 0.0021874117532729265,
+     "source": "release record",
+     "date": "2026-10-30 17:37"
+    }
+   ]
+  },
+  "run_checks": {
+   "reached_end_time": true,
+   "finite_values": true,
+   "time_steps": 137,
+   "rejected_steps": 0,
+   "max_nonlinear_iterations": 1,
+   "energy_balance": "not checked"
+  },
+  "table": "Results of run aa77ed487a86 (model surface_heating_5m, version 733433c2d843bd42)\n\n| quantity | where | when | how | value |\n|---|---|---|---|---|\n| 5 m 깊이 온도 상승(10년 후) | at_5m (50.0, 45.0) m | 10.0 yr | change since start | 8.63 K |\n| 5 m 깊이 온도(10년 후) | at_5m (50.0, 45.0) m | 10.0 yr | value | 23.6 °C |\n| 지표 온도 상승(10년 후) | (50.0, 50.0) m | 10.0 yr | change since start | 10.0 K |\n\nVerified configuration T-2D: V2a passed (max error 0.21 %), V2a-tri passed (max error 0.11 %), V2b passed (max error 6.9e-12 %), V2b-power passed (max error 6.9e-12 %), V2d passed (max error 0.22 %).\nThis run: reached end time True, finite values True, time steps 137, rejected steps 0, max nonlinear iterations 1, energy balance not checked."
+ }
+]

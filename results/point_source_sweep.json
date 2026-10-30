@@ -1,0 +1,94 @@
+{
+ "exact_MPa": 0.9666908901753641,
+ "ell_m": 0.11571721877963162,
+ "first_output_s": 20000,
+ "rows": [
+  {
+   "h": 0.2,
+   "h_over_ell": 1.7283512523825342,
+   "pressure_MPa": 0.16421545560251757,
+   "error_pct": -83.01261993141077,
+   "temperature_rise_K": 0.705737488076636,
+   "cells": 529,
+   "study": null
+  },
+  {
+   "h": 0.1,
+   "h_over_ell": 0.8641756261912671,
+   "pressure_MPa": 0.6350053666051041,
+   "error_pct": -34.311435738273076,
+   "temperature_rise_K": 1.0863838115424187,
+   "cells": 784,
+   "study": null
+  },
+  {
+   "h": 0.0579,
+   "h_over_ell": 0.5003576875647436,
+   "pressure_MPa": 0.9223429405930215,
+   "error_pct": -4.587603962451496,
+   "temperature_rise_K": 1.4854548961217233,
+   "cells": 1089,
+   "study": null
+  },
+  {
+   "h": 0.05,
+   "h_over_ell": 0.43208781309563354,
+   "pressure_MPa": 0.8873277389591284,
+   "error_pct": -8.209775433162374,
+   "temperature_rise_K": 1.4264459031167007,
+   "cells": 1156,
+   "study": null
+  },
+  {
+   "h": 0.0289,
+   "h_over_ell": 0.24974675596927615,
+   "pressure_MPa": 0.9087158948579641,
+   "error_pct": -5.997263024469271,
+   "temperature_rise_K": 1.459336846832116,
+   "cells": 1521,
+   "study": null
+  },
+  {
+   "h": 0.0145,
+   "h_over_ell": 0.12530546579773372,
+   "pressure_MPa": 0.9390216458069184,
+   "error_pct": -2.8622638994173544,
+   "temperature_rise_K": 1.5078435544511422,
+   "cells": 2116,
+   "study": null
+  },
+  {
+   "h": 0.01,
+   "h_over_ell": 0.08641756261912671,
+   "pressure_MPa": 0.9744194818264159,
+   "error_pct": 0.7994894468954553,
+   "temperature_rise_K": 1.5648795226828156,
+   "cells": 2401,
+   "study": null
+  },
+  {
+   "h": 0.005,
+   "h_over_ell": 0.043208781309563356,
+   "pressure_MPa": 0.9626678730418322,
+   "error_pct": -0.41616375766218894,
+   "temperature_rise_K": 1.5460653529534056,
+   "cells": 3136,
+   "study": null
+  },
+  {
+   "h": 0.05,
+   "h_over_ell": 0.43208781309563354,
+   "pressure_MPa": 0.883619074793177,
+   "error_pct": -8.593420733189825,
+   "temperature_rise_K": 1.4208464423311398,
+   "cells": 1156,
+   "study": {
+    "first_step": "100 s",
+    "max_step": "5000 s",
+    "output_times": [
+     "50000 s"
+    ]
+   }
+  }
+ ]
+}

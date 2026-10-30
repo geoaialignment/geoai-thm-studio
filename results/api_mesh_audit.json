@@ -1,0 +1,254 @@
+[
+ {
+  "model": "gpt-6-luna",
+  "scenario": "s01_surface_heating_ko",
+  "label": "5m depth temperature rise after 10 years",
+  "unit": "K",
+  "model_mesh": 8.63,
+  "example_mesh": 8.63,
+  "diff_pct": 0.0
+ },
+ {
+  "model": "gpt-6-luna",
+  "scenario": "s04_pumping_well",
+  "label": "Head change at 50 m after one day",
+  "unit": "m",
+  "model_mesh": -3.06,
+  "example_mesh": -3.06,
+  "diff_pct": 0.0
+ },
+ {
+  "model": "gpt-6-luna",
+  "scenario": "s06_heat_plume",
+  "label": "100일 후 최고 온도",
+  "unit": "°C",
+  "model_mesh": 22.0,
+  "example_mesh": 22.0,
+  "diff_pct": 0.0
+ },
+ {
+  "model": "gpt-6-luna",
+  "scenario": "s06_heat_plume",
+  "label": "x=18 m 중심선 온도 상승",
+  "unit": "K",
+  "model_mesh": 1.23,
+  "example_mesh": 1.22,
+  "diff_pct": 0.8196721311475417
+ },
+ {
+  "model": "gpt-6-luna",
+  "scenario": "s06_heat_plume",
+  "label": "x=21 m 중심선 온도 상승",
+  "unit": "K",
+  "model_mesh": 0.273,
+  "example_mesh": 0.271,
+  "diff_pct": 0.7380073800738013
+ },
+ {
+  "model": "gpt-6-luna",
+  "scenario": "s06_heat_plume",
+  "label": "x=24 m 중심선 온도 상승",
+  "unit": "K",
+  "model_mesh": 0.0377,
+  "example_mesh": 0.0386,
+  "diff_pct": 2.331606217616593
+ },
+ {
+  "model": "gpt-6-luna",
+  "scenario": "s07_tracer",
+  "label": "tracer concentration at 5 m downstream after 10 days",
+  "unit": "-",
+  "model_mesh": 0.0549,
+  "example_mesh": 0.0549,
+  "diff_pct": 0.0
+ },
+ {
+  "model": "gpt-6-luna",
+  "scenario": "s09_consolidation",
+  "label": "Surface vertical displacement change after one year",
+  "unit": "mm",
+  "model_mesh": 18.6,
+  "example_mesh": 18.6,
+  "diff_pct": 0.0
+ },
+ {
+  "model": "gpt-6-luna",
+  "scenario": "s10_thermal_stress",
+  "label": "most compressive xx stress at 1 yr",
+  "unit": "MPa",
+  "model_mesh": -22.1,
+  "example_mesh": -22.1,
+  "diff_pct": 0.0
+ },
+ {
+  "model": "gpt-6-luna",
+  "scenario": "s11_thermal_pressurisation",
+  "label": "간극수압 상승 (열원에서 0.5 m, 5e4초)",
+  "unit": "MPa",
+  "model_mesh": 0.998,
+  "example_mesh": 0.999,
+  "diff_pct": 0.10010010010010019
+ },
+ {
+  "model": "gpt-6-luna",
+  "scenario": "s11_thermal_pressurisation_before_source_check",
+  "label": "간극수압 변화, 열팽창 포함, r=0.5 m, 50,000 s",
+  "unit": "MPa",
+  "model_mesh": -0.507,
+  "example_mesh": 0.974,
+  "diff_pct": 152.05338809034907
+ },
+ {
+  "model": "gpt-6.1-terra",
+  "scenario": "s01_surface_heating_ko",
+  "label": "깊이 5 m 온도 상승",
+  "unit": "K",
+  "model_mesh": 8.64,
+  "example_mesh": 8.63,
+  "diff_pct": 0.11587485515642858
+ },
+ {
+  "model": "gpt-6.1-terra",
+  "scenario": "s01_surface_heating_ko",
+  "label": "깊이 5 m 최종 온도",
+  "unit": "°C",
+  "model_mesh": 23.6,
+  "example_mesh": 23.6,
+  "diff_pct": 0.0
+ },
+ {
+  "model": "gpt-6.1-terra",
+  "scenario": "s01_surface_heating_ko",
+  "label": "초기 온도",
+  "unit": "°C",
+  "model_mesh": 15.0,
+  "example_mesh": 15.0,
+  "diff_pct": 0.0
+ },
+ {
+  "model": "gpt-6.1-terra",
+  "scenario": "s04_pumping_well",
+  "label": "Head change at observation well",
+  "unit": "m",
+  "model_mesh": -3.06,
+  "example_mesh": -3.06,
+  "diff_pct": 0.0
+ },
+ {
+  "model": "gpt-6.1-terra",
+  "scenario": "s06_heat_plume",
+  "label": "6 m 지점 온도 상승",
+  "unit": "K",
+  "model_mesh": 9.85,
+  "example_mesh": 9.85,
+  "diff_pct": 0.0
+ },
+ {
+  "model": "gpt-6.1-terra",
+  "scenario": "s06_heat_plume",
+  "label": "12 m 지점 온도 상승",
+  "unit": "K",
+  "model_mesh": 6.67,
+  "example_mesh": 6.67,
+  "diff_pct": 0.0
+ },
+ {
+  "model": "gpt-6.1-terra",
+  "scenario": "s06_heat_plume",
+  "label": "18 m 지점 온도 상승",
+  "unit": "K",
+  "model_mesh": 1.22,
+  "example_mesh": 1.22,
+  "diff_pct": 0.0
+ },
+ {
+  "model": "gpt-6.1-terra",
+  "scenario": "s06_heat_plume",
+  "label": "24 m 지점 온도 상승",
+  "unit": "K",
+  "model_mesh": 0.0386,
+  "example_mesh": 0.0386,
+  "diff_pct": 0.0
+ },
+ {
+  "model": "gpt-6.1-terra",
+  "scenario": "s06_heat_plume",
+  "label": "초기 대수층 온도",
+  "unit": "°C",
+  "model_mesh": 12.0,
+  "example_mesh": 12.0,
+  "diff_pct": 0.0
+ },
+ {
+  "model": "gpt-6.1-terra",
+  "scenario": "s06_heat_plume",
+  "label": "유입 경계 온도",
+  "unit": "°C",
+  "model_mesh": 22.0,
+  "example_mesh": 22.0,
+  "diff_pct": 0.0
+ },
+ {
+  "model": "gpt-6.1-terra",
+  "scenario": "s07_tracer",
+  "label": "Tracer concentration at 5 m after 10 days",
+  "unit": "-",
+  "model_mesh": 0.0549,
+  "example_mesh": 0.0549,
+  "diff_pct": 0.0
+ },
+ {
+  "model": "gpt-6.1-terra",
+  "scenario": "s09_consolidation",
+  "label": "surface vertical displacement change after one year",
+  "unit": "mm",
+  "model_mesh": 18.6,
+  "example_mesh": 18.6,
+  "diff_pct": 0.0
+ },
+ {
+  "model": "gpt-6.1-terra",
+  "scenario": "s10_thermal_stress",
+  "label": "Most compressive vertical stress on centre line",
+  "unit": "MPa",
+  "model_mesh": -37.4,
+  "example_mesh": -37.4,
+  "diff_pct": 0.0
+ },
+ {
+  "model": "gpt-6.1-terra",
+  "scenario": "s10_thermal_stress",
+  "label": "Least compressive vertical stress on centre line",
+  "unit": "MPa",
+  "model_mesh": -7.37,
+  "example_mesh": -7.37,
+  "diff_pct": 0.0
+ },
+ {
+  "model": "gpt-6.1-terra",
+  "scenario": "s11_thermal_pressurisation",
+  "label": "간극수압 상승",
+  "unit": "MPa",
+  "model_mesh": 0.971,
+  "example_mesh": 0.974,
+  "diff_pct": 0.3080082135523617
+ },
+ {
+  "model": "gpt-6.1-terra",
+  "scenario": "s11_thermal_pressurisation_before_source_check",
+  "label": "해석 종료 시 간극수압 상승",
+  "unit": "MPa",
+  "model_mesh": 0.635,
+  "example_mesh": 0.974,
+  "diff_pct": 34.80492813141684
+ },
+ {
+  "model": "gpt-6.1-terra",
+  "scenario": "s11_thermal_pressurisation_two_elements",
+  "label": "열원에서 0.5 m의 간극수압 상승",
+  "unit": "MPa",
+  "model_mesh": 0.887,
+  "example_mesh": 0.974,
+  "diff_pct": 8.932238193018478
+ }
+]

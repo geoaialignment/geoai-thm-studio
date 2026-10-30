@@ -1,0 +1,59 @@
+{
+ "id": "V2a-official",
+ "kind": "official",
+ "configuration": "T-2D",
+ "title": "Official line_60_heat input against the erfc solution",
+ "official": "Parabolic/T/1D_dirichlet/line_60_heat.prj",
+ "t_end": 39062500,
+ "reference": {
+  "type": "erfc_step",
+  "axis": 0,
+  "base": 273.15,
+  "params": {
+   "diffusivity": 1.28e-06,
+   "dT": 1.0
+  }
+ },
+ "normalization": {
+  "type": "scale",
+  "scale": 1.0
+ },
+ "tolerance": {
+  "max_norm": 0.01,
+  "l2_rel": 0.02
+ },
+ "observations": [
+  {
+   "field": "temperature",
+   "time": 5078125,
+   "line": {
+    "from": [
+     0,
+     0
+    ],
+    "to": [
+     60,
+     0
+    ],
+    "n": 61
+   },
+   "label": "profile at t = 5.07812e+06 s"
+  },
+  {
+   "field": "temperature",
+   "time": 39062500,
+   "line": {
+    "from": [
+     0,
+     0
+    ],
+    "to": [
+     60,
+     0
+    ],
+    "n": 61
+   },
+   "label": "profile at t = 3.90625e+07 s"
+  }
+ ]
+}

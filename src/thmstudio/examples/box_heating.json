@@ -1,0 +1,103 @@
+{
+ "id": "box_heating",
+ "configuration": "T-3D",
+ "verification_cases": [
+  "V2c",
+  "V2c-steady"
+ ],
+ "title": "3D rock block heated from above",
+ "title_ko": "위에서 가열되는 3차원 암반 블록",
+ "description": "A 3D rock block with two layers; its top surface is held 10 K warmer for 5 years.",
+ "model": {
+  "name": "box_heating",
+  "geometry": {
+   "kind": "box",
+   "length_x": "20 m",
+   "length_y": "20 m",
+   "layers": [
+    {
+     "name": "lower",
+     "thickness": "10 m"
+    },
+    {
+     "name": "upper",
+     "thickness": "10 m"
+    }
+   ]
+  },
+  "physics": {
+   "process": "T"
+  },
+  "materials": {
+   "lower": {
+    "label": "granite (typical)",
+    "thermal_conductivity": "3.0 W/m/K",
+    "density": "2650 kg/m3",
+    "specific_heat": "850 J/kg/K"
+   },
+   "upper": {
+    "label": "sandstone (typical)",
+    "thermal_conductivity": "2.5 W/m/K",
+    "density": "2300 kg/m3",
+    "specific_heat": "900 J/kg/K"
+   }
+  },
+  "boundary_conditions": [
+   {
+    "boundary": "top",
+    "variable": "temperature",
+    "value": "25 degC"
+   }
+  ],
+  "initial": {
+   "temperature": "15 degC"
+  },
+  "mesh": {
+   "size": "1 m",
+   "refinements": [
+    {
+     "target": "top",
+     "size": "0.2 m",
+     "growth": 1.2
+    }
+   ]
+  },
+  "study": {
+   "kind": "transient",
+   "end_time": "5 yr",
+   "first_step": "1 d",
+   "growth": 1.2,
+   "max_step": "30 d",
+   "output_times": [
+    "1 yr"
+   ]
+  },
+  "probes": [
+   {
+    "name": "centre_line",
+    "line": [
+     [
+      10,
+      10,
+      20
+     ],
+     [
+      10,
+      10,
+      0
+     ]
+    ]
+   }
+  ]
+ },
+ "adjustable": {
+  "surface_temperature": {
+   "path": "boundary_conditions.top.temperature.value",
+   "unit": "degC"
+  },
+  "duration": {
+   "path": "study.end_time",
+   "unit": "yr"
+  }
+ }
+}

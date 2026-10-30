@@ -1,0 +1,127 @@
+{
+ "schema_version": 1,
+ "name": "cs135_clay_sorption",
+ "geometry": {
+  "kind": "rect",
+  "width": 20.0,
+  "layers": [
+   {
+    "name": "clay",
+    "thickness": 0.05
+   }
+  ],
+  "plane": "horizontal",
+  "segments": []
+ },
+ "materials": {
+  "clay": {
+   "label": "Opalinus Clay (benchmark values)",
+   "permeability": 1e-18,
+   "hydraulic_conductivity": null,
+   "porosity": 0.12,
+   "specific_storage": null,
+   "thermal_conductivity": null,
+   "solid_density": null,
+   "solid_specific_heat": null,
+   "density": null,
+   "specific_heat": null,
+   "longitudinal_dispersivity": 0.0,
+   "transverse_dispersivity": 0.0,
+   "youngs_modulus": null,
+   "poissons_ratio": null,
+   "biot_coefficient": null,
+   "thermal_expansion": null
+  }
+ },
+ "physics": {
+  "process": "HC",
+  "gravity": null,
+  "fluid": {
+   "density": 1000.0,
+   "viscosity": 0.001,
+   "specific_heat": 4180.0,
+   "thermal_conductivity": 0.6,
+   "thermal_expansion": 0.0004,
+   "density_increase_per_concentration": 0.0
+  },
+  "components": [
+   {
+    "name": "cs135",
+    "pore_diffusion": 8.333e-11,
+    "decay_rate": null,
+    "half_life": 72582480000000.0,
+    "retardation": 9976.0
+   }
+  ]
+ },
+ "boundary_conditions": [
+  {
+   "boundary": "left",
+   "variable": "head",
+   "kind": "flux",
+   "value": 2e-11,
+   "component": null,
+   "expression": null
+  },
+  {
+   "boundary": "right",
+   "variable": "pressure",
+   "kind": "fixed",
+   "value": 100000.0,
+   "component": null,
+   "expression": null
+  },
+  {
+   "boundary": "left",
+   "variable": "concentration",
+   "kind": "fixed",
+   "value": 1.0,
+   "component": null,
+   "expression": null
+  }
+ ],
+ "heat_sources": [],
+ "initial": {
+  "temperature": null,
+  "head": null,
+  "pressure": 100000.0,
+  "concentration": 0.0
+ },
+ "mesh": {
+  "element": "auto",
+  "size": 0.01,
+  "divisions": {
+   "y": 1
+  },
+  "refinements": []
+ },
+ "study": {
+  "kind": "transient",
+  "end_time": 1577880000000.0,
+  "first_step": 31557600.0,
+  "max_step": 3155760000.0,
+  "growth": 1.3,
+  "output_times": [
+   31557600000.0,
+   315576000000.0,
+   1577880000000.0
+  ]
+ },
+ "probes": [
+  {
+   "name": "column",
+   "point": null,
+   "line": [
+    [
+     0.0,
+     0.025
+    ],
+    [
+     2.0,
+     0.025
+    ]
+   ],
+   "samples": 101
+  }
+ ]
+}

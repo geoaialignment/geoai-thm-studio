@@ -1,0 +1,24 @@
+{"time": "2026-10-30T20:20:50", "tool": "start_from_example", "ok": true, "state": "DRAFT", "version": 1, "args": "{\"example_id\": \"point_heat_source\", \"changes\": [{\"name\": \"source_power\", \"value\": \"300 W\"}], \"project_name\": \"point_heat_pressure\"}", "note": ""}
+{"time": "2026-10-30T20:20:55", "tool": "build_mesh", "ok": true, "state": "DRAFT", "version": 1, "args": "{}", "note": ""}
+{"time": "2026-10-30T20:20:59", "tool": "set_mesh", "ok": true, "state": "DRAFT", "version": 2, "args": "{\"size\": \"0.5 m\", \"element\": \"quad\", \"divisions\": null, \"refinements\": [{\"target\": \"source\", \"size\": \"0.1 m\", \"growth\": 1.2}]}", "note": ""}
+{"time": "2026-10-30T20:21:02", "tool": "build_mesh", "ok": true, "state": "DRAFT", "version": 2, "args": "{}", "note": ""}
+{"time": "2026-10-30T20:21:06", "tool": "show_mesh", "ok": true, "state": "DRAFT", "version": 2, "args": "{\"zoom\": null}", "note": ""}
+{"time": "2026-10-30T20:21:08", "tool": "check_model", "ok": false, "state": "DRAFT", "version": 2, "args": "{}", "note": ""}
+{"time": "2026-10-30T20:21:13", "tool": "set_mesh", "ok": true, "state": "DRAFT", "version": 3, "args": "{\"size\": \"0.2 m\", \"element\": \"quad\", \"divisions\": null, \"refinements\": [{\"target\": \"source\", \"size\": \"0.0145 m\", \"growth\": 1.2}]}", "note": ""}
+{"time": "2026-10-30T20:21:16", "tool": "build_mesh", "ok": true, "state": "DRAFT", "version": 3, "args": "{}", "note": ""}
+{"time": "2026-10-30T20:21:19", "tool": "show_mesh", "ok": true, "state": "DRAFT", "version": 3, "args": "{\"zoom\": null}", "note": ""}
+{"time": "2026-10-30T20:21:22", "tool": "check_model", "ok": true, "state": "CHECKED", "version": 3, "args": "{}", "note": ""}
+{"time": "2026-10-30T20:21:24", "tool": "run", "ok": true, "state": "RUNNING", "version": 3, "args": "{}", "note": ""}
+{"time": "2026-10-30T20:21:47", "tool": "run_status", "ok": true, "state": "RUNNING", "version": 3, "args": "{}", "note": ""}
+{"time": "2026-10-30T20:22:10", "tool": "run_status", "ok": true, "state": "RUNNING", "version": 3, "args": "{}", "note": ""}
+{"time": "2026-10-30T20:22:33", "tool": "run_status", "ok": true, "state": "RUNNING", "version": 3, "args": "{}", "note": ""}
+{"time": "2026-10-30T20:22:58", "tool": "run_status", "ok": true, "state": "RUNNING", "version": 3, "args": "{}", "note": ""}
+{"time": "2026-10-30T20:23:21", "tool": "run_status", "ok": true, "state": "RUNNING", "version": 3, "args": "{}", "note": ""}
+{"time": "2026-10-30T20:23:45", "tool": "run_status", "ok": true, "state": "RUNNING", "version": 3, "args": "{}", "note": ""}
+{"time": "2026-10-30T20:24:11", "tool": "run_status", "ok": true, "state": "RUNNING", "version": 3, "args": "{}", "note": ""}
+{"time": "2026-10-30T20:24:35", "tool": "run_status", "ok": true, "state": "RUNNING", "version": 3, "args": "{}", "note": ""}
+{"time": "2026-10-30T20:24:58", "tool": "run_status", "ok": true, "state": "COMPUTED", "version": 3, "args": "{}", "note": ""}
+{"time": "2026-10-30T20:25:00", "tool": "show_model", "ok": true, "state": "COMPUTED", "version": 3, "args": "{}", "note": ""}
+{"time": "2026-10-30T20:25:04", "tool": "show_results", "ok": true, "state": "COMPUTED", "version": 3, "args": "{\"field\": \"pressure\", \"component\": null, \"kind\": \"profile\", \"time\": null, \"probe\": \"radial\", \"point\": null, \"line\": null}", "note": ""}
+{"time": "2026-10-30T20:28:13", "tool": "compare", "ok": true, "state": "COMPUTED", "version": 3, "args": "{\"comparison\": \"no_water_thermal_expansion\", \"field\": \"pressure\", \"component\": null, \"probe\": \"at_0_5m\", \"time\": null}", "note": ""}
+{"time": "2026-10-30T20:28:19", "tool": "answer_card", "ok": true, "state": "REPORTED", "version": 3, "args": "{\"items\": [{\"label\": \"간극수압 상승\", \"kind\": \"change\", \"field\": \"pressure\", \"component\": null, \"probe\": \"at_0_5m\", \"point\": null, \"time\": null, \"comparison\": null}, {\"label\": \"물의 열팽창을 끈 경우와의 차이\", \"kind\": \"comparison\", \"field\": \"pressure\", \"component\": null, \"probe\": \"at_0_5m\", \"point\": null, \"time\": null, \"comparison\": \"no_water_thermal_expansion\"}]}", "note": ""}

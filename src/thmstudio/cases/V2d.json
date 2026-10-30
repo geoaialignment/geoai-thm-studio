@@ -1,0 +1,139 @@
+{
+ "id": "V2d",
+ "configuration": "T-2D",
+ "title": "Steady radial conduction around a heated circular inclusion",
+ "source": "steady radial conduction with an internal source; the exact solution is imposed on the outer rectangle",
+ "model": {
+  "name": "v2d",
+  "geometry": {
+   "kind": "rect_inclusion",
+   "width": 10,
+   "height": 10,
+   "center": [
+    5.0,
+    5.0
+   ],
+   "radius": 1.0
+  },
+  "physics": {
+   "process": "T"
+  },
+  "materials": {
+   "matrix": {
+    "thermal_conductivity": 2.0,
+    "density": 2600,
+    "specific_heat": 900
+   },
+   "inclusion": {
+    "thermal_conductivity": 4.0,
+    "density": 2600,
+    "specific_heat": 900
+   }
+  },
+  "boundary_conditions": [
+   {
+    "boundary": "left",
+    "variable": "temperature",
+    "value": 293.15,
+    "expression": "293.15 - 25.0*log(sqrt((x-5.0)^2+(y-5.0)^2)/5.0)"
+   },
+   {
+    "boundary": "right",
+    "variable": "temperature",
+    "value": 293.15,
+    "expression": "293.15 - 25.0*log(sqrt((x-5.0)^2+(y-5.0)^2)/5.0)"
+   },
+   {
+    "boundary": "bottom",
+    "variable": "temperature",
+    "value": 293.15,
+    "expression": "293.15 - 25.0*log(sqrt((x-5.0)^2+(y-5.0)^2)/5.0)"
+   },
+   {
+    "boundary": "top",
+    "variable": "temperature",
+    "value": 293.15,
+    "expression": "293.15 - 25.0*log(sqrt((x-5.0)^2+(y-5.0)^2)/5.0)"
+   }
+  ],
+  "heat_sources": [
+   {
+    "region": "inclusion",
+    "kind": "power_density",
+    "value": 100.0
+   }
+  ],
+  "initial": {
+   "temperature": 293.15
+  },
+  "mesh": {
+   "size": 0.4,
+   "refinements": [
+    {
+     "target": "inclusion_boundary",
+     "size": 0.04,
+     "growth": 1.15
+    }
+   ]
+  },
+  "study": {
+   "kind": "steady"
+  }
+ },
+ "reference": {
+  "type": "radial_inclusion",
+  "center": [
+   5.0,
+   5.0
+  ],
+  "params": {
+   "a": 1.0,
+   "q": 100.0,
+   "k_in": 4.0,
+   "k_out": 2.0,
+   "r_ref": 5.0,
+   "t_ref": 293.15
+  },
+  "base": 293.15
+ },
+ "normalization": {
+  "type": "scale",
+  "scale": 46.48594781085251
+ },
+ "tolerance": {
+  "max_norm": 0.01,
+  "l2_rel": 0.01
+ },
+ "observations": [
+  {
+   "field": "temperature",
+   "line": {
+    "from": [
+     5.0,
+     5.0
+    ],
+    "to": [
+     9.9,
+     5.0
+    ],
+    "n": 50
+   },
+   "label": "temperature from the centre outwards"
+  },
+  {
+   "field": "temperature",
+   "line": {
+    "from": [
+     5.0,
+     5.0
+    ],
+    "to": [
+     8.5,
+     8.5
+    ],
+    "n": 50
+   },
+   "label": "temperature along the diagonal"
+  }
+ ]
+}

@@ -1,0 +1,141 @@
+{
+ "id": "V6a",
+ "configuration": "HC-2D",
+ "title": "Solute front in steady flow (advection and dispersion)",
+ "source": "Ogata and Banks (1961)",
+ "model": {
+  "name": "v6a",
+  "geometry": {
+   "kind": "strip",
+   "segments": [
+    {
+     "name": "column",
+     "thickness": 10
+    }
+   ],
+   "width": 1
+  },
+  "physics": {
+   "process": "HC",
+   "components": [
+    {
+     "name": "c",
+     "pore_diffusion": 1e-09
+    }
+   ]
+  },
+  "materials": {
+   "column": {
+    "permeability": 1e-11,
+    "porosity": 0.25,
+    "longitudinal_dispersivity": 0.1,
+    "transverse_dispersivity": 0.01
+   }
+  },
+  "boundary_conditions": [
+   {
+    "boundary": "left",
+    "variable": "head",
+    "kind": "flux",
+    "value": 1e-06
+   },
+   {
+    "boundary": "right",
+    "variable": "head",
+    "value": 0
+   },
+   {
+    "boundary": "left",
+    "variable": "concentration",
+    "value": 1.0
+   }
+  ],
+  "initial": {
+   "head": 0,
+   "concentration": 0
+  },
+  "mesh": {
+   "size": 0.05
+  },
+  "study": {
+   "kind": "transient",
+   "end_time": 1250000.0,
+   "first_step": 2500,
+   "output_times": [
+    500000.0
+   ]
+  }
+ },
+ "reference": {
+  "type": "advection_dispersion",
+  "axis": 0,
+  "params": {
+   "v": 4e-06,
+   "D": 4.01e-07
+  }
+ },
+ "normalization": {
+  "type": "scale",
+  "scale": 1.0
+ },
+ "tolerance": {
+  "max_norm": 0.02,
+  "l2_rel": 0.02
+ },
+ "observations": [
+  {
+   "field": "c",
+   "time": 500000.0,
+   "line": {
+    "from": [
+     0,
+     0.5
+    ],
+    "to": [
+     10,
+     0.5
+    ],
+    "n": 101
+   },
+   "label": "profile at t = 500000 s"
+  },
+  {
+   "field": "c",
+   "time": 1250000.0,
+   "line": {
+    "from": [
+     0,
+     0.5
+    ],
+    "to": [
+     10,
+     0.5
+    ],
+    "n": 101
+   },
+   "label": "profile at t = 1.25e+06 s"
+  },
+  {
+   "field": "darcy_velocity",
+   "component": 0,
+   "points": [
+    [
+     5,
+     0.5
+    ]
+   ],
+   "label": "Darcy flux from the flux condition",
+   "reference": {
+    "type": "constant",
+    "base": 1e-06
+   },
+   "normalization": {
+    "type": "scale",
+    "scale": 1e-06
+   },
+   "tolerance": {
+    "max_norm": 1e-06
+   }
+  }
+ ]
+}

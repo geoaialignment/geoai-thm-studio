@@ -1,0 +1,15 @@
+{"time": "2026-10-30T18:37:25", "tool": "new_project", "ok": true, "state": "DRAFT", "version": 0, "args": "{\"name\": \"box_head_mid\"}", "note": ""}
+{"time": "2026-10-30T18:37:25", "tool": "search_kb", "ok": true, "state": "DRAFT", "version": 0, "args": "{\"query\": \"sand hydraulic conductivity\"}", "note": ""}
+{"time": "2026-10-30T18:37:27", "tool": "set_geometry", "ok": true, "state": "DRAFT", "version": 1, "args": "{\"shape\": \"box\", \"length_x\": \"20 m\", \"length_y\": \"5 m\", \"layers\": [{\"name\": \"block\", \"thickness\": \"5 m\"}]}", "note": ""}
+{"time": "2026-10-30T18:37:28", "tool": "set_physics", "ok": true, "state": "DRAFT", "version": 2, "args": "{\"process\": \"H\"}", "note": ""}
+{"time": "2026-10-30T18:37:29", "tool": "set_materials", "ok": true, "state": "DRAFT", "version": 3, "args": "{\"materials\": [{\"region\": \"block\", \"library\": \"sand\", \"values\": [{\"name\": \"hydraulic_conductivity\", \"value\": \"1e-4 m/s\"}]}]}", "note": ""}
+{"time": "2026-10-30T18:37:31", "tool": "set_conditions", "ok": true, "state": "DRAFT", "version": 4, "args": "{\"boundary_conditions\": [{\"boundary\": \"left\", \"variable\": \"head\", \"kind\": \"fixed\", \"value\": \"10 m\"}, {\"boundary\": \"right\", \"variable\": \"head\", \"kind\": \"fixed\", \"value\": \"9 m\"}], \"initial\": [{\"name\": \"head\", \"value\": \"9.5 m\"}]}", "note": ""}
+{"time": "2026-10-30T18:37:32", "tool": "set_mesh", "ok": true, "state": "DRAFT", "version": 5, "args": "{\"size\": \"1 m\"}", "note": ""}
+{"time": "2026-10-30T18:37:34", "tool": "build_mesh", "ok": true, "state": "DRAFT", "version": 5, "args": "{}", "note": ""}
+{"time": "2026-10-30T18:37:35", "tool": "check_model", "ok": false, "state": "DRAFT", "version": 5, "args": "{}", "note": ""}
+{"time": "2026-10-30T18:37:37", "tool": "set_study", "ok": true, "state": "DRAFT", "version": 6, "args": "{\"kind\": \"steady\"}", "note": ""}
+{"time": "2026-10-30T18:37:38", "tool": "check_model", "ok": true, "state": "CHECKED", "version": 6, "args": "{}", "note": ""}
+{"time": "2026-10-30T18:37:39", "tool": "run", "ok": true, "state": "RUNNING", "version": 6, "args": "{}", "note": ""}
+{"time": "2026-10-30T18:37:40", "tool": "run_status", "ok": true, "state": "COMPUTED", "version": 6, "args": "{}", "note": ""}
+{"time": "2026-10-30T18:37:41", "tool": "show_model", "ok": true, "state": "COMPUTED", "version": 6, "args": "{}", "note": ""}
+{"time": "2026-10-30T18:37:44", "tool": "answer_card", "ok": true, "state": "REPORTED", "version": 6, "args": "{\"items\": [{\"label\": \"head at block centre\", \"kind\": \"value\", \"field\": \"head\", \"point\": [10, 2.5, 2.5]}, {\"label\": \"head at left face centre\", \"kind\": \"value\", \"field\": \"head\", \"point\": [0, 2.5, 2.5]}, {\"label\": \"head at right face centre\", \"kind\": \"value\", \"field\": \"head\", \"point\": [20, 2.5, 2.5]}]}", "note": ""}

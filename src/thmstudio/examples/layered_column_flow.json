@@ -1,0 +1,99 @@
+{
+ "id": "layered_column_flow",
+ "configuration": "H-2D",
+ "verification_cases": [
+  "V1a"
+ ],
+ "title": "Steady upward flow through two layers",
+ "title_ko": "두 층을 지나는 정상 상향 흐름",
+ "description": "Water flows upward through a sand layer and a clay layer between a fixed head at the bottom and at the top.",
+ "model": {
+  "name": "layered_column_flow",
+  "geometry": {
+   "kind": "rect",
+   "width": "1 m",
+   "layers": [
+    {
+     "name": "sand",
+     "thickness": "5 m"
+    },
+    {
+     "name": "clay",
+     "thickness": "5 m"
+    }
+   ]
+  },
+  "physics": {
+   "process": "H"
+  },
+  "materials": {
+   "sand": {
+    "label": "sand",
+    "hydraulic_conductivity": "1e-4 m/s",
+    "porosity": 0.3
+   },
+   "clay": {
+    "label": "clay",
+    "hydraulic_conductivity": "1e-8 m/s",
+    "porosity": 0.45
+   }
+  },
+  "boundary_conditions": [
+   {
+    "boundary": "bottom",
+    "variable": "head",
+    "value": "12 m"
+   },
+   {
+    "boundary": "top",
+    "variable": "head",
+    "value": "10 m"
+   }
+  ],
+  "initial": {
+   "head": "10 m"
+  },
+  "mesh": {
+   "size": "0.25 m",
+   "divisions": {
+    "x": 2
+   }
+  },
+  "study": {
+   "kind": "steady"
+  },
+  "probes": [
+   {
+    "name": "column",
+    "line": [
+     [
+      0.5,
+      0
+     ],
+     [
+      0.5,
+      10
+     ]
+    ]
+   }
+  ]
+ },
+ "adjustable": {
+  "bottom_head": {
+   "path": "boundary_conditions.bottom.head.value",
+   "unit": "m"
+  },
+  "top_head": {
+   "path": "boundary_conditions.top.head.value",
+   "unit": "m"
+  },
+  "sand_conductivity": {
+   "path": "materials.sand.hydraulic_conductivity",
+   "unit": "m/s"
+  },
+  "clay_conductivity": {
+   "path": "materials.clay.hydraulic_conductivity",
+   "unit": "m/s"
+  }
+ }
+}

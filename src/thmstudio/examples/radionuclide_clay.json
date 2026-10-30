@@ -1,0 +1,114 @@
+{
+ "id": "radionuclide_clay",
+ "configuration": "HC-2D",
+ "verification_cases": [
+  "V6b"
+ ],
+ "title": "Radionuclide migration through clay (135Cs)",
+ "title_ko": "점토층 속 방사성 핵종 이동(135Cs)",
+ "description": "Cesium-135 enters a clay barrier with a very slow flow. Strong sorption retards it and radioactive decay reduces it (after the OGS benchmark on Opalinus Clay).",
+ "model": {
+  "name": "radionuclide_clay",
+  "geometry": {
+   "kind": "rect",
+   "width": "20 m",
+   "layers": [
+    {
+     "name": "clay",
+     "thickness": "0.05 m"
+    }
+   ],
+   "plane": "horizontal"
+  },
+  "physics": {
+   "process": "HC",
+   "components": [
+    {
+     "name": "cs135",
+     "pore_diffusion": "8.333e-11 m2/s",
+     "half_life": "2.3e6 yr",
+     "retardation": 9976
+    }
+   ]
+  },
+  "materials": {
+   "clay": {
+    "label": "Opalinus Clay (benchmark values)",
+    "permeability": "1e-18 m2",
+    "porosity": 0.12,
+    "longitudinal_dispersivity": "0 m",
+    "transverse_dispersivity": "0 m"
+   }
+  },
+  "boundary_conditions": [
+   {
+    "boundary": "left",
+    "variable": "head",
+    "kind": "flux",
+    "value": "2e-11 m/s"
+   },
+   {
+    "boundary": "right",
+    "variable": "pressure",
+    "value": "0.1 MPa"
+   },
+   {
+    "boundary": "left",
+    "variable": "concentration",
+    "value": 1.0
+   }
+  ],
+  "initial": {
+   "pressure": "0.1 MPa",
+   "concentration": 0
+  },
+  "mesh": {
+   "size": "0.01 m",
+   "divisions": {
+    "y": 1
+   }
+  },
+  "study": {
+   "kind": "transient",
+   "end_time": "100000 yr",
+   "first_step": "100 yr",
+   "output_times": [
+    "10000 yr",
+    "50000 yr"
+   ]
+  },
+  "probes": [
+   {
+    "name": "column",
+    "line": [
+     [
+      0,
+      0.025
+     ],
+     [
+      2,
+      0.025
+     ]
+    ]
+   }
+  ]
+ },
+ "adjustable": {
+  "half_life": {
+   "path": "physics.components.cs135.half_life",
+   "unit": "yr"
+  },
+  "retardation": {
+   "path": "physics.components.cs135.retardation",
+   "unit": "-"
+  },
+  "pore_diffusion": {
+   "path": "physics.components.cs135.pore_diffusion",
+   "unit": "m2/s"
+  },
+  "duration": {
+   "path": "study.end_time",
+   "unit": "yr"
+  }
+ }
+}

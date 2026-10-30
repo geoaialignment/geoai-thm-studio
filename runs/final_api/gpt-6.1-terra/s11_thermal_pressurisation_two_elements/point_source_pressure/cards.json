@@ -1,0 +1,54 @@
+[
+ {
+  "run_id": "515565f93d96",
+  "model_name": "point_source_pressure",
+  "created": "2026-10-30 20:19",
+  "rows": [
+   {
+    "label": "열원에서 0.5 m의 간극수압 상승",
+    "quantity": "pressure",
+    "aggregation": "change since start",
+    "location": "at_0_5m (0.5, 0.0) m",
+    "time": "50000 s",
+    "value": "0.887",
+    "unit": "MPa",
+    "value_si": 887327.7389591284,
+    "unit_si": "Pa"
+   },
+   {
+    "label": "물의 열팽창을 끈 경우와의 압력 차이",
+    "quantity": "pressure",
+    "aggregation": "largest difference",
+    "location": "at_0_5m",
+    "time": "50000 s",
+    "value": "0.769",
+    "unit": "MPa",
+    "value_si": 768667.7931273947,
+    "unit_si": "Pa"
+   }
+  ],
+  "verification": {
+   "configuration": "THM-AX",
+   "title": "point heat source in saturated rock (axisymmetric)",
+   "demonstration": false,
+   "cases": [
+    {
+     "case": "V5",
+     "status": "passed",
+     "worst_normalised_error": 0.011030876918178561,
+     "source": "release record",
+     "date": "2026-10-30 19:14"
+    }
+   ]
+  },
+  "run_checks": {
+   "reached_end_time": true,
+   "finite_values": true,
+   "time_steps": 100,
+   "rejected_steps": 0,
+   "max_nonlinear_iterations": 4,
+   "energy_balance": "not checked"
+  },
+  "table": "Results of run 515565f93d96 (model point_source_pressure)\n\n| quantity | where | when | how | value |\n|---|---|---|---|---|\n| 열원에서 0.5 m의 간극수압 상승 | at_0_5m (0.5, 0.0) m | 50000 s | change since start | 0.887 MPa |\n| 물의 열팽창을 끈 경우와의 압력 차이 | at_0_5m | 50000 s | largest difference | 0.769 MPa |\n\nVerified configuration THM-AX: V5 passed (max error 1.1 %).\nThis run: reached end time True, finite values True, time steps 100, rejected steps 0, max nonlinear iterations 4, energy balance not checked."
+ }
+]

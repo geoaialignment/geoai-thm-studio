@@ -1,0 +1,11 @@
+{"time": "2026-10-30T19:36:25", "tool": "start_from_example", "ok": true, "state": "DRAFT", "version": 1, "args": "{\"example_id\": \"consolidation_column\", \"changes\": [{\"name\": \"load\", \"value\": \"50 kPa\"}, {\"name\": \"duration\", \"value\": \"1 yr\"}], \"project_name\": \"clay_settlement\"}", "note": ""}
+{"time": "2026-10-30T19:36:28", "tool": "build_mesh", "ok": true, "state": "DRAFT", "version": 1, "args": "{}", "note": ""}
+{"time": "2026-10-30T19:36:34", "tool": "set_mesh", "ok": true, "state": "DRAFT", "version": 2, "args": "{\"size\": \"0.2 m\", \"element\": \"quad\", \"divisions\": [{\"name\": \"x\", \"elements\": 4}, {\"name\": \"y\", \"elements\": 80}], \"refinements\": [{\"target\": \"top\", \"size\": \"0.1 m\", \"growth\": 1.1}]}", "note": ""}
+{"time": "2026-10-30T19:36:37", "tool": "build_mesh", "ok": true, "state": "DRAFT", "version": 2, "args": "{}", "note": ""}
+{"time": "2026-10-30T19:36:39", "tool": "show_mesh", "ok": true, "state": "DRAFT", "version": 2, "args": "{\"zoom\": null}", "note": ""}
+{"time": "2026-10-30T19:36:41", "tool": "check_model", "ok": true, "state": "CHECKED", "version": 2, "args": "{}", "note": ""}
+{"time": "2026-10-30T19:36:45", "tool": "run", "ok": true, "state": "RUNNING", "version": 2, "args": "{}", "note": ""}
+{"time": "2026-10-30T19:36:48", "tool": "run_status", "ok": true, "state": "COMPUTED", "version": 2, "args": "{}", "note": ""}
+{"time": "2026-10-30T19:36:51", "tool": "show_model", "ok": true, "state": "COMPUTED", "version": 2, "args": "{}", "note": ""}
+{"time": "2026-10-30T19:36:55", "tool": "show_results", "ok": true, "state": "COMPUTED", "version": 2, "args": "{\"field\": \"displacement\", \"component\": \"y\", \"kind\": \"series\", \"time\": null, \"probe\": \"surface\", \"point\": null, \"line\": null}", "note": ""}
+{"time": "2026-10-30T19:36:59", "tool": "answer_card", "ok": true, "state": "REPORTED", "version": 2, "args": "{\"items\": [{\"label\": \"surface vertical displacement change after one year\", \"kind\": \"change\", \"field\": \"displacement\", \"component\": \"y\", \"probe\": \"surface\", \"point\": null, \"time\": \"1 yr\", \"comparison\": null}]}", "note": ""}

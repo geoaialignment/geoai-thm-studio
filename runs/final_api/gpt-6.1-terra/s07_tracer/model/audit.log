@@ -1,0 +1,2 @@
+{"time": "2026-10-30T19:35:30", "tool": "list_capabilities", "ok": true, "state": "EMPTY", "version": 0, "args": "{}", "note": ""}
+{"time": "2026-10-30T19:35:35", "tool": "ask_user", "ok": true, "state": "EMPTY", "version": 0, "args": "{\"question\": \"Is the stated groundwater speed a Darcy flux or a pore-water velocity?\", \"default\": \"Darcy flux\"}", "note": ""}

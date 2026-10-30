@@ -1,0 +1,10 @@
+{"time": "2026-10-30T19:30:26", "tool": "start_from_example", "ok": true, "state": "DRAFT", "version": 1, "args": "{\"example_id\": \"heated_block_tm\", \"changes\": [{\"name\": \"heated_side_temperature\", \"value\": \"60 degC\"}], \"project_name\": null}", "note": ""}
+{"time": "2026-10-30T19:30:29", "tool": "build_mesh", "ok": true, "state": "DRAFT", "version": 1, "args": "{}", "note": ""}
+{"time": "2026-10-30T19:30:33", "tool": "show_mesh", "ok": true, "state": "DRAFT", "version": 1, "args": "{\"zoom\": null}", "note": ""}
+{"time": "2026-10-30T19:30:37", "tool": "check_model", "ok": true, "state": "CHECKED", "version": 1, "args": "{}", "note": ""}
+{"time": "2026-10-30T19:30:40", "tool": "run", "ok": true, "state": "RUNNING", "version": 1, "args": "{}", "note": ""}
+{"time": "2026-10-30T19:30:46", "tool": "run_status", "ok": true, "state": "COMPUTED", "version": 1, "args": "{}", "note": ""}
+{"time": "2026-10-30T19:30:50", "tool": "show_model", "ok": true, "state": "COMPUTED", "version": 1, "args": "{}", "note": ""}
+{"time": "2026-10-30T19:30:54", "tool": "show_results", "ok": true, "state": "COMPUTED", "version": 1, "args": "{\"field\": \"sigma\", \"component\": \"xx\", \"kind\": \"map\", \"time\": null, \"probe\": null, \"point\": null, \"line\": null}", "note": ""}
+{"time": "2026-10-30T19:31:04", "tool": "compare", "ok": true, "state": "COMPUTED", "version": 1, "args": "{\"comparison\": \"no_solid_thermal_expansion\", \"field\": \"sigma\", \"component\": \"xx\", \"probe\": null, \"time\": null}", "note": ""}
+{"time": "2026-10-30T19:31:10", "tool": "answer_card", "ok": true, "state": "REPORTED", "version": 1, "args": "{\"items\": [{\"label\": \"most compressive xx stress at 1 yr\", \"kind\": \"min\", \"field\": \"sigma\", \"component\": \"xx\", \"probe\": null, \"point\": null, \"time\": null, \"comparison\": null}, {\"label\": \"largest xx-stress difference when solid thermal expansion is removed\", \"kind\": \"comparison\", \"field\": \"sigma\", \"component\": \"xx\", \"probe\": \"centre_line\", \"point\": null, \"time\": null, \"comparison\": \"no_solid_the...", "note": ""}

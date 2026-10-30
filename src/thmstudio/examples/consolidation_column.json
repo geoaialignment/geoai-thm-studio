@@ -1,0 +1,131 @@
+{
+ "id": "consolidation_column",
+ "configuration": "HM-2D",
+ "verification_cases": [
+  "V4"
+ ],
+ "title": "Consolidation of a loaded soil layer",
+ "title_ko": "하중을 받는 흙층의 압밀",
+ "description": "A 10 m soft clay layer is loaded at the surface. The load is first carried by the pore water; as water drains through the top the pressure falls and the surface settles (Terzaghi consolidation).",
+ "model": {
+  "name": "consolidation_column",
+  "geometry": {
+   "kind": "rect",
+   "width": "1 m",
+   "layers": [
+    {
+     "name": "clay",
+     "thickness": "10 m"
+    }
+   ]
+  },
+  "physics": {
+   "process": "HM"
+  },
+  "materials": {
+   "clay": {
+    "label": "soft clay",
+    "permeability": "1e-15 m2",
+    "porosity": 0.5,
+    "youngs_modulus": "20 MPa",
+    "poissons_ratio": 0.3,
+    "biot_coefficient": 1.0
+   }
+  },
+  "boundary_conditions": [
+   {
+    "boundary": "left",
+    "variable": "displacement",
+    "kind": "roller"
+   },
+   {
+    "boundary": "right",
+    "variable": "displacement",
+    "kind": "roller"
+   },
+   {
+    "boundary": "bottom",
+    "variable": "displacement",
+    "kind": "roller"
+   },
+   {
+    "boundary": "top",
+    "variable": "displacement",
+    "kind": "load",
+    "value": "100 kPa"
+   },
+   {
+    "boundary": "top",
+    "variable": "pressure",
+    "value": "0 Pa"
+   }
+  ],
+  "initial": {
+   "pressure": "0 Pa"
+  },
+  "mesh": {
+   "size": "0.25 m",
+   "divisions": {
+    "x": 2
+   },
+   "refinements": [
+    {
+     "target": "top",
+     "size": "0.02 m",
+     "growth": 1.15
+    }
+   ]
+  },
+  "study": {
+   "kind": "transient",
+   "end_time": "2 yr",
+   "first_step": "1 h",
+   "growth": 1.15,
+   "max_step": "10 d",
+   "output_times": [
+    "0.1 yr",
+    "0.5 yr"
+   ]
+  },
+  "probes": [
+   {
+    "name": "column",
+    "line": [
+     [
+      0.5,
+      0
+     ],
+     [
+      0.5,
+      10
+     ]
+    ]
+   },
+   {
+    "name": "surface",
+    "point": [
+     0.5,
+     10
+    ]
+   }
+  ]
+ },
+ "adjustable": {
+  "load": {
+   "path": "boundary_conditions.top.displacement.value",
+   "unit": "kPa"
+  },
+  "permeability": {
+   "path": "materials.clay.permeability",
+   "unit": "m2"
+  },
+  "youngs_modulus": {
+   "path": "materials.clay.youngs_modulus",
+   "unit": "MPa"
+  },
+  "duration": {
+   "path": "study.end_time",
+   "unit": "yr"
+  }
+ }
+}

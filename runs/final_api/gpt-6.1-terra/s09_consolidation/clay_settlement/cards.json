@@ -1,0 +1,50 @@
+[
+ {
+  "run_id": "d74cf4932a43",
+  "model_name": "clay_settlement",
+  "created": "2026-10-30 19:36",
+  "rows": [
+   {
+    "label": "surface vertical displacement change after one year",
+    "quantity": "displacement",
+    "aggregation": "change since start",
+    "location": "surface (0.5, 10.0) m",
+    "time": "1.00 yr",
+    "value": "-18.6",
+    "unit": "mm",
+    "value_si": -0.018571427937530548,
+    "unit_si": "m"
+   }
+  ],
+  "verification": {
+   "configuration": "HM-2D",
+   "title": "consolidation of saturated ground under load (plane strain; verified with a 1D column)",
+   "demonstration": false,
+   "cases": [
+    {
+     "case": "V4",
+     "status": "passed",
+     "worst_normalised_error": 0.00811009959011193,
+     "source": "release record",
+     "date": "2026-10-30 19:14"
+    },
+    {
+     "case": "V4b",
+     "status": "passed",
+     "worst_normalised_error": 0.008136032514744554,
+     "source": "release record",
+     "date": "2026-10-30 19:14"
+    }
+   ]
+  },
+  "run_checks": {
+   "reached_end_time": true,
+   "finite_values": true,
+   "time_steps": 70,
+   "rejected_steps": 0,
+   "max_nonlinear_iterations": 2,
+   "energy_balance": "not checked"
+  },
+  "table": "Results of run d74cf4932a43 (model clay_settlement)\n\n| quantity | where | when | how | value |\n|---|---|---|---|---|\n| surface vertical displacement change after one year | surface (0.5, 10.0) m | 1.00 yr | change since start | -18.6 mm |\n\nVerified configuration HM-2D: V4 passed (max error 0.81 %), V4b passed (max error 0.81 %).\nThis run: reached end time True, finite values True, time steps 70, rejected steps 0, max nonlinear iterations 2, energy balance not checked."
+ }
+]

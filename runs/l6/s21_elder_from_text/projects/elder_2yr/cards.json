@@ -1,0 +1,65 @@
+[
+ {
+  "run_id": "03df41f5a22e",
+  "model_name": "elder_2yr",
+  "created": "2026-10-30 18:43",
+  "rows": [
+   {
+    "label": "maximum salt concentration after 2 years",
+    "quantity": "salt",
+    "aggregation": "max",
+    "location": "whole model",
+    "time": "2.00 yr",
+    "value": "1.00",
+    "unit": "-",
+    "value_si": 1.0000000000000029,
+    "unit_si": "-"
+   },
+   {
+    "label": "minimum salt concentration after 2 years",
+    "quantity": "salt",
+    "aggregation": "min",
+    "location": "whole model",
+    "time": "2.00 yr",
+    "value": "-0.183",
+    "unit": "-",
+    "value_si": -0.18318056691314039,
+    "unit_si": "-"
+   },
+   {
+    "label": "salt concentration at finger tip (x 165 m, y 90 m)",
+    "quantity": "salt",
+    "aggregation": "value",
+    "location": "(165.0, 90.0) m",
+    "time": "2.00 yr",
+    "value": "0.412",
+    "unit": "-",
+    "value_si": 0.41183947724488323,
+    "unit_si": "-"
+   }
+  ],
+  "verification": {
+   "configuration": "HC-2D-density",
+   "title": "density-driven (buoyant) solute transport in a vertical section",
+   "demonstration": false,
+   "cases": [
+    {
+     "case": "E2",
+     "status": "passed",
+     "worst_normalised_error": 0.023446545415578446,
+     "source": "release record",
+     "date": "2026-10-30 18:20"
+    }
+   ]
+  },
+  "run_checks": {
+   "reached_end_time": true,
+   "finite_values": true,
+   "time_steps": 122,
+   "rejected_steps": 0,
+   "max_nonlinear_iterations": 16,
+   "energy_balance": "not checked"
+  },
+  "table": "Results of run 03df41f5a22e (model elder_2yr)\n\n| quantity | where | when | how | value |\n|---|---|---|---|---|\n| maximum salt concentration after 2 years | whole model | 2.00 yr | max | 1.00 - |\n| minimum salt concentration after 2 years | whole model | 2.00 yr | min | -0.183 - |\n| salt concentration at finger tip (x 165 m, y 90 m) | (165.0, 90.0) m | 2.00 yr | value | 0.412 - |\n\nVerified configuration HC-2D-density: E2 passed (max error 2.3 %).\nThis run: reached end time True, finite values True, time steps 122, rejected steps 0, max nonlinear iterations 16, energy balance not checked."
+ }
+]

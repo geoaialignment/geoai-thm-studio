@@ -1,0 +1,73 @@
+[
+ {
+  "run_id": "f66e85d37633",
+  "model_hash": "3ab4d68eeac75e7c",
+  "model_name": "heat_plume_100d",
+  "created": "2026-10-30 18:25",
+  "rows": [
+   {
+    "label": "temperature rise at 10 m from inlet after 100 d",
+    "quantity": "temperature",
+    "aggregation": "change since start",
+    "location": "(10.0, 5.0) m",
+    "time": "100 d",
+    "value": "8.39",
+    "unit": "K",
+    "value_si": 8.389702281463428,
+    "unit_si": "K"
+   },
+   {
+    "label": "temperature rise at 20 m from inlet after 100 d",
+    "quantity": "temperature",
+    "aggregation": "change since start",
+    "location": "(20.0, 5.0) m",
+    "time": "100 d",
+    "value": "0.471",
+    "unit": "K",
+    "value_si": 0.4714258505505313,
+    "unit_si": "K"
+   },
+   {
+    "label": "maximum temperature along centre line after 100 d",
+    "quantity": "temperature",
+    "aggregation": "max",
+    "location": "along centre_line",
+    "time": "100 d",
+    "value": "22.0",
+    "unit": "°C",
+    "value_si": 295.14999999999986,
+    "unit_si": "K"
+   }
+  ],
+  "verification": {
+   "configuration": "TH-2D",
+   "title": "heat transport by groundwater flow in 2D",
+   "demonstration": false,
+   "cases": [
+    {
+     "case": "V3",
+     "status": "passed",
+     "worst_normalised_error": 0.009735528566920948,
+     "source": "release record",
+     "date": "2026-10-30 17:37"
+    },
+    {
+     "case": "V3-water",
+     "status": "passed",
+     "worst_normalised_error": 0.004458001765556219,
+     "source": "release record",
+     "date": "2026-10-30 17:37"
+    }
+   ]
+  },
+  "run_checks": {
+   "reached_end_time": true,
+   "finite_values": true,
+   "time_steps": 100,
+   "rejected_steps": 0,
+   "max_nonlinear_iterations": 3,
+   "energy_balance": "not checked"
+  },
+  "table": "Results of run f66e85d37633 (model heat_plume_100d, version 3ab4d68eeac75e7c)\n\n| quantity | where | when | how | value |\n|---|---|---|---|---|\n| temperature rise at 10 m from inlet after 100 d | (10.0, 5.0) m | 100 d | change since start | 8.39 K |\n| temperature rise at 20 m from inlet after 100 d | (20.0, 5.0) m | 100 d | change since start | 0.471 K |\n| maximum temperature along centre line after 100 d | along centre_line | 100 d | max | 22.0 °C |\n\nVerified configuration TH-2D: V3 passed (max error 0.97 %), V3-water passed (max error 0.45 %).\nThis run: reached end time True, finite values True, time steps 100, rejected steps 0, max nonlinear iterations 3, energy balance not checked."
+ }
+]

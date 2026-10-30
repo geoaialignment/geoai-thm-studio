@@ -1,0 +1,2265 @@
+[
+ {
+  "id": "E1",
+  "passed": true,
+  "seconds": 185.02,
+  "checks": [
+   {
+    "field": "heat_content",
+    "time": 15778800.0,
+    "label": "heat stored = power x time (half model), 0.5 yr",
+    "max_norm_error": 0.0047770938292960845,
+    "l2_rel_error": 0.0047770938292960845,
+    "n": 1,
+    "passed": true,
+    "value": 7927088404.056849,
+    "expected": 7889400000.0
+   },
+   {
+    "field": "heat_content",
+    "time": 63115200.0,
+    "label": "heat stored = power x time (half model), 2 yr",
+    "max_norm_error": 0.0030146292746008117,
+    "l2_rel_error": 0.0030146292746008117,
+    "n": 1,
+    "passed": true,
+    "value": 31652734464.796143,
+    "expected": 31557600000.0
+   },
+   {
+    "field": "temperature",
+    "time": 63115200.0,
+    "label": "temperature rise at the canister, buffer and rock (2h vs h)",
+    "max_norm_error": 0.006355871151104755,
+    "l2_rel_error": 0.006355871151104755,
+    "n": 5,
+    "passed": true,
+    "coarse": [
+     317.3954816807491,
+     304.790875623316,
+     297.04926587331556,
+     297.5471069229583,
+     291.6553896042964
+    ],
+    "fine": [
+     317.2107751384181,
+     304.6499994966274,
+     297.0108697980464,
+     297.4787935435446,
+     291.604482742931
+    ]
+   },
+   {
+    "field": "pressure",
+    "time": 63115200.0,
+    "label": "pore pressure in buffer and rock (2h vs h)",
+    "max_norm_error": 0.007457379291897072,
+    "l2_rel_error": 0.007457379291897072,
+    "n": 3,
+    "passed": true,
+    "coarse": [
+     29887.757324023096,
+     29226.21704684452,
+     27986.36096296745
+    ],
+    "fine": [
+     30112.316287939833,
+     29439.29086618764,
+     28164.313163557814
+    ]
+   }
+  ],
+  "run": {
+   "run_id": "f228203e4508",
+   "status": "succeeded",
+   "returncode": 0,
+   "seconds": 168.95,
+   "failure": null,
+   "outputs": [
+    [
+     0.0,
+     "e1_ts_0_t_0.000000.vtu"
+    ],
+    [
+     15778800.0,
+     "e1_ts_36_t_15778800.000000.vtu"
+    ],
+    [
+     63115200.0,
+     "e1_ts_91_t_63115200.000000.vtu"
+    ]
+   ],
+   "reached_end": true,
+   "finite": true,
+   "log": "ogs.log",
+   "progress": 1.0,
+   "notes": []
+  },
+  "mesh": {
+   "engine": "structured",
+   "elements": 2940,
+   "nodes": 9039,
+   "element_type": "Quad8",
+   "order": 2,
+   "dimension": 2,
+   "axisymmetric": true,
+   "regions": {
+    "rock": 0,
+    "canister": 1,
+    "buffer": 2
+   },
+   "boundaries": {
+    "bottom": 49,
+    "top": 49,
+    "axis": 60,
+    "outer": 60
+   },
+   "interfaces": [
+    "buffer_rock",
+    "canister_surface"
+   ],
+   "points": []
+  },
+  "note": "",
+  "date": "2026-10-30 19:14",
+  "package_version": "0.1.0",
+  "ogs_version": "6.5.8"
+ },
+ {
+  "id": "E1a",
+  "passed": true,
+  "seconds": 271.4,
+  "checks": [
+   {
+    "field": "heat_content",
+    "time": 50000.0,
+    "label": "heat stored = power x time (half model)",
+    "max_norm_error": 0.003804821045240884,
+    "l2_rel_error": 0.003804821045240884,
+    "n": 1,
+    "passed": true,
+    "value": 7528536.157839307,
+    "expected": 7500000.0
+   },
+   {
+    "max_norm_error": 0.007646933736076605,
+    "l2_rel_error": 0.010124344350019505,
+    "n": 28,
+    "passed": true,
+    "field": "temperature",
+    "time": 50000.0,
+    "label": "temperature beyond 0.3 m"
+   },
+   {
+    "max_norm_error": 0.0062141441760056515,
+    "l2_rel_error": 0.0069820845127552215,
+    "n": 28,
+    "passed": true,
+    "field": "pressure",
+    "time": 50000.0,
+    "label": "pore pressure beyond 0.3 m"
+   },
+   {
+    "max_norm_error": 0.017194113276177484,
+    "l2_rel_error": 0.012226417807573553,
+    "n": 28,
+    "passed": true,
+    "field": "displacement",
+    "time": 50000.0,
+    "label": "radial displacement beyond 0.3 m"
+   }
+  ],
+  "run": {
+   "run_id": "3daeb523daa7",
+   "status": "succeeded",
+   "returncode": 0,
+   "seconds": 271.26,
+   "failure": null,
+   "outputs": [
+    [
+     0.0,
+     "e1a_ts_0_t_0.000000.vtu"
+    ],
+    [
+     50000.0,
+     "e1a_ts_100_t_50000.000000.vtu"
+    ]
+   ],
+   "reached_end": true,
+   "finite": true,
+   "log": "ogs.log",
+   "progress": 1.0,
+   "notes": []
+  },
+  "mesh": {
+   "engine": "structured",
+   "elements": 3600,
+   "nodes": 11041,
+   "element_type": "Quad8",
+   "order": 2,
+   "dimension": 2,
+   "axisymmetric": true,
+   "regions": {
+    "rock": 0,
+    "canister": 1,
+    "buffer": 2
+   },
+   "boundaries": {
+    "bottom": 60,
+    "top": 60,
+    "axis": 60,
+    "outer": 60
+   },
+   "interfaces": [
+    "buffer_rock",
+    "canister_surface"
+   ],
+   "points": []
+  },
+  "note": "",
+  "date": "2026-10-30 19:14",
+  "package_version": "0.1.0",
+  "ogs_version": "6.5.8"
+ },
+ {
+  "id": "E2",
+  "passed": true,
+  "seconds": 175.05,
+  "checks": [
+   {
+    "max_norm_error": 0.023446545490126147,
+    "l2_rel_error": 0.01630377192298674,
+    "n": 450,
+    "passed": true,
+    "field": "salt",
+    "time": 31557600.0,
+    "label": "salt concentration on a 30 x 15 grid at 1 yr"
+   },
+   {
+    "max_norm_error": 0.0153777750066805,
+    "l2_rel_error": 0.011846850132628838,
+    "n": 450,
+    "passed": true,
+    "field": "salt",
+    "time": 63115200.0,
+    "label": "salt concentration on a 30 x 15 grid at 2 yr"
+   },
+   {
+    "max_norm_error": 0.01783967712302345,
+    "l2_rel_error": 0.011800687272106857,
+    "n": 450,
+    "passed": true,
+    "field": "salt",
+    "time": 126230400.0,
+    "label": "salt concentration on a 30 x 15 grid at 4 yr"
+   }
+  ],
+  "run": {
+   "run_id": "95114841cc3e",
+   "status": "succeeded",
+   "returncode": 0,
+   "seconds": 174.9,
+   "failure": null,
+   "outputs": [
+    [
+     0.0,
+     "e2_ts_0_t_0.000000.vtu"
+    ],
+    [
+     31557600.0,
+     "e2_ts_120_t_31557600.000000.vtu"
+    ],
+    [
+     63115200.0,
+     "e2_ts_240_t_63115200.000000.vtu"
+    ],
+    [
+     126230400.0,
+     "e2_ts_480_t_126230400.000000.vtu"
+    ]
+   ],
+   "reached_end": true,
+   "finite": true,
+   "log": "ogs.log",
+   "progress": 1.0,
+   "notes": []
+  },
+  "mesh": {
+   "engine": "structured",
+   "elements": 8192,
+   "nodes": 8385,
+   "element_type": "Quad4",
+   "order": 1,
+   "dimension": 2,
+   "axisymmetric": false,
+   "regions": {
+    "aquifer": 0
+   },
+   "boundaries": {
+    "bottom": 128,
+    "top": 128,
+    "left": 64,
+    "right": 64,
+    "salt_source": 64
+   },
+   "interfaces": [],
+   "points": [
+    "corner_bottom_left",
+    "corner_bottom_right",
+    "corner_top_left",
+    "corner_top_right"
+   ]
+  },
+  "note": "",
+  "date": "2026-10-30 19:14",
+  "package_version": "0.1.0",
+  "ogs_version": "6.5.8"
+ },
+ {
+  "id": "V1a",
+  "passed": true,
+  "seconds": 0.28,
+  "checks": [
+   {
+    "max_norm_error": 1.021405182655144e-13,
+    "l2_rel_error": 1.1767107535874016e-14,
+    "n": 41,
+    "passed": true,
+    "field": "head",
+    "time": 1.0,
+    "label": "head along the column"
+   },
+   {
+    "max_norm_error": 8.355053582377612e-13,
+    "l2_rel_error": 5.960307397295996e-13,
+    "n": 2,
+    "passed": true,
+    "field": "darcy_velocity",
+    "time": 1.0,
+    "label": "Darcy flux in each layer"
+   }
+  ],
+  "run": {
+   "run_id": "333ba24ab927",
+   "status": "succeeded",
+   "returncode": 0,
+   "seconds": 0.21,
+   "failure": null,
+   "outputs": [
+    [
+     0.0,
+     "v1a_ts_0_t_0.000000.vtu"
+    ],
+    [
+     1.0,
+     "v1a_ts_1_t_1.000000.vtu"
+    ]
+   ],
+   "reached_end": true,
+   "finite": true,
+   "log": "ogs.log",
+   "progress": 1.0,
+   "notes": []
+  },
+  "mesh": {
+   "engine": "structured",
+   "elements": 80,
+   "nodes": 123,
+   "element_type": "Quad4",
+   "order": 1,
+   "dimension": 2,
+   "axisymmetric": false,
+   "regions": {
+    "lower": 0,
+    "upper": 1
+   },
+   "boundaries": {
+    "bottom": 2,
+    "top": 2,
+    "left": 40,
+    "right": 40,
+    "left_lower": 20,
+    "left_upper": 20,
+    "right_lower": 20,
+    "right_upper": 20
+   },
+   "interfaces": [
+    "interface_lower_upper"
+   ],
+   "points": [
+    "corner_bottom_left",
+    "corner_bottom_right",
+    "corner_top_left",
+    "corner_top_right"
+   ]
+  },
+  "note": "",
+  "date": "2026-10-30 19:14",
+  "package_version": "0.1.0",
+  "ogs_version": "6.5.8"
+ },
+ {
+  "id": "V1b",
+  "passed": true,
+  "seconds": 0.28,
+  "checks": [
+   {
+    "max_norm_error": 0.0196735374638941,
+    "l2_rel_error": 0.006537930088452357,
+    "n": 7,
+    "passed": true,
+    "field": "head",
+    "time": 1000.0000000000001,
+    "label": "head at t = 1000 s"
+   },
+   {
+    "max_norm_error": 0.015799346878416717,
+    "l2_rel_error": 0.00528077340018706,
+    "n": 7,
+    "passed": true,
+    "field": "head",
+    "time": 10000.0,
+    "label": "head at t = 10000 s"
+   },
+   {
+    "max_norm_error": 0.003375547094371816,
+    "l2_rel_error": 0.0018190180900720546,
+    "n": 7,
+    "passed": true,
+    "field": "head",
+    "time": 100000.0,
+    "label": "head at t = 100000 s"
+   }
+  ],
+  "run": {
+   "run_id": "b048ab920036",
+   "status": "succeeded",
+   "returncode": 0,
+   "seconds": 0.21,
+   "failure": null,
+   "outputs": [
+    [
+     0.0,
+     "v1b_ts_0_t_0.000000.vtu"
+    ],
+    [
+     1000.0000000000001,
+     "v1b_ts_36_t_1000.000000.vtu"
+    ],
+    [
+     10000.0,
+     "v1b_ts_53_t_10000.000000.vtu"
+    ],
+    [
+     100000.0,
+     "v1b_ts_99_t_100000.000000.vtu"
+    ]
+   ],
+   "reached_end": true,
+   "finite": true,
+   "log": "ogs.log",
+   "progress": 1.0,
+   "notes": []
+  },
+  "mesh": {
+   "engine": "structured",
+   "elements": 214,
+   "nodes": 324,
+   "element_type": "Quad4",
+   "order": 1,
+   "dimension": 2,
+   "axisymmetric": true,
+   "regions": {
+    "aquifer": 0
+   },
+   "boundaries": {
+    "bottom": 107,
+    "top": 107,
+    "well": 2,
+    "outer": 2
+   },
+   "interfaces": [],
+   "points": []
+  },
+  "note": "",
+  "date": "2026-10-30 19:14",
+  "package_version": "0.1.0",
+  "ogs_version": "6.5.8"
+ },
+ {
+  "id": "V1c",
+  "passed": true,
+  "seconds": 0.29,
+  "checks": [
+   {
+    "max_norm_error": 3.552713678800501e-15,
+    "l2_rel_error": 1.9069014460686636e-15,
+    "n": 21,
+    "passed": true,
+    "field": "head",
+    "time": 1.0,
+    "label": "head on the vertical centre line"
+   },
+   {
+    "max_norm_error": 3.4117640188831557e-15,
+    "l2_rel_error": 3.2718764543949718e-15,
+    "n": 21,
+    "passed": true,
+    "field": "pressure",
+    "time": 1.0,
+    "label": "pressure p = rho g (10 - z)"
+   }
+  ],
+  "run": {
+   "run_id": "1fe84bcf8e7c",
+   "status": "succeeded",
+   "returncode": 0,
+   "seconds": 0.21,
+   "failure": null,
+   "outputs": [
+    [
+     0.0,
+     "v1c_ts_0_t_0.000000.vtu"
+    ],
+    [
+     1.0,
+     "v1c_ts_1_t_1.000000.vtu"
+    ]
+   ],
+   "reached_end": true,
+   "finite": true,
+   "log": "ogs.log",
+   "progress": 1.0,
+   "notes": []
+  },
+  "mesh": {
+   "engine": "structured",
+   "elements": 1000,
+   "nodes": 1331,
+   "element_type": "Hex8",
+   "order": 1,
+   "dimension": 3,
+   "axisymmetric": false,
+   "regions": {
+    "lower": 0,
+    "upper": 1
+   },
+   "boundaries": {
+    "bottom": 100,
+    "top": 100,
+    "front": 100,
+    "back": 100,
+    "left": 100,
+    "right": 100
+   },
+   "interfaces": [
+    "interface_lower_upper"
+   ],
+   "points": []
+  },
+  "note": "",
+  "date": "2026-10-30 19:14",
+  "package_version": "0.1.0",
+  "ogs_version": "6.5.8"
+ },
+ {
+  "id": "V1c-flow",
+  "passed": true,
+  "seconds": 0.28,
+  "checks": [
+   {
+    "max_norm_error": 8.881784197001252e-15,
+    "l2_rel_error": 7.413271687920253e-15,
+    "n": 41,
+    "passed": true,
+    "field": "head",
+    "time": 1.0,
+    "label": "head across both layers"
+   },
+   {
+    "max_norm_error": 5.05111390564491e-14,
+    "l2_rel_error": 5.05111390564491e-14,
+    "n": 1,
+    "passed": true,
+    "field": "darcy_velocity",
+    "time": 1.0,
+    "label": "Darcy flux in the lower layer"
+   },
+   {
+    "max_norm_error": 1.8822954383428895e-14,
+    "l2_rel_error": 1.8822954383428895e-14,
+    "n": 1,
+    "passed": true,
+    "field": "darcy_velocity",
+    "time": 1.0,
+    "label": "Darcy flux in the upper layer"
+   }
+  ],
+  "run": {
+   "run_id": "35667f6b1a4d",
+   "status": "succeeded",
+   "returncode": 0,
+   "seconds": 0.21,
+   "failure": null,
+   "outputs": [
+    [
+     0.0,
+     "v1cflow_ts_0_t_0.000000.vtu"
+    ],
+    [
+     1.0,
+     "v1cflow_ts_1_t_1.000000.vtu"
+    ]
+   ],
+   "reached_end": true,
+   "finite": true,
+   "log": "ogs.log",
+   "progress": 1.0,
+   "notes": []
+  },
+  "mesh": {
+   "engine": "structured",
+   "elements": 500,
+   "nodes": 756,
+   "element_type": "Hex8",
+   "order": 1,
+   "dimension": 3,
+   "axisymmetric": false,
+   "regions": {
+    "lower": 0,
+    "upper": 1
+   },
+   "boundaries": {
+    "bottom": 100,
+    "top": 100,
+    "front": 100,
+    "back": 100,
+    "left": 25,
+    "right": 25
+   },
+   "interfaces": [
+    "interface_lower_upper"
+   ],
+   "points": []
+  },
+  "note": "",
+  "date": "2026-10-30 19:14",
+  "package_version": "0.1.0",
+  "ogs_version": "6.5.8"
+ },
+ {
+  "id": "V2a",
+  "passed": true,
+  "seconds": 0.28,
+  "checks": [
+   {
+    "max_norm_error": 0.002114665788383263,
+    "l2_rel_error": 0.0032097472475411002,
+    "n": 61,
+    "passed": true,
+    "field": "temperature",
+    "time": 5078125.0,
+    "label": "profile at t = 5.07812e+06 s"
+   },
+   {
+    "max_norm_error": 0.00027648282230074983,
+    "l2_rel_error": 0.0004556376447143373,
+    "n": 61,
+    "passed": true,
+    "field": "temperature",
+    "time": 39062500.0,
+    "label": "profile at t = 3.90625e+07 s"
+   }
+  ],
+  "run": {
+   "run_id": "2c892b486faa",
+   "status": "succeeded",
+   "returncode": 0,
+   "seconds": 0.21,
+   "failure": null,
+   "outputs": [
+    [
+     0.0,
+     "v2a_ts_0_t_0.000000.vtu"
+    ],
+    [
+     5078125.0,
+     "v2a_ts_65_t_5078125.000000.vtu"
+    ],
+    [
+     39062500.0,
+     "v2a_ts_500_t_39062500.000000.vtu"
+    ]
+   ],
+   "reached_end": true,
+   "finite": true,
+   "log": "ogs.log",
+   "progress": 1.0,
+   "notes": []
+  },
+  "mesh": {
+   "engine": "structured",
+   "elements": 60,
+   "nodes": 122,
+   "element_type": "Quad4",
+   "order": 1,
+   "dimension": 2,
+   "axisymmetric": false,
+   "regions": {
+    "rock": 0
+   },
+   "boundaries": {
+    "bottom": 60,
+    "top": 60,
+    "left": 1,
+    "right": 1
+   },
+   "interfaces": [],
+   "points": []
+  },
+  "note": "",
+  "date": "2026-10-30 19:14",
+  "package_version": "0.1.0",
+  "ogs_version": "6.5.8"
+ },
+ {
+  "id": "V2a-official",
+  "passed": true,
+  "seconds": 0.44,
+  "checks": [
+   {
+    "max_norm_error": 0.0021146657857116224,
+    "l2_rel_error": 0.0032097472423986595,
+    "n": 61,
+    "passed": true,
+    "field": "temperature",
+    "time": 5078125.0,
+    "label": "profile at t = 5.07812e+06 s"
+   },
+   {
+    "max_norm_error": 0.00027648280826042537,
+    "l2_rel_error": 0.0004556376182903217,
+    "n": 61,
+    "passed": true,
+    "field": "temperature",
+    "time": 39062500.0,
+    "label": "profile at t = 3.90625e+07 s"
+   }
+  ],
+  "run": {
+   "run_id": "a95c7f58d96c",
+   "status": "succeeded",
+   "returncode": 0,
+   "seconds": 0.42,
+   "failure": null,
+   "outputs": [
+    [
+     0.0,
+     "line_60_heat_ts_0_t_0.000000.vtu"
+    ],
+    [
+     5078125.0,
+     "line_60_heat_ts_65_t_5078125.000000.vtu"
+    ],
+    [
+     31640625.0,
+     "line_60_heat_ts_405_t_31640625.000000.vtu"
+    ],
+    [
+     39062500.0,
+     "line_60_heat_ts_500_t_39062500.000000.vtu"
+    ],
+    [
+     39062500.0,
+     "line_60_heat_ts_500_t_39062500.000000.vtu"
+    ]
+   ],
+   "reached_end": true,
+   "finite": true,
+   "log": "ogs.log",
+   "progress": 1.0,
+   "notes": []
+  },
+  "mesh": {},
+  "note": "",
+  "date": "2026-10-30 19:14",
+  "package_version": "0.1.0",
+  "ogs_version": "6.5.8"
+ },
+ {
+  "id": "V2a-tri",
+  "passed": true,
+  "seconds": 0.74,
+  "checks": [
+   {
+    "max_norm_error": 0.001141043320785684,
+    "l2_rel_error": 0.001000988425485553,
+    "n": 61,
+    "passed": true,
+    "field": "temperature",
+    "time": 5078125.0,
+    "label": "profile at t = 5.07812e+06 s"
+   },
+   {
+    "max_norm_error": 0.000251436917551473,
+    "l2_rel_error": 0.0002548485160576792,
+    "n": 61,
+    "passed": true,
+    "field": "temperature",
+    "time": 39062500.0,
+    "label": "profile at t = 3.90625e+07 s"
+   }
+  ],
+  "run": {
+   "run_id": "65325ded87e6",
+   "status": "succeeded",
+   "returncode": 0,
+   "seconds": 0.42,
+   "failure": null,
+   "outputs": [
+    [
+     0.0,
+     "v2atri_ts_0_t_0.000000.vtu"
+    ],
+    [
+     5078125.0,
+     "v2atri_ts_65_t_5078125.000000.vtu"
+    ],
+    [
+     39062500.0,
+     "v2atri_ts_500_t_39062500.000000.vtu"
+    ]
+   ],
+   "reached_end": true,
+   "finite": true,
+   "log": "ogs.log",
+   "progress": 1.0,
+   "notes": []
+  },
+  "mesh": {
+   "engine": "gmsh",
+   "elements": 626,
+   "nodes": 378,
+   "element_type": "Tri3",
+   "order": 1,
+   "dimension": 2,
+   "axisymmetric": false,
+   "regions": {
+    "rock": 0
+   },
+   "boundaries": {
+    "left": 4,
+    "right": 4,
+    "bottom": 60,
+    "top": 60
+   },
+   "interfaces": [],
+   "points": []
+  },
+  "note": "",
+  "date": "2026-10-30 19:14",
+  "package_version": "0.1.0",
+  "ogs_version": "6.5.8"
+ },
+ {
+  "id": "V2b",
+  "passed": true,
+  "seconds": 0.27,
+  "checks": [
+   {
+    "max_norm_error": 6.912159733474254e-14,
+    "l2_rel_error": 6.118719321601153e-14,
+    "n": 41,
+    "passed": true,
+    "field": "temperature",
+    "time": 1.0,
+    "label": "temperature profile"
+   },
+   {
+    "max_norm_error": 0.0006250000000691216,
+    "l2_rel_error": 0.000855816349897522,
+    "n": 40,
+    "passed": true,
+    "field": "temperature",
+    "time": 1.0,
+    "label": "temperature between the nodes"
+   }
+  ],
+  "run": {
+   "run_id": "149d716360dc",
+   "status": "succeeded",
+   "returncode": 0,
+   "seconds": 0.21,
+   "failure": null,
+   "outputs": [
+    [
+     0.0,
+     "v2b_ts_0_t_0.000000.vtu"
+    ],
+    [
+     1.0,
+     "v2b_ts_1_t_1.000000.vtu"
+    ]
+   ],
+   "reached_end": true,
+   "finite": true,
+   "log": "ogs.log",
+   "progress": 1.0,
+   "notes": []
+  },
+  "mesh": {
+   "engine": "structured",
+   "elements": 40,
+   "nodes": 82,
+   "element_type": "Quad4",
+   "order": 1,
+   "dimension": 2,
+   "axisymmetric": false,
+   "regions": {
+    "slab": 0
+   },
+   "boundaries": {
+    "bottom": 40,
+    "top": 40,
+    "left": 1,
+    "right": 1
+   },
+   "interfaces": [],
+   "points": []
+  },
+  "note": "",
+  "date": "2026-10-30 19:14",
+  "package_version": "0.1.0",
+  "ogs_version": "6.5.8"
+ },
+ {
+  "id": "V2b-power",
+  "passed": true,
+  "seconds": 0.28,
+  "checks": [
+   {
+    "max_norm_error": 6.912159733474254e-14,
+    "l2_rel_error": 6.118719321601153e-14,
+    "n": 41,
+    "passed": true,
+    "field": "temperature",
+    "time": 1.0,
+    "label": "temperature profile"
+   }
+  ],
+  "run": {
+   "run_id": "fdc1ad73f75a",
+   "status": "succeeded",
+   "returncode": 0,
+   "seconds": 0.21,
+   "failure": null,
+   "outputs": [
+    [
+     0.0,
+     "v2bpower_ts_0_t_0.000000.vtu"
+    ],
+    [
+     1.0,
+     "v2bpower_ts_1_t_1.000000.vtu"
+    ]
+   ],
+   "reached_end": true,
+   "finite": true,
+   "log": "ogs.log",
+   "progress": 1.0,
+   "notes": []
+  },
+  "mesh": {
+   "engine": "structured",
+   "elements": 40,
+   "nodes": 82,
+   "element_type": "Quad4",
+   "order": 1,
+   "dimension": 2,
+   "axisymmetric": false,
+   "regions": {
+    "slab": 0
+   },
+   "boundaries": {
+    "bottom": 40,
+    "top": 40,
+    "left": 1,
+    "right": 1
+   },
+   "interfaces": [],
+   "points": []
+  },
+  "note": "",
+  "date": "2026-10-30 19:14",
+  "package_version": "0.1.0",
+  "ogs_version": "6.5.8"
+ },
+ {
+  "id": "V2c",
+  "passed": true,
+  "seconds": 2.39,
+  "checks": [
+   {
+    "max_norm_error": 0.006401589865049573,
+    "l2_rel_error": 0.007838641276461994,
+    "n": 57,
+    "passed": true,
+    "field": "temperature",
+    "time": 1000000.0000000001,
+    "label": "depth profile at t = 1e+06 s"
+   },
+   {
+    "max_norm_error": 0.0021913918880045458,
+    "l2_rel_error": 0.0024200346528926086,
+    "n": 57,
+    "passed": true,
+    "field": "temperature",
+    "time": 10000000.0,
+    "label": "depth profile at t = 1e+07 s"
+   }
+  ],
+  "run": {
+   "run_id": "670be1f5ecc9",
+   "status": "succeeded",
+   "returncode": 0,
+   "seconds": 2.3,
+   "failure": null,
+   "outputs": [
+    [
+     0.0,
+     "v2c_ts_0_t_0.000000.vtu"
+    ],
+    [
+     1000000.0000000001,
+     "v2c_ts_26_t_1000000.000000.vtu"
+    ],
+    [
+     10000000.0,
+     "v2c_ts_73_t_10000000.000000.vtu"
+    ]
+   ],
+   "reached_end": true,
+   "finite": true,
+   "log": "ogs.log",
+   "progress": 1.0,
+   "notes": []
+  },
+  "mesh": {
+   "engine": "structured",
+   "elements": 2500,
+   "nodes": 3146,
+   "element_type": "Hex8",
+   "order": 1,
+   "dimension": 3,
+   "axisymmetric": false,
+   "regions": {
+    "rock": 0
+   },
+   "boundaries": {
+    "bottom": 100,
+    "top": 100,
+    "front": 250,
+    "back": 250,
+    "left": 250,
+    "right": 250
+   },
+   "interfaces": [],
+   "points": []
+  },
+  "note": "",
+  "date": "2026-10-30 19:14",
+  "package_version": "0.1.0",
+  "ogs_version": "6.5.8"
+ },
+ {
+  "id": "V2c-steady",
+  "passed": true,
+  "seconds": 0.28,
+  "checks": [
+   {
+    "max_norm_error": 6.195932655828074e-13,
+    "l2_rel_error": 1.5294082900864892e-14,
+    "n": 41,
+    "passed": true,
+    "field": "temperature",
+    "time": 1.0,
+    "label": "temperature along z"
+   }
+  ],
+  "run": {
+   "run_id": "bde26a337077",
+   "status": "succeeded",
+   "returncode": 0,
+   "seconds": 0.21,
+   "failure": null,
+   "outputs": [
+    [
+     0.0,
+     "v2csteady_ts_0_t_0.000000.vtu"
+    ],
+    [
+     1.0,
+     "v2csteady_ts_1_t_1.000000.vtu"
+    ]
+   ],
+   "reached_end": true,
+   "finite": true,
+   "log": "ogs.log",
+   "progress": 1.0,
+   "notes": []
+  },
+  "mesh": {
+   "engine": "structured",
+   "elements": 500,
+   "nodes": 756,
+   "element_type": "Hex8",
+   "order": 1,
+   "dimension": 3,
+   "axisymmetric": false,
+   "regions": {
+    "lower": 0,
+    "upper": 1
+   },
+   "boundaries": {
+    "bottom": 25,
+    "top": 25,
+    "front": 100,
+    "back": 100,
+    "left": 100,
+    "right": 100
+   },
+   "interfaces": [
+    "interface_lower_upper"
+   ],
+   "points": []
+  },
+  "note": "",
+  "date": "2026-10-30 19:14",
+  "package_version": "0.1.0",
+  "ogs_version": "6.5.8"
+ },
+ {
+  "id": "V2d",
+  "passed": true,
+  "seconds": 0.54,
+  "checks": [
+   {
+    "max_norm_error": 0.0021874117532729265,
+    "l2_rel_error": 0.0018834302808176631,
+    "n": 50,
+    "passed": true,
+    "field": "temperature",
+    "time": 1.0,
+    "label": "temperature from the centre outwards"
+   },
+   {
+    "max_norm_error": 0.0020410398370085655,
+    "l2_rel_error": 0.0018889283501997783,
+    "n": 50,
+    "passed": true,
+    "field": "temperature",
+    "time": 1.0,
+    "label": "temperature along the diagonal"
+   }
+  ],
+  "run": {
+   "run_id": "d688e5fe7b3a",
+   "status": "succeeded",
+   "returncode": 0,
+   "seconds": 0.21,
+   "failure": null,
+   "outputs": [
+    [
+     0.0,
+     "v2d_ts_0_t_0.000000.vtu"
+    ],
+    [
+     1.0,
+     "v2d_ts_1_t_1.000000.vtu"
+    ]
+   ],
+   "reached_end": true,
+   "finite": true,
+   "log": "ogs.log",
+   "progress": 1.0,
+   "notes": []
+  },
+  "mesh": {
+   "engine": "gmsh",
+   "elements": 5912,
+   "nodes": 3007,
+   "element_type": "Tri3",
+   "order": 1,
+   "dimension": 2,
+   "axisymmetric": false,
+   "regions": {
+    "matrix": 0,
+    "inclusion": 1
+   },
+   "boundaries": {
+    "left": 25,
+    "right": 25,
+    "bottom": 25,
+    "top": 25
+   },
+   "interfaces": [
+    "inclusion_boundary"
+   ],
+   "points": []
+  },
+  "note": "",
+  "date": "2026-10-30 19:14",
+  "package_version": "0.1.0",
+  "ogs_version": "6.5.8"
+ },
+ {
+  "id": "V3",
+  "passed": true,
+  "seconds": 1.3,
+  "checks": [
+   {
+    "max_norm_error": 0.009735528544410954,
+    "l2_rel_error": 0.007719198219873458,
+    "n": 101,
+    "passed": true,
+    "field": "temperature",
+    "time": 100000.0,
+    "label": "profile at t = 100000 s"
+   },
+   {
+    "max_norm_error": 0.008991368491081175,
+    "l2_rel_error": 0.0055550934805541725,
+    "n": 101,
+    "passed": true,
+    "field": "temperature",
+    "time": 300000.0,
+    "label": "profile at t = 300000 s"
+   },
+   {
+    "max_norm_error": 4.572792069047066e-12,
+    "l2_rel_error": 4.572792069047066e-12,
+    "n": 1,
+    "passed": true,
+    "field": "darcy_velocity",
+    "time": 300000.0,
+    "label": "Darcy flux"
+   }
+  ],
+  "run": {
+   "run_id": "7ed2674dc1b9",
+   "status": "succeeded",
+   "returncode": 0,
+   "seconds": 1.24,
+   "failure": null,
+   "outputs": [
+    [
+     0.0,
+     "v3_ts_0_t_0.000000.vtu"
+    ],
+    [
+     100000.0,
+     "v3_ts_200_t_100000.000000.vtu"
+    ],
+    [
+     300000.0,
+     "v3_ts_600_t_300000.000000.vtu"
+    ]
+   ],
+   "reached_end": true,
+   "finite": true,
+   "log": "ogs.log",
+   "progress": 1.0,
+   "notes": []
+  },
+  "mesh": {
+   "engine": "structured",
+   "elements": 200,
+   "nodes": 402,
+   "element_type": "Quad4",
+   "order": 1,
+   "dimension": 2,
+   "axisymmetric": false,
+   "regions": {
+    "column": 0
+   },
+   "boundaries": {
+    "bottom": 200,
+    "top": 200,
+    "left": 1,
+    "right": 1
+   },
+   "interfaces": [],
+   "points": []
+  },
+  "note": "",
+  "date": "2026-10-30 19:14",
+  "package_version": "0.1.0",
+  "ogs_version": "6.5.8"
+ },
+ {
+  "id": "V3-official",
+  "passed": true,
+  "seconds": 0.26,
+  "checks": [
+   {
+    "max_norm_error": 1.2922996006636822e-12,
+    "l2_rel_error": 9.158678153104994e-13,
+    "n": 101,
+    "passed": true,
+    "field": "temperature",
+    "time": 50000.0,
+    "label": "temperature along the strip at t = 50000 s"
+   }
+  ],
+  "run": {
+   "run_id": "cd113706ae88",
+   "status": "succeeded",
+   "returncode": 0,
+   "seconds": 0.21,
+   "failure": null,
+   "outputs": [
+    [
+     0.0,
+     "HeatTransportInStationaryFlow_ts_0_t_0.000000.vtu"
+    ],
+    [
+     50000.0,
+     "HeatTransportInStationaryFlow_ts_50_t_50000.000000.vtu"
+    ]
+   ],
+   "reached_end": true,
+   "finite": true,
+   "log": "ogs.log",
+   "progress": 1.0,
+   "notes": []
+  },
+  "mesh": {},
+  "note": "",
+  "date": "2026-10-30 19:16",
+  "package_version": "0.1.0",
+  "ogs_version": "6.5.8"
+ },
+ {
+  "id": "V3-water",
+  "passed": true,
+  "seconds": 8.62,
+  "checks": [
+   {
+    "max_norm_error": 0.004458001783518739,
+    "l2_rel_error": 0.002880985464855009,
+    "n": 101,
+    "passed": true,
+    "field": "temperature",
+    "time": 100000.0,
+    "label": "profile at t = 100000 s"
+   },
+   {
+    "max_norm_error": 0.004362266055125019,
+    "l2_rel_error": 0.0023557253577953232,
+    "n": 101,
+    "passed": true,
+    "field": "temperature",
+    "time": 200000.0,
+    "label": "profile at t = 200000 s"
+   },
+   {
+    "max_norm_error": 8.936197593532869e-12,
+    "l2_rel_error": 8.936197593532869e-12,
+    "n": 1,
+    "passed": true,
+    "field": "darcy_velocity",
+    "time": 200000.0,
+    "label": "Darcy flux"
+   }
+  ],
+  "run": {
+   "run_id": "fef58a7c0007",
+   "status": "succeeded",
+   "returncode": 0,
+   "seconds": 8.55,
+   "failure": null,
+   "outputs": [
+    [
+     0.0,
+     "v3water_ts_0_t_0.000000.vtu"
+    ],
+    [
+     100000.0,
+     "v3water_ts_1000_t_100000.000000.vtu"
+    ],
+    [
+     200000.0,
+     "v3water_ts_2000_t_200000.000000.vtu"
+    ]
+   ],
+   "reached_end": true,
+   "finite": true,
+   "log": "ogs.log",
+   "progress": 1.0,
+   "notes": []
+  },
+  "mesh": {
+   "engine": "structured",
+   "elements": 500,
+   "nodes": 1002,
+   "element_type": "Quad4",
+   "order": 1,
+   "dimension": 2,
+   "axisymmetric": false,
+   "regions": {
+    "column": 0
+   },
+   "boundaries": {
+    "bottom": 500,
+    "top": 500,
+    "left": 1,
+    "right": 1
+   },
+   "interfaces": [],
+   "points": []
+  },
+  "note": "",
+  "date": "2026-10-30 19:14",
+  "package_version": "0.1.0",
+  "ogs_version": "6.5.8"
+ },
+ {
+  "id": "V4",
+  "passed": true,
+  "seconds": 1.12,
+  "checks": [
+   {
+    "max_norm_error": 0.00811009959011193,
+    "l2_rel_error": 0.005277026002615809,
+    "n": 41,
+    "passed": true,
+    "field": "pressure",
+    "time": 4166.666667,
+    "label": "excess pressure at Tv = 0.05"
+   },
+   {
+    "max_norm_error": 0.0023371574665280058,
+    "l2_rel_error": 0.003072695801856654,
+    "n": 41,
+    "passed": true,
+    "field": "pressure",
+    "time": 16666.666666999987,
+    "label": "excess pressure at Tv = 0.2"
+   },
+   {
+    "max_norm_error": 0.002687738993227467,
+    "l2_rel_error": 0.00721512074216008,
+    "n": 41,
+    "passed": true,
+    "field": "pressure",
+    "time": 41666.66666699997,
+    "label": "excess pressure at Tv = 0.5"
+   },
+   {
+    "max_norm_error": 0.0018610518782143093,
+    "l2_rel_error": 0.007375957711601915,
+    "n": 1,
+    "passed": true,
+    "field": "displacement",
+    "time": 4166.666667,
+    "label": "settlement at Tv = 0.05"
+   },
+   {
+    "max_norm_error": 0.0015654597912859516,
+    "l2_rel_error": 0.003105529886918259,
+    "n": 1,
+    "passed": true,
+    "field": "displacement",
+    "time": 16666.666666999987,
+    "label": "settlement at Tv = 0.2"
+   },
+   {
+    "max_norm_error": 0.0016852213535269514,
+    "l2_rel_error": 0.0022059305241493043,
+    "n": 1,
+    "passed": true,
+    "field": "displacement",
+    "time": 41666.66666699997,
+    "label": "settlement at Tv = 0.5"
+   }
+  ],
+  "run": {
+   "run_id": "7ee77d942ff0",
+   "status": "succeeded",
+   "returncode": 0,
+   "seconds": 1.05,
+   "failure": null,
+   "outputs": [
+    [
+     0.0,
+     "v4_ts_0_t_0.000000.vtu"
+    ],
+    [
+     4166.666667,
+     "v4_ts_47_t_4166.666667.vtu"
+    ],
+    [
+     16666.666666999987,
+     "v4_ts_77_t_16666.666667.vtu"
+    ],
+    [
+     41666.66666699997,
+     "v4_ts_137_t_41666.666667.vtu"
+    ]
+   ],
+   "reached_end": true,
+   "finite": true,
+   "log": "ogs.log",
+   "progress": 1.0,
+   "notes": []
+  },
+  "mesh": {
+   "engine": "structured",
+   "elements": 102,
+   "nodes": 413,
+   "element_type": "Quad8",
+   "order": 2,
+   "dimension": 2,
+   "axisymmetric": false,
+   "regions": {
+    "soil": 0
+   },
+   "boundaries": {
+    "bottom": 2,
+    "top": 2,
+    "left": 51,
+    "right": 51
+   },
+   "interfaces": [],
+   "points": [
+    "corner_bottom_left",
+    "corner_bottom_right",
+    "corner_top_left",
+    "corner_top_right"
+   ]
+  },
+  "note": "",
+  "date": "2026-10-30 19:14",
+  "package_version": "0.1.0",
+  "ogs_version": "6.5.8"
+ },
+ {
+  "id": "V4b",
+  "passed": true,
+  "seconds": 1.12,
+  "checks": [
+   {
+    "max_norm_error": 0.008136032514744554,
+    "l2_rel_error": 0.005293317961490185,
+    "n": 41,
+    "passed": true,
+    "field": "pressure",
+    "time": 2400.0,
+    "label": "excess pressure at Tv = 0.05"
+   },
+   {
+    "max_norm_error": 0.0023383245725003303,
+    "l2_rel_error": 0.00307417084146625,
+    "n": 41,
+    "passed": true,
+    "field": "pressure",
+    "time": 9600.0,
+    "label": "excess pressure at Tv = 0.2"
+   },
+   {
+    "max_norm_error": 0.0026882094372201477,
+    "l2_rel_error": 0.007216392385462156,
+    "n": 41,
+    "passed": true,
+    "field": "pressure",
+    "time": 24000.0,
+    "label": "excess pressure at Tv = 0.5"
+   },
+   {
+    "max_norm_error": 0.0011667308715890279,
+    "l2_rel_error": 0.0021902386121213564,
+    "n": 1,
+    "passed": true,
+    "field": "displacement",
+    "time": 2400.0,
+    "label": "settlement at Tv = 0.05"
+   },
+   {
+    "max_norm_error": 0.0009788865115272286,
+    "l2_rel_error": 0.00141856326080677,
+    "n": 1,
+    "passed": true,
+    "field": "displacement",
+    "time": 9600.0,
+    "label": "settlement at Tv = 0.2"
+   },
+   {
+    "max_norm_error": 0.001053451096843308,
+    "l2_rel_error": 0.0012357647613385383,
+    "n": 1,
+    "passed": true,
+    "field": "displacement",
+    "time": 24000.0,
+    "label": "settlement at Tv = 0.5"
+   }
+  ],
+  "run": {
+   "run_id": "6eb612f5545d",
+   "status": "succeeded",
+   "returncode": 0,
+   "seconds": 1.04,
+   "failure": null,
+   "outputs": [
+    [
+     0.0,
+     "v4b_ts_0_t_0.000000.vtu"
+    ],
+    [
+     2400.0,
+     "v4b_ts_43_t_2400.000000.vtu"
+    ],
+    [
+     9600.0,
+     "v4b_ts_73_t_9600.000000.vtu"
+    ],
+    [
+     24000.0,
+     "v4b_ts_133_t_24000.000000.vtu"
+    ]
+   ],
+   "reached_end": true,
+   "finite": true,
+   "log": "ogs.log",
+   "progress": 1.0,
+   "notes": []
+  },
+  "mesh": {
+   "engine": "structured",
+   "elements": 102,
+   "nodes": 413,
+   "element_type": "Quad8",
+   "order": 2,
+   "dimension": 2,
+   "axisymmetric": false,
+   "regions": {
+    "soil": 0
+   },
+   "boundaries": {
+    "bottom": 2,
+    "top": 2,
+    "left": 51,
+    "right": 51
+   },
+   "interfaces": [],
+   "points": [
+    "corner_bottom_left",
+    "corner_bottom_right",
+    "corner_top_left",
+    "corner_top_right"
+   ]
+  },
+  "note": "",
+  "date": "2026-10-30 19:14",
+  "package_version": "0.1.0",
+  "ogs_version": "6.5.8"
+ },
+ {
+  "id": "V5",
+  "passed": true,
+  "seconds": 154.33,
+  "checks": [
+   {
+    "max_norm_error": 0.011030876918178561,
+    "l2_rel_error": 0.012911857673246593,
+    "n": 39,
+    "passed": true,
+    "field": "temperature",
+    "time": 20000.0,
+    "label": "temperature along the symmetry plane at t = 2e4 s"
+   },
+   {
+    "max_norm_error": 0.003978992049362455,
+    "l2_rel_error": 0.004918284150400976,
+    "n": 39,
+    "passed": true,
+    "field": "temperature",
+    "time": 50000.0,
+    "label": "temperature along the symmetry plane"
+   },
+   {
+    "max_norm_error": 0.0051896095814658654,
+    "l2_rel_error": 0.005672760435255545,
+    "n": 39,
+    "passed": true,
+    "field": "temperature",
+    "time": 50000.0,
+    "label": "temperature along the axis"
+   },
+   {
+    "max_norm_error": 0.003558124800498737,
+    "l2_rel_error": 0.003919670567228111,
+    "n": 39,
+    "passed": true,
+    "field": "pressure",
+    "time": 50000.0,
+    "label": "pore pressure along the symmetry plane"
+   },
+   {
+    "max_norm_error": 0.0008716452305468426,
+    "l2_rel_error": 0.0012730364238855763,
+    "n": 39,
+    "passed": true,
+    "field": "displacement",
+    "time": 50000.0,
+    "label": "radial displacement along the symmetry plane"
+   }
+  ],
+  "run": {
+   "run_id": "8ed4380a4c63",
+   "status": "succeeded",
+   "returncode": 0,
+   "seconds": 154.2,
+   "failure": null,
+   "outputs": [
+    [
+     0.0,
+     "v5_ts_0_t_0.000000.vtu"
+    ],
+    [
+     20000.0,
+     "v5_ts_40_t_20000.000000.vtu"
+    ],
+    [
+     50000.0,
+     "v5_ts_100_t_50000.000000.vtu"
+    ]
+   ],
+   "reached_end": true,
+   "finite": true,
+   "log": "ogs.log",
+   "progress": 1.0,
+   "notes": []
+  },
+  "mesh": {
+   "engine": "structured",
+   "elements": 2401,
+   "nodes": 7400,
+   "element_type": "Quad8",
+   "order": 2,
+   "dimension": 2,
+   "axisymmetric": true,
+   "regions": {
+    "rock": 0
+   },
+   "boundaries": {
+    "bottom": 49,
+    "top": 49,
+    "axis": 49,
+    "outer": 49
+   },
+   "interfaces": [],
+   "points": [
+    "source"
+   ]
+  },
+  "note": "",
+  "date": "2026-10-30 19:14",
+  "package_version": "0.1.0",
+  "ogs_version": "6.5.8"
+ },
+ {
+  "id": "V6a",
+  "passed": true,
+  "seconds": 1.11,
+  "checks": [
+   {
+    "max_norm_error": 0.006813188000246662,
+    "l2_rel_error": 0.0059756367952297695,
+    "n": 101,
+    "passed": true,
+    "field": "c",
+    "time": 500000.0,
+    "label": "profile at t = 500000 s"
+   },
+   {
+    "max_norm_error": 0.006278225324373721,
+    "l2_rel_error": 0.004467636981947528,
+    "n": 101,
+    "passed": true,
+    "field": "c",
+    "time": 1250000.0,
+    "label": "profile at t = 1.25e+06 s"
+   },
+   {
+    "max_norm_error": 8.643971226730135e-13,
+    "l2_rel_error": 8.643971226730135e-13,
+    "n": 1,
+    "passed": true,
+    "field": "darcy_velocity",
+    "time": 1250000.0,
+    "label": "Darcy flux from the flux condition"
+   }
+  ],
+  "run": {
+   "run_id": "8b0b421933c8",
+   "status": "succeeded",
+   "returncode": 0,
+   "seconds": 1.05,
+   "failure": null,
+   "outputs": [
+    [
+     0.0,
+     "v6a_ts_0_t_0.000000.vtu"
+    ],
+    [
+     500000.0,
+     "v6a_ts_200_t_500000.000000.vtu"
+    ],
+    [
+     1250000.0,
+     "v6a_ts_500_t_1250000.000000.vtu"
+    ]
+   ],
+   "reached_end": true,
+   "finite": true,
+   "log": "ogs.log",
+   "progress": 1.0,
+   "notes": []
+  },
+  "mesh": {
+   "engine": "structured",
+   "elements": 200,
+   "nodes": 402,
+   "element_type": "Quad4",
+   "order": 1,
+   "dimension": 2,
+   "axisymmetric": false,
+   "regions": {
+    "column": 0
+   },
+   "boundaries": {
+    "bottom": 200,
+    "top": 200,
+    "left": 1,
+    "right": 1
+   },
+   "interfaces": [],
+   "points": []
+  },
+  "note": "",
+  "date": "2026-10-30 19:14",
+  "package_version": "0.1.0",
+  "ogs_version": "6.5.8"
+ },
+ {
+  "id": "V6b",
+  "passed": true,
+  "seconds": 17.81,
+  "checks": [
+   {
+    "max_norm_error": 0.014045649338502497,
+    "l2_rel_error": 0.016549410515100248,
+    "n": 101,
+    "passed": true,
+    "field": "cs",
+    "time": 315360000000.0,
+    "label": "profile at t = 3.1536e+11 s"
+   },
+   {
+    "max_norm_error": 0.0015934034912884476,
+    "l2_rel_error": 0.0020037824610709114,
+    "n": 101,
+    "passed": true,
+    "field": "cs",
+    "time": 3153600000000.0,
+    "label": "profile at t = 3.1536e+12 s"
+   },
+   {
+    "max_norm_error": 0.0002198853680329682,
+    "l2_rel_error": 0.000264764640393475,
+    "n": 101,
+    "passed": true,
+    "field": "cs",
+    "time": 31536000000000.0,
+    "label": "profile at t = 3.1536e+13 s"
+   }
+  ],
+  "run": {
+   "run_id": "55ef6b34747a",
+   "status": "succeeded",
+   "returncode": 0,
+   "seconds": 17.7,
+   "failure": null,
+   "outputs": [
+    [
+     0.0,
+     "v6b_ts_0_t_0.000000.vtu"
+    ],
+    [
+     31536000000.0,
+     "v6b_ts_1_t_31536000000.000000.vtu"
+    ],
+    [
+     315360000000.0,
+     "v6b_ts_10_t_315360000000.000000.vtu"
+    ],
+    [
+     3153600000000.0,
+     "v6b_ts_100_t_3153600000000.000000.vtu"
+    ],
+    [
+     31536000000000.0,
+     "v6b_ts_1000_t_31536000000000.000000.vtu"
+    ]
+   ],
+   "reached_end": true,
+   "finite": true,
+   "log": "ogs.log",
+   "progress": 1.0,
+   "notes": []
+  },
+  "mesh": {
+   "engine": "structured",
+   "elements": 2000,
+   "nodes": 4002,
+   "element_type": "Quad4",
+   "order": 1,
+   "dimension": 2,
+   "axisymmetric": false,
+   "regions": {
+    "clay": 0
+   },
+   "boundaries": {
+    "bottom": 2000,
+    "top": 2000,
+    "left": 1,
+    "right": 1
+   },
+   "interfaces": [],
+   "points": []
+  },
+  "note": "",
+  "date": "2026-10-30 19:14",
+  "package_version": "0.1.0",
+  "ogs_version": "6.5.8"
+ },
+ {
+  "id": "V6b-official",
+  "passed": true,
+  "seconds": 8.97,
+  "checks": [
+   {
+    "max_norm_error": 0.014045649338513932,
+    "l2_rel_error": 0.016549410515101504,
+    "n": 101,
+    "passed": true,
+    "field": "Cs",
+    "time": 315360000000.0,
+    "label": "profile at t = 3.1536e+11 s"
+   },
+   {
+    "max_norm_error": 0.001593403491146117,
+    "l2_rel_error": 0.0020037824608908233,
+    "n": 101,
+    "passed": true,
+    "field": "Cs",
+    "time": 3153600000000.0,
+    "label": "profile at t = 3.1536e+12 s"
+   },
+   {
+    "max_norm_error": 0.00021988536791817115,
+    "l2_rel_error": 0.0002647646402441987,
+    "n": 101,
+    "passed": true,
+    "field": "Cs",
+    "time": 31536000000000.0,
+    "label": "profile at t = 3.1536e+13 s"
+   }
+  ],
+  "run": {
+   "run_id": "9cbf7cac6091",
+   "status": "succeeded",
+   "returncode": 0,
+   "seconds": 8.96,
+   "failure": null,
+   "outputs": [
+    [
+     0.0,
+     "1D_AdvectionDiffusionSorptionDecay_ts_0_t_0.000000.vtu"
+    ],
+    [
+     31536000000.0,
+     "1D_AdvectionDiffusionSorptionDecay_ts_1_t_31536000000.000000.vtu"
+    ],
+    [
+     315360000000.0,
+     "1D_AdvectionDiffusionSorptionDecay_ts_10_t_315360000000.000000.vtu"
+    ],
+    [
+     3153600000000.0,
+     "1D_AdvectionDiffusionSorptionDecay_ts_100_t_3153600000000.000000.vtu"
+    ],
+    [
+     31536000000000.0,
+     "1D_AdvectionDiffusionSorptionDecay_ts_1000_t_31536000000000.000000.vtu"
+    ]
+   ],
+   "reached_end": true,
+   "finite": true,
+   "log": "ogs.log",
+   "progress": 1.0,
+   "notes": []
+  },
+  "mesh": {},
+  "note": "",
+  "date": "2026-10-30 19:14",
+  "package_version": "0.1.0",
+  "ogs_version": "6.5.8"
+ },
+ {
+  "id": "V7a",
+  "passed": true,
+  "seconds": 0.29,
+  "checks": [
+   {
+    "max_norm_error": 4.163336342344337e-15,
+    "l2_rel_error": 3.911756641658904e-15,
+    "n": 21,
+    "passed": true,
+    "field": "displacement",
+    "time": 1.0,
+    "label": "u_x = (1 + nu) alpha dT x"
+   },
+   {
+    "max_norm_error": 9.126961231231687e-15,
+    "l2_rel_error": 9.126961231231689e-15,
+    "n": 2,
+    "passed": true,
+    "field": "sigma",
+    "time": 1.0,
+    "label": "sigma_zz = -E alpha dT"
+   },
+   {
+    "max_norm_error": 2.6320451358513407e-14,
+    "l2_rel_error": 3.005693600191701e-14,
+    "n": 2,
+    "passed": true,
+    "field": "sigma",
+    "time": 1.0,
+    "label": "sigma_xx = 0"
+   }
+  ],
+  "run": {
+   "run_id": "8e1095e5766a",
+   "status": "succeeded",
+   "returncode": 0,
+   "seconds": 0.21,
+   "failure": null,
+   "outputs": [
+    [
+     0.0,
+     "v7a_ts_0_t_0.000000.vtu"
+    ],
+    [
+     1.0,
+     "v7a_ts_1_t_1.000000.vtu"
+    ]
+   ],
+   "reached_end": true,
+   "finite": true,
+   "log": "ogs.log",
+   "progress": 1.0,
+   "notes": []
+  },
+  "mesh": {
+   "engine": "structured",
+   "elements": 32,
+   "nodes": 121,
+   "element_type": "Quad8",
+   "order": 2,
+   "dimension": 2,
+   "axisymmetric": false,
+   "regions": {
+    "rock": 0
+   },
+   "boundaries": {
+    "bottom": 8,
+    "top": 8,
+    "left": 4,
+    "right": 4
+   },
+   "interfaces": [],
+   "points": [
+    "corner_bottom_left",
+    "corner_bottom_right",
+    "corner_top_left",
+    "corner_top_right"
+   ]
+  },
+  "note": "",
+  "date": "2026-10-30 19:14",
+  "package_version": "0.1.0",
+  "ogs_version": "6.5.8"
+ },
+ {
+  "id": "V7b",
+  "passed": true,
+  "seconds": 0.29,
+  "checks": [
+   {
+    "max_norm_error": 2.421438694000244e-15,
+    "l2_rel_error": 1.5914447131226826e-15,
+    "n": 3,
+    "passed": true,
+    "field": "sigma",
+    "time": 1.0,
+    "label": "sigma_xx = -E alpha dT / (1 - 2 nu)"
+   },
+   {
+    "max_norm_error": 2.421438694000244e-15,
+    "l2_rel_error": 2.134605427293862e-15,
+    "n": 3,
+    "passed": true,
+    "field": "sigma",
+    "time": 1.0,
+    "label": "sigma_yy = -E alpha dT / (1 - 2 nu)"
+   },
+   {
+    "max_norm_error": 2.6077032089233393e-15,
+    "l2_rel_error": 2.0852754046205014e-15,
+    "n": 3,
+    "passed": true,
+    "field": "sigma",
+    "time": 1.0,
+    "label": "sigma_zz = -E alpha dT / (1 - 2 nu)"
+   }
+  ],
+  "run": {
+   "run_id": "4be6a556c189",
+   "status": "succeeded",
+   "returncode": 0,
+   "seconds": 0.21,
+   "failure": null,
+   "outputs": [
+    [
+     0.0,
+     "v7b_ts_0_t_0.000000.vtu"
+    ],
+    [
+     1.0,
+     "v7b_ts_1_t_1.000000.vtu"
+    ]
+   ],
+   "reached_end": true,
+   "finite": true,
+   "log": "ogs.log",
+   "progress": 1.0,
+   "notes": []
+  },
+  "mesh": {
+   "engine": "structured",
+   "elements": 32,
+   "nodes": 121,
+   "element_type": "Quad8",
+   "order": 2,
+   "dimension": 2,
+   "axisymmetric": false,
+   "regions": {
+    "rock": 0
+   },
+   "boundaries": {
+    "bottom": 8,
+    "top": 8,
+    "left": 4,
+    "right": 4
+   },
+   "interfaces": [],
+   "points": [
+    "corner_bottom_left",
+    "corner_bottom_right",
+    "corner_top_left",
+    "corner_top_right"
+   ]
+  },
+  "note": "",
+  "date": "2026-10-30 19:14",
+  "package_version": "0.1.0",
+  "ogs_version": "6.5.8"
+ },
+ {
+  "id": "V7c",
+  "passed": true,
+  "seconds": 0.28,
+  "checks": [
+   {
+    "max_norm_error": 2.9923979960599922e-15,
+    "l2_rel_error": 3.1345973054170737e-15,
+    "n": 21,
+    "passed": true,
+    "field": "displacement",
+    "time": 1.0,
+    "label": "u_y = (1 + nu)/(1 - nu) alpha dT y"
+   },
+   {
+    "max_norm_error": 3.352761268615722e-15,
+    "l2_rel_error": 3.352761268615722e-15,
+    "n": 1,
+    "passed": true,
+    "field": "sigma",
+    "time": 1.0,
+    "label": "sigma_xx = -E alpha dT / (1 - nu)"
+   }
+  ],
+  "run": {
+   "run_id": "fd6faa49ea3a",
+   "status": "succeeded",
+   "returncode": 0,
+   "seconds": 0.21,
+   "failure": null,
+   "outputs": [
+    [
+     0.0,
+     "v7c_ts_0_t_0.000000.vtu"
+    ],
+    [
+     1.0,
+     "v7c_ts_1_t_1.000000.vtu"
+    ]
+   ],
+   "reached_end": true,
+   "finite": true,
+   "log": "ogs.log",
+   "progress": 1.0,
+   "notes": []
+  },
+  "mesh": {
+   "engine": "structured",
+   "elements": 16,
+   "nodes": 65,
+   "element_type": "Quad8",
+   "order": 2,
+   "dimension": 2,
+   "axisymmetric": false,
+   "regions": {
+    "rock": 0
+   },
+   "boundaries": {
+    "bottom": 4,
+    "top": 4,
+    "left": 4,
+    "right": 4
+   },
+   "interfaces": [],
+   "points": [
+    "corner_bottom_left",
+    "corner_bottom_right",
+    "corner_top_left",
+    "corner_top_right"
+   ]
+  },
+  "note": "",
+  "date": "2026-10-30 19:14",
+  "package_version": "0.1.0",
+  "ogs_version": "6.5.8"
+ }
+]

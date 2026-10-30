@@ -1,0 +1,91 @@
+{
+ "id": "V2b-power",
+ "configuration": "T-2D",
+ "title": "Steady slab with a heat source given as total power",
+ "source": "as V2b; total power 100 W over 10 m x 1 m x 1 m equals 10 W/m3",
+ "model": {
+  "name": "v2bpower",
+  "geometry": {
+   "kind": "strip",
+   "segments": [
+    {
+     "name": "slab",
+     "thickness": 10
+    }
+   ],
+   "width": 1
+  },
+  "physics": {
+   "process": "T"
+  },
+  "materials": {
+   "slab": {
+    "thermal_conductivity": 2.0,
+    "density": 2600,
+    "specific_heat": 900
+   }
+  },
+  "boundary_conditions": [
+   {
+    "boundary": "left",
+    "variable": "temperature",
+    "value": 283.15
+   },
+   {
+    "boundary": "right",
+    "variable": "temperature",
+    "value": 283.15
+   }
+  ],
+  "heat_sources": [
+   {
+    "region": "slab",
+    "kind": "power",
+    "value": 100.0
+   }
+  ],
+  "initial": {
+   "temperature": 283.15
+  },
+  "mesh": {
+   "size": 0.25
+  },
+  "study": {
+   "kind": "steady"
+  }
+ },
+ "reference": {
+  "type": "slab_with_source",
+  "axis": 0,
+  "base": 283.15,
+  "params": {
+   "length": 10,
+   "q": 10.0,
+   "conductivity": 2.0
+  }
+ },
+ "normalization": {
+  "type": "scale",
+  "scale": 62.5
+ },
+ "tolerance": {
+  "max_norm": 1e-06
+ },
+ "observations": [
+  {
+   "field": "temperature",
+   "line": {
+    "from": [
+     0,
+     0.5
+    ],
+    "to": [
+     10,
+     0.5
+    ],
+    "n": 41
+   },
+   "label": "temperature profile"
+  }
+ ]
+}

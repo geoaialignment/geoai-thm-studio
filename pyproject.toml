@@ -1,0 +1,41 @@
+[build-system]
+requires = ["setuptools>=69"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "geoai-thm-studio"
+version = "0.1.0"
+description = "GeoAI-THM Studio: an agent harness for subsurface thermo-hydro-mechanical and transport models, built on OpenGeoSys"
+requires-python = ">=3.12,<3.13"
+license = {text = "PolyForm-Noncommercial-1.0.0"}
+authors = [{name = "Eungyu Park", email = "egpark@knu.ac.kr"}, {name = "Taeyu Kim"}, {name = "Jangwon Park"}]
+maintainers = [{name = "GeoAI Alignment, Inc."}]
+readme = "README.md"
+dependencies = [
+    "ogs==6.5.8",
+    "numpy",
+    "pyvista",
+    "meshio",
+    "pydantic>=2.10",
+    "lxml",
+    "matplotlib",
+    "openai-agents==0.24.0",
+    "mcp==2.3.0",
+]
+
+[project.optional-dependencies]
+mesh-gmsh = ["gmsh==4.15.2"]
+dev = ["pytest"]
+
+[project.scripts]
+thmstudio = "thmstudio.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+thmstudio = ["examples/*.json", "cases/*.json", "verification_record.json", "agent/instructions/*.md", "agent/skills/*.md", "agent/kb/*.md", "agent/kb/*.json"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+markers = ["ogs: runs OpenGeoSys (slower)", "verification: L2 verification cases"]

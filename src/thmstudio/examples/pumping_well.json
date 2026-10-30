@@ -1,0 +1,120 @@
+{
+ "id": "pumping_well",
+ "configuration": "H-AX-well",
+ "verification_cases": [
+  "V1b"
+ ],
+ "title": "Drawdown around a pumping well",
+ "title_ko": "양수정 주변 수위 강하",
+ "description": "A well pumps a confined aquifer at a constant rate for one day (axisymmetric model). Far away the head stays at its initial value.",
+ "model": {
+  "name": "pumping_well",
+  "geometry": {
+   "kind": "axisym_well",
+   "well_radius": "0.1 m",
+   "outer_radius": "5000 m",
+   "layers": [
+    {
+     "name": "aquifer",
+     "thickness": "10 m"
+    }
+   ]
+  },
+  "physics": {
+   "process": "H",
+   "gravity": false
+  },
+  "materials": {
+   "aquifer": {
+    "label": "sandy aquifer",
+    "hydraulic_conductivity": "1e-4 m/s",
+    "specific_storage": "1e-5 1/m",
+    "porosity": 0.25
+   }
+  },
+  "boundary_conditions": [
+   {
+    "boundary": "well",
+    "variable": "head",
+    "kind": "rate",
+    "value": "-864 m3/d"
+   },
+   {
+    "boundary": "outer",
+    "variable": "head",
+    "value": "0 m"
+   }
+  ],
+  "initial": {
+   "head": "0 m"
+  },
+  "mesh": {
+   "size": "200 m",
+   "divisions": {
+    "z": 2
+   },
+   "refinements": [
+    {
+     "target": "well",
+     "size": "0.02 m",
+     "growth": 1.1
+    }
+   ]
+  },
+  "study": {
+   "kind": "transient",
+   "end_time": "1 d",
+   "first_step": "1 s",
+   "growth": 1.15,
+   "max_step": "2000 s",
+   "output_times": [
+    "1000 s",
+    "10000 s"
+   ]
+  },
+  "probes": [
+   {
+    "name": "radial",
+    "line": [
+     [
+      0.1,
+      5
+     ],
+     [
+      500,
+      5
+     ]
+    ]
+   },
+   {
+    "name": "obs_well_50m",
+    "point": [
+     50,
+     5
+    ]
+   }
+  ]
+ },
+ "adjustable": {
+  "pumping_rate": {
+   "path": "boundary_conditions.well.head.value",
+   "unit": "m3/d (negative = pumping)"
+  },
+  "aquifer_conductivity": {
+   "path": "materials.aquifer.hydraulic_conductivity",
+   "unit": "m/s"
+  },
+  "specific_storage": {
+   "path": "materials.aquifer.specific_storage",
+   "unit": "1/m"
+  },
+  "aquifer_thickness": {
+   "path": "geometry.layers.aquifer.thickness",
+   "unit": "m"
+  },
+  "duration": {
+   "path": "study.end_time",
+   "unit": "d or s"
+  }
+ }
+}

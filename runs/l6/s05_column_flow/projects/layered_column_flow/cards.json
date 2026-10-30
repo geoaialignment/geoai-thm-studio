@@ -1,0 +1,66 @@
+[
+ {
+  "run_id": "0fb5996f9258",
+  "model_hash": "055bf38c7bd4441f",
+  "model_name": "layered_column_flow",
+  "created": "2026-10-30 18:25",
+  "rows": [
+   {
+    "label": "head at sand-clay interface",
+    "quantity": "head",
+    "aggregation": "value",
+    "location": "(0.5, 5.0) m",
+    "time": "1.00 s",
+    "value": "12.0",
+    "unit": "m",
+    "value_si": 11.99980001999775,
+    "unit_si": "m"
+   },
+   {
+    "label": "head at bottom of column",
+    "quantity": "head",
+    "aggregation": "value",
+    "location": "(0.5, 0.0) m",
+    "time": "1.00 s",
+    "value": "12.0",
+    "unit": "m",
+    "value_si": 12.000000000000002,
+    "unit_si": "m"
+   },
+   {
+    "label": "head at top of column",
+    "quantity": "head",
+    "aggregation": "value",
+    "location": "(0.5, 10.0) m",
+    "time": "1.00 s",
+    "value": "10.0",
+    "unit": "m",
+    "value_si": 10.0,
+    "unit_si": "m"
+   }
+  ],
+  "verification": {
+   "configuration": "H-2D",
+   "title": "groundwater flow in a 2D section or plan",
+   "demonstration": false,
+   "cases": [
+    {
+     "case": "V1a",
+     "status": "passed",
+     "worst_normalised_error": 8.355053582377612e-13,
+     "source": "release record",
+     "date": "2026-10-30 17:37"
+    }
+   ]
+  },
+  "run_checks": {
+   "reached_end_time": true,
+   "finite_values": true,
+   "time_steps": 1,
+   "rejected_steps": 0,
+   "max_nonlinear_iterations": 1,
+   "energy_balance": "not checked"
+  },
+  "table": "Results of run 0fb5996f9258 (model layered_column_flow, version 055bf38c7bd4441f)\n\n| quantity | where | when | how | value |\n|---|---|---|---|---|\n| head at sand-clay interface | (0.5, 5.0) m | 1.00 s | value | 12.0 m |\n| head at bottom of column | (0.5, 0.0) m | 1.00 s | value | 12.0 m |\n| head at top of column | (0.5, 10.0) m | 1.00 s | value | 10.0 m |\n\nVerified configuration H-2D: V1a passed (max error 8.4e-11 %).\nThis run: reached end time True, finite values True, time steps 1, rejected steps 0, max nonlinear iterations 1, energy balance not checked."
+ }
+]

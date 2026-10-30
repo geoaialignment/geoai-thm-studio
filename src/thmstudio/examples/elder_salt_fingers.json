@@ -1,0 +1,132 @@
+{
+ "id": "elder_salt_fingers",
+ "configuration": "HC-2D-density",
+ "verification_cases": [
+  "E2"
+ ],
+ "title": "Elder problem: salt water sinking in fingers",
+ "title_ko": "Elder 문제: 손가락 모양으로 가라앉는 소금물",
+ "description": "Salt water (20 % denser) enters the top of a 150 m deep saturated layer and sinks under its own weight in fingers (Elder 1967; Voss and Souza 1987). Half of the classic 600 m domain is modelled; the right side is the symmetry line.",
+ "model": {
+  "name": "elder_salt_fingers",
+  "geometry": {
+   "kind": "rect",
+   "width": "300 m",
+   "layers": [
+    {
+     "name": "aquifer",
+     "thickness": "150 m"
+    }
+   ],
+   "segments": [
+    {
+     "name": "salt_source",
+     "side": "top",
+     "start": "150 m",
+     "end": "300 m"
+    }
+   ]
+  },
+  "physics": {
+   "process": "HC",
+   "fluid": {
+    "density": "1000 kg/m3",
+    "viscosity": "1e-3 Pa*s",
+    "density_increase_per_concentration": 200
+   },
+   "components": [
+    {
+     "name": "salt",
+     "pore_diffusion": "3.57e-6 m2/s"
+    }
+   ]
+  },
+  "materials": {
+   "aquifer": {
+    "label": "Elder benchmark medium",
+    "permeability": "4.845e-13 m2",
+    "porosity": 0.1,
+    "longitudinal_dispersivity": "0 m",
+    "transverse_dispersivity": "0 m"
+   }
+  },
+  "boundary_conditions": [
+   {
+    "boundary": "salt_source",
+    "variable": "concentration",
+    "value": 1.0
+   },
+   {
+    "boundary": "bottom",
+    "variable": "concentration",
+    "value": 0.0
+   },
+   {
+    "boundary": "corner_top_left",
+    "variable": "pressure",
+    "value": "0 Pa"
+   }
+  ],
+  "initial": {
+   "head": "150 m",
+   "concentration": 0.0
+  },
+  "mesh": {
+   "divisions": {
+    "x": 128,
+    "y": 64
+   }
+  },
+  "study": {
+   "kind": "transient",
+   "end_time": "4 yr",
+   "first_step": "262980 s",
+   "output_times": [
+    "1 yr",
+    "2 yr"
+   ]
+  },
+  "probes": [
+   {
+    "name": "centre_line",
+    "line": [
+     [
+      300,
+      0
+     ],
+     [
+      300,
+      150
+     ]
+    ]
+   },
+   {
+    "name": "mid_depth",
+    "line": [
+     [
+      0,
+      75
+     ],
+     [
+      300,
+      75
+     ]
+    ]
+   }
+  ]
+ },
+ "adjustable": {
+  "density_increase": {
+   "path": "physics.fluid.density_increase_per_concentration",
+   "unit": "kg/m3 per unit concentration"
+  },
+  "permeability": {
+   "path": "materials.aquifer.permeability",
+   "unit": "m2"
+  },
+  "duration": {
+   "path": "study.end_time",
+   "unit": "yr"
+  }
+ }
+}

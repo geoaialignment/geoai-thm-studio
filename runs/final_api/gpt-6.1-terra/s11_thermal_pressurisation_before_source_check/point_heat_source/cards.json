@@ -1,0 +1,65 @@
+[
+ {
+  "run_id": "26e4919431e3",
+  "model_name": "point_heat_source",
+  "created": "2026-10-30 19:42",
+  "rows": [
+   {
+    "label": "해석 종료 시 간극수압 상승",
+    "quantity": "pressure",
+    "aggregation": "change since start",
+    "location": "at_0_5m (0.5, 0.0) m",
+    "time": "50000 s",
+    "value": "0.635",
+    "unit": "MPa",
+    "value_si": 635005.3666051041,
+    "unit_si": "Pa"
+   },
+   {
+    "label": "물의 열팽창에 따른 압력 차이",
+    "quantity": "pressure",
+    "aggregation": "largest difference",
+    "location": "at_0_5m",
+    "time": "50000 s",
+    "value": "0.550",
+    "unit": "MPa",
+    "value_si": 550222.2160010438,
+    "unit_si": "Pa"
+   },
+   {
+    "label": "격자 세분화에 따른 압력 차이",
+    "quantity": "pressure",
+    "aggregation": "largest difference",
+    "location": "at_0_5m",
+    "time": "50000 s",
+    "value": "0.257",
+    "unit": "MPa",
+    "value_si": 256551.53789496003,
+    "unit_si": "Pa"
+   }
+  ],
+  "verification": {
+   "configuration": "THM-AX",
+   "title": "point heat source in saturated rock (axisymmetric)",
+   "demonstration": false,
+   "cases": [
+    {
+     "case": "V5",
+     "status": "passed",
+     "worst_normalised_error": 0.011030876918178561,
+     "source": "release record",
+     "date": "2026-10-30 19:14"
+    }
+   ]
+  },
+  "run_checks": {
+   "reached_end_time": true,
+   "finite_values": true,
+   "time_steps": 100,
+   "rejected_steps": 0,
+   "max_nonlinear_iterations": 3,
+   "energy_balance": "not checked"
+  },
+  "table": "Results of run 26e4919431e3 (model point_heat_source)\n\n| quantity | where | when | how | value |\n|---|---|---|---|---|\n| 해석 종료 시 간극수압 상승 | at_0_5m (0.5, 0.0) m | 50000 s | change since start | 0.635 MPa |\n| 물의 열팽창에 따른 압력 차이 | at_0_5m | 50000 s | largest difference | 0.550 MPa |\n| 격자 세분화에 따른 압력 차이 | at_0_5m | 50000 s | largest difference | 0.257 MPa |\n\nVerified configuration THM-AX: V5 passed (max error 1.1 %).\nThis run: reached end time True, finite values True, time steps 100, rejected steps 0, max nonlinear iterations 3, energy balance not checked."
+ }
+]

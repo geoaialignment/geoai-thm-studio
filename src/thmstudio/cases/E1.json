@@ -1,0 +1,212 @@
+{
+ "id": "E1",
+ "configuration": "THM-AX-repository",
+ "title": "Heated canister in a bentonite-filled deposition hole in granite (demonstration)",
+ "source": "consistency checks: energy balance, mesh and time-step convergence, region areas (no exact solution exists)",
+ "model": {
+  "name": "e1",
+  "geometry": {
+   "kind": "axisym_source",
+   "outer_radius": 50,
+   "height": 50,
+   "symmetric": true,
+   "source": "canister",
+   "canister_radius": 0.51,
+   "canister_length": 4.83,
+   "buffer_radius": 0.875,
+   "buffer_length": 6.83
+  },
+  "physics": {
+   "process": "THM"
+  },
+  "materials": {
+   "rock": {
+    "label": "granite (demonstration values)",
+    "permeability": 1e-18,
+    "porosity": 0.005,
+    "youngs_modulus": 50000000000.0,
+    "poissons_ratio": 0.25,
+    "biot_coefficient": 1.0,
+    "thermal_conductivity": 3.0,
+    "solid_density": 2650,
+    "solid_specific_heat": 850,
+    "thermal_expansion": 1e-05
+   },
+   "buffer": {
+    "label": "saturated bentonite, linear poroelastic (no swelling)",
+    "permeability": 1e-20,
+    "porosity": 0.44,
+    "youngs_modulus": 300000000.0,
+    "poissons_ratio": 0.35,
+    "biot_coefficient": 1.0,
+    "thermal_conductivity": 1.2,
+    "solid_density": 2750,
+    "solid_specific_heat": 800,
+    "thermal_expansion": 1e-05
+   },
+   "canister": {
+    "label": "canister (cast iron insert, homogenised)",
+    "permeability": 1e-22,
+    "porosity": 0.01,
+    "youngs_modulus": 170000000000.0,
+    "poissons_ratio": 0.3,
+    "biot_coefficient": 1.0,
+    "thermal_conductivity": 40.0,
+    "solid_density": 7200,
+    "solid_specific_heat": 450,
+    "thermal_expansion": 1.2e-05
+   }
+  },
+  "boundary_conditions": [
+   {
+    "boundary": "bottom",
+    "variable": "displacement",
+    "kind": "roller"
+   },
+   {
+    "boundary": "outer",
+    "variable": "displacement",
+    "kind": "roller"
+   },
+   {
+    "boundary": "top",
+    "variable": "displacement",
+    "kind": "roller"
+   },
+   {
+    "boundary": "outer",
+    "variable": "temperature",
+    "value": 288.15
+   },
+   {
+    "boundary": "top",
+    "variable": "temperature",
+    "value": 288.15
+   },
+   {
+    "boundary": "outer",
+    "variable": "pressure",
+    "value": 0.0
+   },
+   {
+    "boundary": "top",
+    "variable": "pressure",
+    "value": 0.0
+   }
+  ],
+  "heat_sources": [
+   {
+    "region": "canister",
+    "kind": "power",
+    "value": 1000.0
+   }
+  ],
+  "initial": {
+   "temperature": 288.15,
+   "pressure": 0.0
+  },
+  "mesh": {
+   "size": 2.0,
+   "refinements": [
+    {
+     "target": "buffer_rock",
+     "size": 0.05,
+     "growth": 1.2
+    },
+    {
+     "target": "canister_surface",
+     "size": 0.05,
+     "growth": 1.2
+    }
+   ]
+  },
+  "study": {
+   "kind": "transient",
+   "end_time": 63115200.0,
+   "first_step": 3600,
+   "growth": 1.3,
+   "max_step": 864000,
+   "output_times": [
+    15778800.0
+   ]
+  }
+ },
+ "reference": {
+  "type": "constant"
+ },
+ "normalization": {
+  "type": "scale",
+  "scale": 1.0
+ },
+ "tolerance": {
+  "max_norm": 1.0
+ },
+ "integrals": [
+  {
+   "label": "heat stored = power x time (half model), 0.5 yr",
+   "time": 15778800.0,
+   "power": 1000.0,
+   "fraction": 0.5,
+   "tolerance": 0.01
+  },
+  {
+   "label": "heat stored = power x time (half model), 2 yr",
+   "time": 63115200.0,
+   "power": 1000.0,
+   "fraction": 0.5,
+   "tolerance": 0.01
+  }
+ ],
+ "observations": [],
+ "convergence": [
+  {
+   "field": "temperature",
+   "time": 63115200.0,
+   "points": [
+    [
+     0.51,
+     0.0
+    ],
+    [
+     0.875,
+     0.0
+    ],
+    [
+     0.875,
+     3.0
+    ],
+    [
+     2.0,
+     0.0
+    ],
+    [
+     5.0,
+     0.0
+    ]
+   ],
+   "base": 288.15,
+   "max_rel_change": 0.02,
+   "label": "temperature rise at the canister, buffer and rock (2h vs h)"
+  },
+  {
+   "field": "pressure",
+   "time": 63115200.0,
+   "points": [
+    [
+     0.875,
+     0.0
+    ],
+    [
+     2.0,
+     0.0
+    ],
+    [
+     5.0,
+     0.0
+    ]
+   ],
+   "max_rel_change": 0.05,
+   "label": "pore pressure in buffer and rock (2h vs h)"
+  }
+ ]
+}

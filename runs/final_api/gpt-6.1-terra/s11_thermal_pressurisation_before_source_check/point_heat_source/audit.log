@@ -1,0 +1,15 @@
+{"time": "2026-10-30T19:37:59", "tool": "start_from_example", "ok": true, "state": "DRAFT", "version": 1, "args": "{\"example_id\": \"point_heat_source\", \"changes\": [{\"name\": \"source_power\", \"value\": \"300 W\"}], \"project_name\": null}", "note": ""}
+{"time": "2026-10-30T19:38:03", "tool": "build_mesh", "ok": true, "state": "DRAFT", "version": 1, "args": "{}", "note": ""}
+{"time": "2026-10-30T19:38:07", "tool": "show_mesh", "ok": true, "state": "DRAFT", "version": 1, "args": "{\"zoom\": null}", "note": ""}
+{"time": "2026-10-30T19:38:12", "tool": "set_mesh", "ok": true, "state": "DRAFT", "version": 2, "args": "{\"size\": \"0.5 m\", \"element\": \"quad\", \"divisions\": null, \"refinements\": [{\"target\": \"source\", \"size\": \"0.1 m\", \"growth\": 1.1}]}", "note": ""}
+{"time": "2026-10-30T19:38:15", "tool": "build_mesh", "ok": true, "state": "DRAFT", "version": 2, "args": "{}", "note": ""}
+{"time": "2026-10-30T19:38:19", "tool": "show_mesh", "ok": true, "state": "DRAFT", "version": 2, "args": "{\"zoom\": null}", "note": ""}
+{"time": "2026-10-30T19:38:21", "tool": "check_model", "ok": true, "state": "CHECKED", "version": 2, "args": "{}", "note": ""}
+{"time": "2026-10-30T19:38:23", "tool": "run", "ok": true, "state": "RUNNING", "version": 2, "args": "{}", "note": ""}
+{"time": "2026-10-30T19:38:46", "tool": "run_status", "ok": true, "state": "RUNNING", "version": 2, "args": "{}", "note": ""}
+{"time": "2026-10-30T19:39:00", "tool": "run_status", "ok": true, "state": "COMPUTED", "version": 2, "args": "{}", "note": ""}
+{"time": "2026-10-30T19:39:03", "tool": "show_model", "ok": true, "state": "COMPUTED", "version": 2, "args": "{}", "note": ""}
+{"time": "2026-10-30T19:39:07", "tool": "show_results", "ok": true, "state": "COMPUTED", "version": 2, "args": "{\"field\": \"pressure\", \"component\": null, \"kind\": \"series\", \"time\": null, \"probe\": \"at_0_5m\", \"point\": null, \"line\": null}", "note": ""}
+{"time": "2026-10-30T19:39:42", "tool": "compare", "ok": true, "state": "COMPUTED", "version": 2, "args": "{\"comparison\": \"no_water_thermal_expansion\", \"field\": \"pressure\", \"component\": null, \"probe\": \"at_0_5m\", \"time\": \"50000 s\"}", "note": ""}
+{"time": "2026-10-30T19:42:16", "tool": "compare", "ok": true, "state": "COMPUTED", "version": 2, "args": "{\"comparison\": \"half_element_size\", \"field\": \"pressure\", \"component\": null, \"probe\": \"at_0_5m\", \"time\": \"50000 s\"}", "note": ""}
+{"time": "2026-10-30T19:42:22", "tool": "answer_card", "ok": true, "state": "REPORTED", "version": 2, "args": "{\"items\": [{\"label\": \"해석 종료 시 간극수압 상승\", \"kind\": \"change\", \"field\": \"pressure\", \"component\": null, \"probe\": \"at_0_5m\", \"point\": null, \"time\": \"50000 s\", \"comparison\": null}, {\"label\": \"물의 열팽창에 따른 압력 차이\", \"kind\": \"comparison\", \"field\": \"pressure\", \"component\": null, \"probe\": \"at_0_5m\", \"point\": null, \"time\": \"50000 s\", \"comparison\": \"no_water_thermal_expansion\"}, {\"label\": \"격자 세분화에 따른 압력 차이\", \"ki...", "note": ""}

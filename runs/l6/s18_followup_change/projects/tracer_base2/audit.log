@@ -1,0 +1,7 @@
+{"time": "2026-10-30T18:39:00", "tool": "start_from_example", "ok": true, "state": "DRAFT", "version": 3, "args": "{\"example_id\": \"solute_front\", \"project_name\": \"tracer_base2\"}", "note": ""}
+{"time": "2026-10-30T18:39:00", "tool": "build_mesh", "ok": false, "state": "DRAFT", "version": 3, "args": "{}", "note": "'build_mesh' is not available in state DRAFT (step check). Next step: call check_model. Available now: check_model, go_to_step, show_model, search_kb, ask_user."}
+{"time": "2026-10-30T18:39:01", "tool": "check_model", "ok": false, "state": "DRAFT", "version": 3, "args": "{}", "note": ""}
+{"time": "2026-10-30T18:39:02", "tool": "build_mesh", "ok": true, "state": "DRAFT", "version": 3, "args": "{}", "note": ""}
+{"time": "2026-10-30T18:39:03", "tool": "check_model", "ok": true, "state": "CHECKED", "version": 3, "args": "{}", "note": ""}
+{"time": "2026-10-30T18:39:03", "tool": "run", "ok": true, "state": "COMPUTED", "version": 3, "args": "{}", "note": ""}
+{"time": "2026-10-30T18:39:05", "tool": "answer_card", "ok": true, "state": "REPORTED", "version": 3, "args": "{\"items\": [{\"label\": \"tracer concentration at 5 m after 10 days, dispersivity 0.1 m (default)\", \"kind\": \"value\", \"probe\": \"at_5m\", \"time\": \"864000 s\", \"field\": \"tracer\"}]}", "note": ""}

@@ -1,0 +1,118 @@
+{
+ "id": "surface_heating",
+ "configuration": "T-2D",
+ "verification_cases": [
+  "V2a",
+  "V2c"
+ ],
+ "title": "Rock warmed from the surface",
+ "title_ko": "지표에서 가열되는 암반",
+ "description": "A 2D vertical section of rock whose top surface is held 10 K warmer than the rock for 10 years. Heat spreads downward by conduction.",
+ "model": {
+  "name": "surface_heating",
+  "geometry": {
+   "kind": "rect",
+   "width": "100 m",
+   "layers": [
+    {
+     "name": "rock",
+     "thickness": "50 m"
+    }
+   ]
+  },
+  "physics": {
+   "process": "T"
+  },
+  "materials": {
+   "rock": {
+    "label": "granite (typical)",
+    "thermal_conductivity": "3.0 W/m/K",
+    "density": "2650 kg/m3",
+    "specific_heat": "850 J/kg/K"
+   }
+  },
+  "boundary_conditions": [
+   {
+    "boundary": "top",
+    "variable": "temperature",
+    "value": "25 degC"
+   }
+  ],
+  "initial": {
+   "temperature": "15 degC"
+  },
+  "mesh": {
+   "size": "5 m",
+   "refinements": [
+    {
+     "target": "top",
+     "size": "0.25 m",
+     "growth": 1.2
+    }
+   ]
+  },
+  "study": {
+   "kind": "transient",
+   "end_time": "10 yr",
+   "first_step": "1 d",
+   "growth": 1.2,
+   "max_step": "30 d",
+   "output_times": [
+    "1 yr",
+    "5 yr"
+   ]
+  },
+  "probes": [
+   {
+    "name": "depth_profile",
+    "line": [
+     [
+      50,
+      50
+     ],
+     [
+      50,
+      0
+     ]
+    ]
+   },
+   {
+    "name": "at_5m",
+    "point": [
+     50,
+     45
+    ]
+   }
+  ]
+ },
+ "adjustable": {
+  "surface_temperature": {
+   "path": "boundary_conditions.top.temperature.value",
+   "unit": "degC or K"
+  },
+  "initial_temperature": {
+   "path": "initial.temperature",
+   "unit": "degC or K"
+  },
+  "rock_conductivity": {
+   "path": "materials.rock.thermal_conductivity",
+   "unit": "W/m/K"
+  },
+  "rock_density": {
+   "path": "materials.rock.density",
+   "unit": "kg/m3"
+  },
+  "rock_specific_heat": {
+   "path": "materials.rock.specific_heat",
+   "unit": "J/kg/K"
+  },
+  "duration": {
+   "path": "study.end_time",
+   "unit": "yr, d or s"
+  },
+  "depth": {
+   "path": "geometry.layers.rock.thickness",
+   "unit": "m"
+  }
+ }
+}

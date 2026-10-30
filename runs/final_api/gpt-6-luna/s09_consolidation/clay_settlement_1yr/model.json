@@ -1,0 +1,144 @@
+{
+ "schema_version": 1,
+ "name": "clay_settlement_1yr",
+ "geometry": {
+  "kind": "rect",
+  "width": 1.0,
+  "layers": [
+   {
+    "name": "clay",
+    "thickness": 10.0
+   }
+  ],
+  "plane": "vertical",
+  "segments": []
+ },
+ "materials": {
+  "clay": {
+   "label": "soft clay",
+   "permeability": 1e-15,
+   "hydraulic_conductivity": null,
+   "porosity": 0.5,
+   "specific_storage": null,
+   "thermal_conductivity": null,
+   "solid_density": null,
+   "solid_specific_heat": null,
+   "density": null,
+   "specific_heat": null,
+   "longitudinal_dispersivity": null,
+   "transverse_dispersivity": null,
+   "youngs_modulus": 20000000.0,
+   "poissons_ratio": 0.3,
+   "biot_coefficient": 1.0,
+   "thermal_expansion": null
+  }
+ },
+ "physics": {
+  "process": "HM",
+  "gravity": null,
+  "fluid": {
+   "density": 1000.0,
+   "viscosity": 0.001,
+   "specific_heat": 4180.0,
+   "thermal_conductivity": 0.6,
+   "thermal_expansion": 0.0004,
+   "density_increase_per_concentration": 0.0
+  },
+  "components": []
+ },
+ "boundary_conditions": [
+  {
+   "boundary": "left",
+   "variable": "displacement",
+   "kind": "roller",
+   "value": 0.0,
+   "component": null,
+   "expression": null
+  },
+  {
+   "boundary": "right",
+   "variable": "displacement",
+   "kind": "roller",
+   "value": 0.0,
+   "component": null,
+   "expression": null
+  },
+  {
+   "boundary": "bottom",
+   "variable": "displacement",
+   "kind": "roller",
+   "value": 0.0,
+   "component": null,
+   "expression": null
+  },
+  {
+   "boundary": "top",
+   "variable": "displacement",
+   "kind": "load",
+   "value": 50000.0,
+   "component": null,
+   "expression": null
+  },
+  {
+   "boundary": "top",
+   "variable": "pressure",
+   "kind": "fixed",
+   "value": 0.0,
+   "component": null,
+   "expression": null
+  }
+ ],
+ "heat_sources": [],
+ "initial": {
+  "temperature": null,
+  "head": null,
+  "pressure": 0.0,
+  "concentration": null
+ },
+ "mesh": {
+  "element": "quad",
+  "size": 0.25,
+  "divisions": {
+   "x": 10,
+   "y": 100
+  },
+  "refinements": []
+ },
+ "study": {
+  "kind": "transient",
+  "end_time": 31557600.0,
+  "first_step": 3600.0,
+  "max_step": 864000.0,
+  "growth": 1.15,
+  "output_times": [
+   3155760.0,
+   15778800.0
+  ]
+ },
+ "probes": [
+  {
+   "name": "column",
+   "point": null,
+   "line": [
+    [
+     0.5,
+     0.0
+    ],
+    [
+     0.5,
+     10.0
+    ]
+   ],
+   "samples": 101
+  },
+  {
+   "name": "surface",
+   "point": [
+    0.5,
+    10.0
+   ],
+   "line": null,
+   "samples": 101
+  }
+ ]
+}

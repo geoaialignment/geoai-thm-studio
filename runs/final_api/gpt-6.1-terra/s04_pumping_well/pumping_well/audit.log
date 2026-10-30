@@ -1,0 +1,19 @@
+{"time": "2026-10-30T19:33:00", "tool": "start_from_example", "ok": true, "state": "DRAFT", "version": 1, "args": "{\"example_id\": \"pumping_well\", \"changes\": [{\"name\": \"aquifer_thickness\", \"value\": \"10 m\"}, {\"name\": \"pumping_rate\", \"value\": \"500 m3/day\"}, {\"name\": \"duration\", \"value\": \"1 day\"}], \"project_name\": \"pumping_well\"}", "note": ""}
+{"time": "2026-10-30T19:33:03", "tool": "build_mesh", "ok": true, "state": "DRAFT", "version": 1, "args": "{}", "note": ""}
+{"time": "2026-10-30T19:33:07", "tool": "show_mesh", "ok": true, "state": "DRAFT", "version": 1, "args": "{\"zoom\": null}", "note": ""}
+{"time": "2026-10-30T19:33:11", "tool": "set_mesh", "ok": true, "state": "DRAFT", "version": 2, "args": "{\"size\": \"5 m\", \"element\": \"quad\", \"divisions\": [{\"name\": \"r\", \"elements\": 500}, {\"name\": \"z\", \"elements\": 5}], \"refinements\": [{\"target\": \"well\", \"size\": \"0.2 m\", \"growth\": 1.2}]}", "note": ""}
+{"time": "2026-10-30T19:33:14", "tool": "build_mesh", "ok": true, "state": "DRAFT", "version": 2, "args": "{}", "note": ""}
+{"time": "2026-10-30T19:33:18", "tool": "show_mesh", "ok": true, "state": "DRAFT", "version": 2, "args": "{\"zoom\": null}", "note": ""}
+{"time": "2026-10-30T19:33:21", "tool": "check_model", "ok": true, "state": "CHECKED", "version": 2, "args": "{}", "note": ""}
+{"time": "2026-10-30T19:33:24", "tool": "run", "ok": true, "state": "RUNNING", "version": 2, "args": "{}", "note": ""}
+{"time": "2026-10-30T19:33:27", "tool": "run_status", "ok": true, "state": "COMPUTED", "version": 2, "args": "{}", "note": ""}
+{"time": "2026-10-30T19:33:30", "tool": "show_model", "ok": true, "state": "COMPUTED", "version": 2, "args": "{}", "note": ""}
+{"time": "2026-10-30T19:33:34", "tool": "show_results", "ok": true, "state": "COMPUTED", "version": 2, "args": "{\"field\": \"head\", \"component\": null, \"kind\": \"series\", \"time\": null, \"probe\": \"obs_well_50m\", \"point\": null, \"line\": null}", "note": ""}
+{"time": "2026-10-30T19:33:38", "tool": "go_to_step", "ok": true, "state": "DRAFT", "version": 2, "args": "{\"step\": \"conditions\"}", "note": ""}
+{"time": "2026-10-30T19:33:42", "tool": "set_conditions", "ok": true, "state": "DRAFT", "version": 3, "args": "{\"boundary_conditions\": [{\"boundary\": \"well\", \"variable\": \"head\", \"kind\": \"rate\", \"value\": \"-500 m3/day\", \"component\": null}], \"initial\": null, \"heat_sources\": null, \"remove_boundaries\": null}", "note": ""}
+{"time": "2026-10-30T19:33:45", "tool": "check_model", "ok": true, "state": "CHECKED", "version": 3, "args": "{}", "note": ""}
+{"time": "2026-10-30T19:33:47", "tool": "run", "ok": true, "state": "RUNNING", "version": 3, "args": "{}", "note": ""}
+{"time": "2026-10-30T19:33:49", "tool": "run_status", "ok": true, "state": "COMPUTED", "version": 3, "args": "{}", "note": ""}
+{"time": "2026-10-30T19:33:54", "tool": "show_results", "ok": true, "state": "COMPUTED", "version": 3, "args": "{\"field\": \"head\", \"component\": null, \"kind\": \"series\", \"time\": null, \"probe\": \"obs_well_50m\", \"point\": null, \"line\": null}", "note": ""}
+{"time": "2026-10-30T19:34:01", "tool": "compare", "ok": true, "state": "COMPUTED", "version": 3, "args": "{\"comparison\": \"half_element_size\", \"field\": \"head\", \"component\": null, \"probe\": \"obs_well_50m\", \"time\": \"1 day\"}", "note": ""}
+{"time": "2026-10-30T19:34:05", "tool": "answer_card", "ok": true, "state": "REPORTED", "version": 3, "args": "{\"items\": [{\"label\": \"Head change at observation well\", \"kind\": \"change\", \"field\": \"head\", \"component\": null, \"probe\": \"obs_well_50m\", \"point\": null, \"time\": \"1 day\", \"comparison\": null}, {\"label\": \"Mesh refinement difference\", \"kind\": \"comparison\", \"field\": \"head\", \"component\": null, \"probe\": \"obs_well_50m\", \"point\": null, \"time\": \"1 day\", \"comparison\": \"half_element_size\"}]}", "note": ""}

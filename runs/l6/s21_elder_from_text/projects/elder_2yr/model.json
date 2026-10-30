@@ -1,0 +1,162 @@
+{
+ "schema_version": 1,
+ "name": "elder_2yr",
+ "geometry": {
+  "kind": "rect",
+  "width": 600.0,
+  "layers": [
+   {
+    "name": "aquifer",
+    "thickness": 150.0
+   }
+  ],
+  "plane": "vertical",
+  "segments": [
+   {
+    "name": "salt_source",
+    "side": "top",
+    "start": 150.0,
+    "end": 450.0
+   }
+  ]
+ },
+ "materials": {
+  "aquifer": {
+   "label": "Elder benchmark medium",
+   "permeability": 4.845e-13,
+   "hydraulic_conductivity": null,
+   "porosity": 0.1,
+   "specific_storage": null,
+   "thermal_conductivity": null,
+   "solid_density": null,
+   "solid_specific_heat": null,
+   "density": null,
+   "specific_heat": null,
+   "longitudinal_dispersivity": 0.0,
+   "transverse_dispersivity": 0.0,
+   "youngs_modulus": null,
+   "poissons_ratio": null,
+   "biot_coefficient": null,
+   "thermal_expansion": null
+  }
+ },
+ "physics": {
+  "process": "HC",
+  "gravity": true,
+  "fluid": {
+   "density": 1000.0,
+   "viscosity": 0.001,
+   "specific_heat": 4180.0,
+   "thermal_conductivity": 0.6,
+   "thermal_expansion": 0.0004,
+   "density_increase_per_concentration": 200.0
+  },
+  "components": [
+   {
+    "name": "salt",
+    "pore_diffusion": 3.57e-6,
+    "decay_rate": null,
+    "half_life": null,
+    "retardation": 1.0
+   }
+  ]
+ },
+ "boundary_conditions": [
+  {
+   "boundary": "salt_source",
+   "variable": "concentration",
+   "kind": "fixed",
+   "value": 1.0,
+   "component": null,
+   "expression": null
+  },
+  {
+   "boundary": "bottom",
+   "variable": "concentration",
+   "kind": "fixed",
+   "value": 0.0,
+   "component": null,
+   "expression": null
+  },
+  {
+   "boundary": "corner_top_left",
+   "variable": "pressure",
+   "kind": "fixed",
+   "value": 0.0,
+   "component": null,
+   "expression": null
+  },
+  {
+   "boundary": "corner_top_right",
+   "variable": "pressure",
+   "kind": "fixed",
+   "value": 0.0,
+   "component": null,
+   "expression": null
+  }
+ ],
+ "heat_sources": [],
+ "initial": {
+  "temperature": null,
+  "head": null,
+  "pressure": 0.0,
+  "concentration": 0.0
+ },
+ "mesh": {
+  "element": "quad",
+  "size": 5.0,
+  "divisions": {
+   "x": 128,
+   "y": 64
+  },
+  "refinements": [
+   {
+    "target": "salt_source",
+    "size": 2.0,
+    "growth": 1.2
+   }
+  ]
+ },
+ "study": {
+  "kind": "transient",
+  "end_time": 63115200.0,
+  "first_step": 518400.0,
+  "max_step": null,
+  "growth": 1.0,
+  "output_times": [
+   31557600.0
+  ]
+ },
+ "probes": [
+  {
+   "name": "centre_line",
+   "point": null,
+   "line": [
+    [
+     300.0,
+     0.0
+    ],
+    [
+     300.0,
+     150.0
+    ]
+   ],
+   "samples": 101
+  },
+  {
+   "name": "mid_depth",
+   "point": null,
+   "line": [
+    [
+     0.0,
+     75.0
+    ],
+    [
+     300.0,
+     75.0
+    ]
+   ],
+   "samples": 101
+  }
+ ]
+}

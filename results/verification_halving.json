@@ -1,0 +1,110 @@
+{
+ "note": "largest normalized max-norm error per case at the released discretization (h) and with element size and time step halved (h/2)",
+ "cases": [
+  {
+   "id": "V1b",
+   "steady": false,
+   "error_h": 0.0196735374638941,
+   "error_h2": 0.009780641722749249,
+   "ratio": 0.4971470809812008,
+   "package_version": "0.1.0",
+   "ogs_version": "6.5.8"
+  },
+  {
+   "id": "V2a",
+   "steady": false,
+   "error_h": 0.002114665788383263,
+   "error_h2": 0.0009274284713569614,
+   "ratio": 0.4385697619225274,
+   "package_version": "0.1.0",
+   "ogs_version": "6.5.8"
+  },
+  {
+   "id": "V2a-tri",
+   "steady": false,
+   "error_h": 0.001141043320785684,
+   "error_h2": 0.000723799266665992,
+   "ratio": 0.6343311016163771,
+   "package_version": "0.1.0",
+   "ogs_version": "6.5.8"
+  },
+  {
+   "id": "V2c",
+   "steady": false,
+   "error_h": 0.006401589865049573,
+   "error_h2": 0.003501838184376993,
+   "ratio": 0.5470263259906413,
+   "package_version": "0.1.0",
+   "ogs_version": "6.5.8"
+  },
+  {
+   "id": "V2d",
+   "steady": true,
+   "error_h": 0.0021874117532729265,
+   "error_h2": 0.0005834603523982616,
+   "ratio": 0.2667354929977202,
+   "package_version": "0.1.0",
+   "ogs_version": "6.5.8"
+  },
+  {
+   "id": "V3",
+   "steady": false,
+   "error_h": 0.009735528544410954,
+   "error_h2": 0.004889589297022212,
+   "ratio": 0.5022417914669116,
+   "package_version": "0.1.0",
+   "ogs_version": "6.5.8"
+  },
+  {
+   "id": "V3-water",
+   "steady": false,
+   "error_h": 0.004458001783518739,
+   "error_h2": 0.0021993225229834934,
+   "ratio": 0.4933426745396116,
+   "package_version": "0.1.0",
+   "ogs_version": "6.5.8"
+  },
+  {
+   "id": "V4",
+   "steady": false,
+   "error_h": 0.00811009959011193,
+   "error_h2": 0.004351932928087553,
+   "ratio": 0.5366065952375673,
+   "package_version": "0.1.0",
+   "ogs_version": "6.5.8"
+  },
+  {
+   "id": "V4b",
+   "steady": false,
+   "error_h": 0.008136032514744554,
+   "error_h2": 0.00431248590492499,
+   "ratio": 0.5300477717007243,
+   "package_version": "0.1.0",
+   "ogs_version": "6.5.8"
+  },
+  {
+   "id": "V6a",
+   "steady": false,
+   "error_h": 0.006813188000246662,
+   "error_h2": 0.003430063880525358,
+   "ratio": 0.5034447721685028,
+   "package_version": "0.1.0",
+   "ogs_version": "6.5.8"
+  },
+  {
+   "id": "V6b",
+   "steady": false,
+   "error_h": 0.014045649338502497,
+   "error_h2": 0.007113644492490856,
+   "ratio": 0.5064660466063785,
+   "package_version": "0.1.0",
+   "ogs_version": "6.5.8"
+  }
+ ],
+ "skipped": [
+  {
+   "id": "V5",
+   "reason": "the refined run did not finish within the run-time limit"
+  }
+ ]
+}

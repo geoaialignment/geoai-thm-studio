@@ -1,0 +1,111 @@
+{
+ "schema_version": 1,
+ "name": "layered_heat_steady",
+ "geometry": {
+  "kind": "rect",
+  "width": 20.0,
+  "layers": [
+   {
+    "name": "sandstone",
+    "thickness": 6.0
+   },
+   {
+    "name": "clay",
+    "thickness": 4.0
+   }
+  ],
+  "plane": "vertical",
+  "segments": []
+ },
+ "materials": {
+  "sandstone": {
+   "label": null,
+   "permeability": null,
+   "hydraulic_conductivity": null,
+   "porosity": null,
+   "specific_storage": null,
+   "thermal_conductivity": 2.5,
+   "solid_density": null,
+   "solid_specific_heat": null,
+   "density": 2000.0,
+   "specific_heat": 1000.0,
+   "longitudinal_dispersivity": null,
+   "transverse_dispersivity": null,
+   "youngs_modulus": null,
+   "poissons_ratio": null,
+   "biot_coefficient": null,
+   "thermal_expansion": null
+  },
+  "clay": {
+   "label": null,
+   "permeability": null,
+   "hydraulic_conductivity": null,
+   "porosity": null,
+   "specific_storage": null,
+   "thermal_conductivity": 1.5,
+   "solid_density": null,
+   "solid_specific_heat": null,
+   "density": 2000.0,
+   "specific_heat": 1000.0,
+   "longitudinal_dispersivity": null,
+   "transverse_dispersivity": null,
+   "youngs_modulus": null,
+   "poissons_ratio": null,
+   "biot_coefficient": null,
+   "thermal_expansion": null
+  }
+ },
+ "physics": {
+  "process": "T",
+  "gravity": null,
+  "fluid": {
+   "density": 1000.0,
+   "viscosity": 0.001,
+   "specific_heat": 4180.0,
+   "thermal_conductivity": 0.6,
+   "thermal_expansion": 0.0004,
+   "density_increase_per_concentration": 0.0
+  },
+  "components": []
+ },
+ "boundary_conditions": [
+  {
+   "boundary": "bottom",
+   "variable": "temperature",
+   "kind": "fixed",
+   "value": 303.15,
+   "component": null,
+   "expression": null
+  },
+  {
+   "boundary": "top",
+   "variable": "temperature",
+   "kind": "fixed",
+   "value": 283.15,
+   "component": null,
+   "expression": null
+  }
+ ],
+ "heat_sources": [],
+ "initial": {
+  "temperature": 293.15,
+  "head": null,
+  "pressure": null,
+  "concentration": null
+ },
+ "mesh": {
+  "element": "quad",
+  "size": 1.0,
+  "divisions": {},
+  "refinements": []
+ },
+ "study": {
+  "kind": "steady",
+  "end_time": null,
+  "first_step": null,
+  "max_step": null,
+  "growth": 1.0,
+  "output_times": []
+ },
+ "probes": []
+}

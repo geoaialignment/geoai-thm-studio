@@ -1,0 +1,83 @@
+[
+ {
+  "run_id": "f87fc7f99740",
+  "model_name": "sand_aquifer_heat",
+  "created": "2026-10-30 19:23",
+  "rows": [
+   {
+    "label": "100일 후 최고 온도",
+    "quantity": "temperature",
+    "aggregation": "max",
+    "location": "whole model",
+    "time": "100 d",
+    "value": "22.0",
+    "unit": "°C",
+    "value_si": 295.15000000000003,
+    "unit_si": "K"
+   },
+   {
+    "label": "x=18 m 중심선 온도 상승",
+    "quantity": "temperature",
+    "aggregation": "change since start",
+    "location": "(18.0, 5.0) m",
+    "time": "100 d",
+    "value": "1.23",
+    "unit": "K",
+    "value_si": 1.2298973424043993,
+    "unit_si": "K"
+   },
+   {
+    "label": "x=21 m 중심선 온도 상승",
+    "quantity": "temperature",
+    "aggregation": "change since start",
+    "location": "(21.0, 5.0) m",
+    "time": "100 d",
+    "value": "0.273",
+    "unit": "K",
+    "value_si": 0.27345711226746516,
+    "unit_si": "K"
+   },
+   {
+    "label": "x=24 m 중심선 온도 상승",
+    "quantity": "temperature",
+    "aggregation": "change since start",
+    "location": "(24.0, 5.0) m",
+    "time": "100 d",
+    "value": "0.0377",
+    "unit": "K",
+    "value_si": 0.03765819574323359,
+    "unit_si": "K"
+   }
+  ],
+  "verification": {
+   "configuration": "TH-2D",
+   "title": "heat transport by groundwater flow in 2D",
+   "demonstration": false,
+   "cases": [
+    {
+     "case": "V3",
+     "status": "passed",
+     "worst_normalised_error": 0.009735528544410954,
+     "source": "release record",
+     "date": "2026-10-30 19:14"
+    },
+    {
+     "case": "V3-water",
+     "status": "passed",
+     "worst_normalised_error": 0.004458001783518739,
+     "source": "release record",
+     "date": "2026-10-30 19:14"
+    }
+   ]
+  },
+  "run_checks": {
+   "reached_end_time": true,
+   "finite_values": true,
+   "time_steps": 100,
+   "rejected_steps": 0,
+   "max_nonlinear_iterations": 3,
+   "energy_balance": "not checked"
+  },
+  "table": "Results of run f87fc7f99740 (model sand_aquifer_heat)\n\n| quantity | where | when | how | value |\n|---|---|---|---|---|\n| 100일 후 최고 온도 | whole model | 100 d | max | 22.0 °C |\n| x=18 m 중심선 온도 상승 | (18.0, 5.0) m | 100 d | change since start | 1.23 K |\n| x=21 m 중심선 온도 상승 | (21.0, 5.0) m | 100 d | change since start | 0.273 K |\n| x=24 m 중심선 온도 상승 | (24.0, 5.0) m | 100 d | change since start | 0.0377 K |\n\nVerified configuration TH-2D: V3 passed (max error 0.97 %), V3-water passed (max error 0.45 %).\nThis run: reached end time True, finite values True, time steps 100, rejected steps 0, max nonlinear iterations 3, energy balance not checked."
+ }
+]

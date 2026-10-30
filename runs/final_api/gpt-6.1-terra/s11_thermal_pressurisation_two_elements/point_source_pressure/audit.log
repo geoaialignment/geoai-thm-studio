@@ -1,0 +1,15 @@
+{"time": "2026-10-30T20:17:03", "tool": "start_from_example", "ok": true, "state": "DRAFT", "version": 1, "args": "{\"example_id\": \"point_heat_source\", \"changes\": [{\"name\": \"source_power\", \"value\": \"300 W\"}], \"project_name\": \"point_source_pressure\"}", "note": ""}
+{"time": "2026-10-30T20:17:09", "tool": "build_mesh", "ok": true, "state": "DRAFT", "version": 1, "args": "{}", "note": ""}
+{"time": "2026-10-30T20:17:12", "tool": "show_mesh", "ok": true, "state": "DRAFT", "version": 1, "args": "{\"zoom\": null}", "note": ""}
+{"time": "2026-10-30T20:17:15", "tool": "set_mesh", "ok": true, "state": "DRAFT", "version": 2, "args": "{\"size\": \"0.5 m\", \"element\": \"quad\", \"divisions\": null, \"refinements\": [{\"target\": \"source\", \"size\": \"0.05 m\", \"growth\": 1.1}]}", "note": ""}
+{"time": "2026-10-30T20:17:18", "tool": "build_mesh", "ok": true, "state": "DRAFT", "version": 2, "args": "{}", "note": ""}
+{"time": "2026-10-30T20:17:22", "tool": "show_mesh", "ok": true, "state": "DRAFT", "version": 2, "args": "{\"zoom\": null}", "note": ""}
+{"time": "2026-10-30T20:17:26", "tool": "check_model", "ok": true, "state": "CHECKED", "version": 2, "args": "{}", "note": ""}
+{"time": "2026-10-30T20:17:30", "tool": "run", "ok": true, "state": "RUNNING", "version": 2, "args": "{}", "note": ""}
+{"time": "2026-10-30T20:17:52", "tool": "run_status", "ok": true, "state": "RUNNING", "version": 2, "args": "{}", "note": ""}
+{"time": "2026-10-30T20:18:14", "tool": "run_status", "ok": true, "state": "RUNNING", "version": 2, "args": "{}", "note": ""}
+{"time": "2026-10-30T20:18:22", "tool": "run_status", "ok": true, "state": "COMPUTED", "version": 2, "args": "{}", "note": ""}
+{"time": "2026-10-30T20:18:25", "tool": "show_model", "ok": true, "state": "COMPUTED", "version": 2, "args": "{}", "note": ""}
+{"time": "2026-10-30T20:18:29", "tool": "show_results", "ok": true, "state": "COMPUTED", "version": 2, "args": "{\"field\": \"pressure\", \"component\": null, \"kind\": \"profile\", \"time\": null, \"probe\": \"radial\", \"point\": null, \"line\": null}", "note": ""}
+{"time": "2026-10-30T20:19:18", "tool": "compare", "ok": true, "state": "COMPUTED", "version": 2, "args": "{\"comparison\": \"no_water_thermal_expansion\", \"field\": \"pressure\", \"component\": null, \"probe\": \"at_0_5m\", \"time\": null}", "note": ""}
+{"time": "2026-10-30T20:19:22", "tool": "answer_card", "ok": true, "state": "REPORTED", "version": 2, "args": "{\"items\": [{\"label\": \"열원에서 0.5 m의 간극수압 상승\", \"kind\": \"change\", \"field\": \"pressure\", \"component\": null, \"probe\": \"at_0_5m\", \"point\": null, \"time\": null, \"comparison\": null}, {\"label\": \"물의 열팽창을 끈 경우와의 압력 차이\", \"kind\": \"comparison\", \"field\": \"pressure\", \"component\": null, \"probe\": \"at_0_5m\", \"point\": null, \"time\": null, \"comparison\": \"no_water_thermal_expansion\"}]}", "note": ""}

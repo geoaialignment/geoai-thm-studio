@@ -1,0 +1,83 @@
+[
+ {
+  "run_id": "ce2b3d284478",
+  "model_name": "s20_steady_transport",
+  "created": "2026-10-30 18:40",
+  "rows": [
+   {
+    "label": "steady concentration along the column (minimum)",
+    "quantity": "tracer",
+    "aggregation": "min",
+    "location": "along column",
+    "time": "1.00 yr",
+    "value": "1.000",
+    "unit": "-",
+    "value_si": 0.9999999999999756,
+    "unit_si": "-"
+   },
+   {
+    "label": "steady concentration along the column (maximum)",
+    "quantity": "tracer",
+    "aggregation": "max",
+    "location": "along column",
+    "time": "1.00 yr",
+    "value": "1.00",
+    "unit": "-",
+    "value_si": 1.000000000000002,
+    "unit_si": "-"
+   },
+   {
+    "label": "concentration at the inflow end (x = 0 m)",
+    "quantity": "tracer",
+    "aggregation": "value",
+    "location": "(0.0, 0.5) m",
+    "time": "1.00 yr",
+    "value": "1.00",
+    "unit": "-",
+    "value_si": 1.0,
+    "unit_si": "-"
+   },
+   {
+    "label": "concentration at the outflow end (x = 10 m)",
+    "quantity": "tracer",
+    "aggregation": "value",
+    "location": "(10.0, 0.5) m",
+    "time": "1.00 yr",
+    "value": "1.000",
+    "unit": "-",
+    "value_si": 0.9999999999999782,
+    "unit_si": "-"
+   }
+  ],
+  "verification": {
+   "configuration": "HC-2D",
+   "title": "solute transport (advection, dispersion, sorption, decay) in 2D",
+   "demonstration": false,
+   "cases": [
+    {
+     "case": "V6a",
+     "status": "passed",
+     "worst_normalised_error": 0.006813187999819781,
+     "source": "release record",
+     "date": "2026-10-30 18:31"
+    },
+    {
+     "case": "V6b",
+     "status": "passed",
+     "worst_normalised_error": 0.01404564933853214,
+     "source": "release record",
+     "date": "2026-10-30 18:31"
+    }
+   ]
+  },
+  "run_checks": {
+   "reached_end_time": true,
+   "finite_values": true,
+   "time_steps": 881,
+   "rejected_steps": 0,
+   "max_nonlinear_iterations": 3,
+   "energy_balance": "not checked"
+  },
+  "table": "Results of run ce2b3d284478 (model s20_steady_transport)\n\n| quantity | where | when | how | value |\n|---|---|---|---|---|\n| steady concentration along the column (minimum) | along column | 1.00 yr | min | 1.000 - |\n| steady concentration along the column (maximum) | along column | 1.00 yr | max | 1.00 - |\n| concentration at the inflow end (x = 0 m) | (0.0, 0.5) m | 1.00 yr | value | 1.00 - |\n| concentration at the outflow end (x = 10 m) | (10.0, 0.5) m | 1.00 yr | value | 1.000 - |\n\nVerified configuration HC-2D: V6a passed (max error 0.68 %), V6b passed (max error 1.4 %).\nThis run: reached end time True, finite values True, time steps 881, rejected steps 0, max nonlinear iterations 3, energy balance not checked."
+ }
+]

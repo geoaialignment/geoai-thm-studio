@@ -1,0 +1,14 @@
+{"time": "2026-10-30T18:24:38", "tool": "start_from_example", "ok": true, "state": "DRAFT", "version": 1, "args": "{\"example_id\": \"pumping_well\", \"project_name\": \"pumping_well_1d\", \"changes\": [{\"name\": \"pumping_rate\", \"value\": \"-500 m3/d\"}, {\"name\": \"duration\", \"value\": \"1 d\"}]}", "note": ""}
+{"time": "2026-10-30T18:24:40", "tool": "show_model", "ok": false, "state": "DRAFT", "version": 1, "args": "{}", "note": "'show_model' is not available in state DRAFT (step mesh). Next step: call build_mesh (set_mesh first if the default size is not wanted). Available now: set_mesh, build_mesh, show_mesh, check_model, go_to_step, ask_user."}
+{"time": "2026-10-30T18:24:41", "tool": "build_mesh", "ok": true, "state": "DRAFT", "version": 1, "args": "{}", "note": ""}
+{"time": "2026-10-30T18:24:44", "tool": "set_mesh", "ok": true, "state": "DRAFT", "version": 2, "args": "{\"divisions\": [{\"name\": \"aquifer\", \"elements\": 20}], \"refinements\": [{\"target\": \"well\", \"size\": \"0.5 m\", \"growth\": 1.15}]}", "note": ""}
+{"time": "2026-10-30T18:24:44", "tool": "build_mesh", "ok": true, "state": "DRAFT", "version": 2, "args": "{}", "note": ""}
+{"time": "2026-10-30T18:24:47", "tool": "set_mesh", "ok": true, "state": "DRAFT", "version": 3, "args": "{\"size\": \"100 m\", \"divisions\": [{\"name\": \"aquifer\", \"elements\": 5}], \"refinements\": [{\"target\": \"well\", \"size\": \"0.5 m\", \"growth\": 1.2}]}", "note": ""}
+{"time": "2026-10-30T18:24:47", "tool": "build_mesh", "ok": true, "state": "DRAFT", "version": 3, "args": "{}", "note": ""}
+{"time": "2026-10-30T18:24:48", "tool": "check_model", "ok": true, "state": "CHECKED", "version": 3, "args": "{}", "note": ""}
+{"time": "2026-10-30T18:24:49", "tool": "run", "ok": true, "state": "RUNNING", "version": 3, "args": "{}", "note": ""}
+{"time": "2026-10-30T18:24:49", "tool": "show_model", "ok": false, "state": "RUNNING", "version": 3, "args": "{}", "note": "'show_model' is not available in state RUNNING. Next step: call run_status. Available now: run_status."}
+{"time": "2026-10-30T18:24:50", "tool": "run_status", "ok": true, "state": "COMPUTED", "version": 3, "args": "{}", "note": ""}
+{"time": "2026-10-30T18:24:52", "tool": "show_model", "ok": true, "state": "COMPUTED", "version": 3, "args": "{}", "note": ""}
+{"time": "2026-10-30T18:24:54", "tool": "show_results", "ok": true, "state": "COMPUTED", "version": 3, "args": "{\"field\": \"head\", \"kind\": \"profile\", \"probe\": \"radial\"}", "note": ""}
+{"time": "2026-10-30T18:24:54", "tool": "answer_card", "ok": true, "state": "REPORTED", "version": 3, "args": "{\"items\": [{\"label\": \"head change 50 m from well after 1 day\", \"kind\": \"change\", \"field\": \"head\", \"probe\": \"obs_well_50m\", \"time\": \"1 d\"}, {\"label\": \"head at 50 m after 1 day\", \"kind\": \"value\", \"field\": \"head\", \"probe\": \"obs_well_50m\", \"time\": \"1 d\"}]}", "note": ""}

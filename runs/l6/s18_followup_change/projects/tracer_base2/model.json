@@ -1,0 +1,135 @@
+{
+ "schema_version": 1,
+ "name": "tracer_base2",
+ "geometry": {
+  "kind": "rect",
+  "width": 10.0,
+  "layers": [
+   {
+    "name": "sand",
+    "thickness": 1.0
+   }
+  ],
+  "plane": "horizontal",
+  "segments": []
+ },
+ "materials": {
+  "sand": {
+   "label": "sand",
+   "permeability": 1e-11,
+   "hydraulic_conductivity": null,
+   "porosity": 0.25,
+   "specific_storage": null,
+   "thermal_conductivity": null,
+   "solid_density": null,
+   "solid_specific_heat": null,
+   "density": null,
+   "specific_heat": null,
+   "longitudinal_dispersivity": 0.1,
+   "transverse_dispersivity": 0.01,
+   "youngs_modulus": null,
+   "poissons_ratio": null,
+   "biot_coefficient": null,
+   "thermal_expansion": null
+  }
+ },
+ "physics": {
+  "process": "HC",
+  "gravity": null,
+  "fluid": {
+   "density": 1000.0,
+   "viscosity": 0.001,
+   "specific_heat": 4180.0,
+   "thermal_conductivity": 0.6,
+   "thermal_expansion": 0.0004,
+   "density_increase_per_concentration": 0.0
+  },
+  "components": [
+   {
+    "name": "tracer",
+    "pore_diffusion": 1e-9,
+    "decay_rate": null,
+    "half_life": null,
+    "retardation": 1.0
+   }
+  ]
+ },
+ "boundary_conditions": [
+  {
+   "boundary": "left",
+   "variable": "head",
+   "kind": "flux",
+   "value": 1e-6,
+   "component": null,
+   "expression": null
+  },
+  {
+   "boundary": "right",
+   "variable": "head",
+   "kind": "fixed",
+   "value": 0.0,
+   "component": null,
+   "expression": null
+  },
+  {
+   "boundary": "left",
+   "variable": "concentration",
+   "kind": "fixed",
+   "value": 1.0,
+   "component": null,
+   "expression": null
+  }
+ ],
+ "heat_sources": [],
+ "initial": {
+  "temperature": null,
+  "head": 0.0,
+  "pressure": null,
+  "concentration": 0.0
+ },
+ "mesh": {
+  "element": "auto",
+  "size": 0.05,
+  "divisions": {
+   "y": 2
+  },
+  "refinements": []
+ },
+ "study": {
+  "kind": "transient",
+  "end_time": 1296000.0,
+  "first_step": 8640.0,
+  "max_step": null,
+  "growth": 1.0,
+  "output_times": [
+   432000.0,
+   864000.0
+  ]
+ },
+ "probes": [
+  {
+   "name": "column",
+   "point": null,
+   "line": [
+    [
+     0.0,
+     0.5
+    ],
+    [
+     10.0,
+     0.5
+    ]
+   ],
+   "samples": 101
+  },
+  {
+   "name": "at_5m",
+   "point": [
+    5.0,
+    0.5
+   ],
+   "line": null,
+   "samples": 101
+  }
+ ]
+}

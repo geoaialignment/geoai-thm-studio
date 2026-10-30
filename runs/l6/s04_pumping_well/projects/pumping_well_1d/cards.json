@@ -1,0 +1,55 @@
+[
+ {
+  "run_id": "e28a56961aff",
+  "model_hash": "d73d9f2e8f6bac96",
+  "model_name": "pumping_well_1d",
+  "created": "2026-10-30 18:24",
+  "rows": [
+   {
+    "label": "head change 50 m from well after 1 day",
+    "quantity": "head",
+    "aggregation": "change since start",
+    "location": "obs_well_50m (50.0, 5.0) m",
+    "time": "1.00 d",
+    "value": "-3.06",
+    "unit": "m",
+    "value_si": -3.0554353570841384,
+    "unit_si": "m"
+   },
+   {
+    "label": "head at 50 m after 1 day",
+    "quantity": "head",
+    "aggregation": "value",
+    "location": "obs_well_50m (50.0, 5.0) m",
+    "time": "1.00 d",
+    "value": "-3.06",
+    "unit": "m",
+    "value_si": -3.0554353570841384,
+    "unit_si": "m"
+   }
+  ],
+  "verification": {
+   "configuration": "H-AX-well",
+   "title": "radial flow to a well (axisymmetric)",
+   "demonstration": false,
+   "cases": [
+    {
+     "case": "V1b",
+     "status": "passed",
+     "worst_normalised_error": 0.018779685801362772,
+     "source": "release record",
+     "date": "2026-10-30 17:37"
+    }
+   ]
+  },
+  "run_checks": {
+   "reached_end_time": true,
+   "finite_values": true,
+   "time_steps": 92,
+   "rejected_steps": 0,
+   "max_nonlinear_iterations": 1,
+   "energy_balance": "not checked"
+  },
+  "table": "Results of run e28a56961aff (model pumping_well_1d, version d73d9f2e8f6bac96)\n\n| quantity | where | when | how | value |\n|---|---|---|---|---|\n| head change 50 m from well after 1 day | obs_well_50m (50.0, 5.0) m | 1.00 d | change since start | -3.06 m |\n| head at 50 m after 1 day | obs_well_50m (50.0, 5.0) m | 1.00 d | value | -3.06 m |\n\nVerified configuration H-AX-well: V1b passed (max error 1.9 %).\nThis run: reached end time True, finite values True, time steps 92, rejected steps 0, max nonlinear iterations 1, energy balance not checked."
+ }
+]

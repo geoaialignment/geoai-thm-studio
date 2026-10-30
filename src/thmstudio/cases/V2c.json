@@ -1,0 +1,117 @@
+{
+ "id": "V2c",
+ "configuration": "T-3D",
+ "title": "3D box heated from the top surface (1D erfc in depth)",
+ "source": "Carslaw and Jaeger (1959) erfc solution in a 3D box with insulated sides",
+ "model": {
+  "name": "v2c",
+  "geometry": {
+   "kind": "box",
+   "length_x": 10,
+   "length_y": 10,
+   "layers": [
+    {
+     "name": "rock",
+     "thickness": 20
+    }
+   ]
+  },
+  "physics": {
+   "process": "T"
+  },
+  "materials": {
+   "rock": {
+    "thermal_conductivity": 2.5,
+    "density": 2600.0,
+    "specific_heat": 900.0
+   }
+  },
+  "boundary_conditions": [
+   {
+    "boundary": "top",
+    "variable": "temperature",
+    "value": 294.15
+   }
+  ],
+  "initial": {
+   "temperature": 293.15
+  },
+  "mesh": {
+   "size": 1.0,
+   "refinements": [
+    {
+     "target": "top",
+     "size": 0.2,
+     "growth": 1.15
+    }
+   ]
+  },
+  "study": {
+   "kind": "transient",
+   "end_time": 10000000.0,
+   "first_step": 10000.0,
+   "growth": 1.1,
+   "max_step": 200000.0,
+   "output_times": [
+    1000000.0
+   ]
+  }
+ },
+ "reference": {
+  "type": "erfc_step",
+  "axis": 2,
+  "origin": 20.0,
+  "sign": -1.0,
+  "base": 293.15,
+  "params": {
+   "diffusivity": 1.0683760683760685e-06,
+   "dT": 1.0
+  }
+ },
+ "normalization": {
+  "type": "scale",
+  "scale": 1.0
+ },
+ "tolerance": {
+  "max_norm": 0.01,
+  "l2_rel": 0.02
+ },
+ "observations": [
+  {
+   "field": "temperature",
+   "time": 1000000.0,
+   "line": {
+    "from": [
+     5,
+     5,
+     20
+    ],
+    "to": [
+     5,
+     5,
+     6
+    ],
+    "n": 57
+   },
+   "label": "depth profile at t = 1e+06 s"
+  },
+  {
+   "field": "temperature",
+   "time": 10000000.0,
+   "line": {
+    "from": [
+     5,
+     5,
+     20
+    ],
+    "to": [
+     5,
+     5,
+     6
+    ],
+    "n": 57
+   },
+   "label": "depth profile at t = 1e+07 s"
+  }
+ ]
+}

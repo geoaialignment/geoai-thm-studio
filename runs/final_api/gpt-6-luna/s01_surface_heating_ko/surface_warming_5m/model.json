@@ -1,0 +1,115 @@
+{
+ "schema_version": 1,
+ "name": "surface_warming_5m",
+ "geometry": {
+  "kind": "rect",
+  "width": 100.0,
+  "layers": [
+   {
+    "name": "rock",
+    "thickness": 50.0
+   }
+  ],
+  "plane": "vertical",
+  "segments": []
+ },
+ "materials": {
+  "rock": {
+   "label": "granite (typical)",
+   "permeability": null,
+   "hydraulic_conductivity": null,
+   "porosity": null,
+   "specific_storage": null,
+   "thermal_conductivity": 3.0,
+   "solid_density": null,
+   "solid_specific_heat": null,
+   "density": 2650.0,
+   "specific_heat": 850.0,
+   "longitudinal_dispersivity": null,
+   "transverse_dispersivity": null,
+   "youngs_modulus": null,
+   "poissons_ratio": null,
+   "biot_coefficient": null,
+   "thermal_expansion": null
+  }
+ },
+ "physics": {
+  "process": "T",
+  "gravity": null,
+  "fluid": {
+   "density": 1000.0,
+   "viscosity": 0.001,
+   "specific_heat": 4180.0,
+   "thermal_conductivity": 0.6,
+   "thermal_expansion": 0.0004,
+   "density_increase_per_concentration": 0.0
+  },
+  "components": []
+ },
+ "boundary_conditions": [
+  {
+   "boundary": "top",
+   "variable": "temperature",
+   "kind": "fixed",
+   "value": 298.15,
+   "component": null,
+   "expression": null
+  }
+ ],
+ "heat_sources": [],
+ "initial": {
+  "temperature": 288.15,
+  "head": null,
+  "pressure": null,
+  "concentration": null
+ },
+ "mesh": {
+  "element": "auto",
+  "size": 5.0,
+  "divisions": {},
+  "refinements": [
+   {
+    "target": "top",
+    "size": 0.25,
+    "growth": 1.2
+   }
+  ]
+ },
+ "study": {
+  "kind": "transient",
+  "end_time": 315576000.0,
+  "first_step": 86400.0,
+  "max_step": 2592000.0,
+  "growth": 1.2,
+  "output_times": [
+   31557600.0,
+   157788000.0
+  ]
+ },
+ "probes": [
+  {
+   "name": "depth_profile",
+   "point": null,
+   "line": [
+    [
+     50.0,
+     50.0
+    ],
+    [
+     50.0,
+     0.0
+    ]
+   ],
+   "samples": 101
+  },
+  {
+   "name": "at_5m",
+   "point": [
+    50.0,
+    45.0
+   ],
+   "line": null,
+   "samples": 101
+  }
+ ]
+}

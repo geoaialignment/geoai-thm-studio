@@ -1,0 +1,18 @@
+{"time": "2026-10-30T18:39:18", "tool": "start_from_example", "ok": true, "state": "DRAFT", "version": 1, "args": "{\"example_id\": \"consolidation_column\", \"project_name\": \"clay_consolidation_gravity\"}", "note": ""}
+{"time": "2026-10-30T18:39:19", "tool": "go_to_step", "ok": true, "state": "DRAFT", "version": 1, "args": "{\"step\": \"physics\"}", "note": ""}
+{"time": "2026-10-30T18:39:19", "tool": "show_model", "ok": true, "state": "DRAFT", "version": 1, "args": "{}", "note": ""}
+{"time": "2026-10-30T18:39:22", "tool": "set_physics", "ok": true, "state": "DRAFT", "version": 2, "args": "{\"process\": \"HM\", \"gravity\": true}", "note": ""}
+{"time": "2026-10-30T18:39:23", "tool": "build_mesh", "ok": true, "state": "DRAFT", "version": 2, "args": "{}", "note": ""}
+{"time": "2026-10-30T18:39:23", "tool": "check_model", "ok": false, "state": "DRAFT", "version": 2, "args": "{}", "note": ""}
+{"time": "2026-10-30T18:39:27", "tool": "ask_user", "ok": true, "state": "DRAFT", "version": 2, "args": "{\"question\": \"Gravity with mechanics is not computed in this free version (no initial stress state). OK to run the verified consolidation model with gravity off, under the 100 kPa surface load?\", \"default\": \"Yes: gravity off, run the verified consolidation model\"}", "note": ""}
+{"time": "2026-10-30T18:39:28", "tool": "set_physics", "ok": false, "state": "DRAFT", "version": 2, "args": "{\"process\": \"HM\", \"gravity\": false}", "note": "'set_physics' is not available in state DRAFT (step mesh). Next step: call check_model (or set_mesh and build_mesh again to change the mesh). Available now: set_mesh, build_mesh, show_mesh, check_model, go_to_step, ask_user."}
+{"time": "2026-10-30T18:39:28", "tool": "set_mesh", "ok": true, "state": "DRAFT", "version": 3, "args": "{\"refinements\": [{\"target\": \"top\", \"size\": \"0.02 m\", \"growth\": 1.1}]}", "note": ""}
+{"time": "2026-10-30T18:39:29", "tool": "go_to_step", "ok": true, "state": "DRAFT", "version": 3, "args": "{\"step\": \"physics\"}", "note": ""}
+{"time": "2026-10-30T18:39:29", "tool": "set_physics", "ok": true, "state": "DRAFT", "version": 4, "args": "{\"process\": \"HM\", \"gravity\": false}", "note": ""}
+{"time": "2026-10-30T18:39:30", "tool": "build_mesh", "ok": true, "state": "DRAFT", "version": 4, "args": "{}", "note": ""}
+{"time": "2026-10-30T18:39:30", "tool": "check_model", "ok": true, "state": "CHECKED", "version": 4, "args": "{}", "note": ""}
+{"time": "2026-10-30T18:39:31", "tool": "run", "ok": true, "state": "RUNNING", "version": 4, "args": "{}", "note": ""}
+{"time": "2026-10-30T18:39:32", "tool": "run_status", "ok": true, "state": "COMPUTED", "version": 4, "args": "{}", "note": ""}
+{"time": "2026-10-30T18:39:33", "tool": "show_results", "ok": true, "state": "COMPUTED", "version": 4, "args": "{\"field\": \"displacement\", \"kind\": \"series\", \"probe\": \"surface\"}", "note": ""}
+{"time": "2026-10-30T18:39:33", "tool": "show_results", "ok": true, "state": "COMPUTED", "version": 4, "args": "{\"field\": \"pressure\", \"kind\": \"profile\", \"probe\": \"column\"}", "note": ""}
+{"time": "2026-10-30T18:39:36", "tool": "answer_card", "ok": true, "state": "REPORTED", "version": 4, "args": "{\"items\": [{\"label\": \"surface settlement at 2 yr (change of vertical displacement)\", \"kind\": \"change\", \"field\": \"displacement\", \"component\": \"y\", \"probe\": \"surface\", \"time\": null}, {\"label\": \"peak excess pore pressure after 36.5 d\", \"kind\": \"max\", \"field\": \"pressure\", \"probe\": \"column\", \"time\": \"36.5 d\"}]}", "note": ""}

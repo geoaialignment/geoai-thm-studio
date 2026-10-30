@@ -1,0 +1,139 @@
+{
+ "id": "V3",
+ "configuration": "TH-2D",
+ "title": "Heat carried by steady flow through a porous column",
+ "source": "advection-conduction (Ogata and Banks 1961 form); OGS benchmark Parabolic/HT/HeatTransportInStationaryFlow",
+ "model": {
+  "name": "v3",
+  "geometry": {
+   "kind": "strip",
+   "segments": [
+    {
+     "name": "column",
+     "thickness": 10
+    }
+   ],
+   "width": 1
+  },
+  "physics": {
+   "process": "TH"
+  },
+  "materials": {
+   "column": {
+    "permeability": 1e-11,
+    "porosity": 0.3,
+    "thermal_conductivity": 2.0,
+    "solid_density": 2700.0,
+    "solid_specific_heat": 900.0
+   }
+  },
+  "boundary_conditions": [
+   {
+    "boundary": "left",
+    "variable": "pressure",
+    "value": 110000.0
+   },
+   {
+    "boundary": "right",
+    "variable": "pressure",
+    "value": 100000.0
+   },
+   {
+    "boundary": "left",
+    "variable": "temperature",
+    "value": 294.15
+   }
+  ],
+  "initial": {
+   "temperature": 293.15,
+   "pressure": 100000.0
+  },
+  "mesh": {
+   "size": 0.05
+  },
+  "study": {
+   "kind": "transient",
+   "end_time": 300000.0,
+   "first_step": 500,
+   "output_times": [
+    100000.0
+   ]
+  }
+ },
+ "reference": {
+  "type": "heat_advection",
+  "axis": 0,
+  "base": 293.15,
+  "params": {
+   "darcy_velocity": 1e-05,
+   "rho_c_eff": 2955000.0,
+   "rho_c_water": 4180000.0,
+   "conductivity": 2.0,
+   "dT": 1.0
+  }
+ },
+ "normalization": {
+  "type": "scale",
+  "scale": 1.0
+ },
+ "tolerance": {
+  "max_norm": 0.02,
+  "l2_rel": 0.02
+ },
+ "observations": [
+  {
+   "field": "temperature",
+   "time": 100000.0,
+   "line": {
+    "from": [
+     0,
+     0.5
+    ],
+    "to": [
+     10,
+     0.5
+    ],
+    "n": 101
+   },
+   "label": "profile at t = 100000 s"
+  },
+  {
+   "field": "temperature",
+   "time": 300000.0,
+   "line": {
+    "from": [
+     0,
+     0.5
+    ],
+    "to": [
+     10,
+     0.5
+    ],
+    "n": 101
+   },
+   "label": "profile at t = 300000 s"
+  },
+  {
+   "field": "darcy_velocity",
+   "component": 0,
+   "points": [
+    [
+     5,
+     0.5
+    ]
+   ],
+   "label": "Darcy flux",
+   "reference": {
+    "type": "constant",
+    "base": 1e-05
+   },
+   "normalization": {
+    "type": "scale",
+    "scale": 1e-05
+   },
+   "tolerance": {
+    "max_norm": 1e-06
+   }
+  }
+ ]
+}

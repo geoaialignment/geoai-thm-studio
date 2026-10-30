@@ -1,0 +1,15 @@
+{"time": "2026-10-30T19:22:39", "tool": "start_from_example", "ok": true, "state": "DRAFT", "version": 1, "args": "{\"example_id\": \"aquifer_heat_plume\", \"changes\": [{\"name\": \"duration\", \"value\": \"100 days\"}], \"project_name\": \"sand_aquifer_heat\"}", "note": ""}
+{"time": "2026-10-30T19:22:45", "tool": "set_mesh", "ok": true, "state": "DRAFT", "version": 2, "args": "{\"size\": \"1 m\", \"element\": \"auto\", \"divisions\": null, \"refinements\": [{\"target\": \"left\", \"size\": \"0.25 m\", \"growth\": 1.2}]}", "note": ""}
+{"time": "2026-10-30T19:22:48", "tool": "build_mesh", "ok": true, "state": "DRAFT", "version": 2, "args": "{}", "note": ""}
+{"time": "2026-10-30T19:22:51", "tool": "show_mesh", "ok": true, "state": "DRAFT", "version": 2, "args": "{\"zoom\": null}", "note": ""}
+{"time": "2026-10-30T19:22:56", "tool": "check_model", "ok": true, "state": "CHECKED", "version": 2, "args": "{}", "note": ""}
+{"time": "2026-10-30T19:23:00", "tool": "go_to_step", "ok": true, "state": "DRAFT", "version": 2, "args": "{\"step\": \"mesh\"}", "note": ""}
+{"time": "2026-10-30T19:23:03", "tool": "set_mesh", "ok": true, "state": "DRAFT", "version": 3, "args": "{\"size\": \"0.8 m\", \"element\": \"auto\", \"divisions\": null, \"refinements\": [{\"target\": \"left\", \"size\": \"0.25 m\", \"growth\": 1.2}]}", "note": ""}
+{"time": "2026-10-30T19:23:07", "tool": "build_mesh", "ok": true, "state": "DRAFT", "version": 3, "args": "{}", "note": ""}
+{"time": "2026-10-30T19:23:10", "tool": "show_mesh", "ok": true, "state": "DRAFT", "version": 3, "args": "{\"zoom\": null}", "note": ""}
+{"time": "2026-10-30T19:23:13", "tool": "check_model", "ok": true, "state": "CHECKED", "version": 3, "args": "{}", "note": ""}
+{"time": "2026-10-30T19:23:16", "tool": "run", "ok": true, "state": "RUNNING", "version": 3, "args": "{}", "note": ""}
+{"time": "2026-10-30T19:23:20", "tool": "run_status", "ok": true, "state": "COMPUTED", "version": 3, "args": "{}", "note": ""}
+{"time": "2026-10-30T19:23:23", "tool": "show_results", "ok": true, "state": "COMPUTED", "version": 3, "args": "{\"field\": \"temperature\", \"component\": null, \"kind\": \"map\", \"time\": \"100 days\", \"probe\": null, \"point\": null, \"line\": null}", "note": ""}
+{"time": "2026-10-30T19:23:29", "tool": "show_results", "ok": true, "state": "COMPUTED", "version": 3, "args": "{\"field\": \"temperature\", \"component\": null, \"kind\": \"profile\", \"time\": \"100 days\", \"probe\": null, \"point\": null, \"line\": [[0, 5], [60, 5]]}", "note": ""}
+{"time": "2026-10-30T19:23:38", "tool": "answer_card", "ok": true, "state": "REPORTED", "version": 3, "args": "{\"items\": [{\"label\": \"100일 후 최고 온도\", \"kind\": \"max\", \"field\": \"temperature\", \"component\": null, \"probe\": null, \"point\": null, \"time\": \"100 days\", \"comparison\": null}, {\"label\": \"x=18 m 중심선 온도 상승\", \"kind\": \"change\", \"field\": \"temperature\", \"component\": null, \"probe\": null, \"point\": [18, 5], \"time\": \"100 days\", \"comparison\": null}, {\"label\": \"x=21 m 중심선 온도 상승\", \"kind\": \"change\", \"field\": \"temperat...", "note": ""}

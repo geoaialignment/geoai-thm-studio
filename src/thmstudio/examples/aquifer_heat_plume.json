@@ -1,0 +1,115 @@
+{
+ "id": "aquifer_heat_plume",
+ "configuration": "TH-2D",
+ "verification_cases": [
+  "V3",
+  "V3-water"
+ ],
+ "title": "Warm water carried through an aquifer",
+ "title_ko": "대수층을 따라 이동하는 온수",
+ "description": "Groundwater flows from left to right through a sandy aquifer (plan view, Darcy flux about 0.09 m per day). Water entering on the left is 10 K warmer; the heat front moves more slowly than the water because the rock must be heated too.",
+ "model": {
+  "name": "aquifer_heat_plume",
+  "geometry": {
+   "kind": "rect",
+   "width": "60 m",
+   "layers": [
+    {
+     "name": "aquifer",
+     "thickness": "10 m"
+    }
+   ],
+   "plane": "horizontal"
+  },
+  "physics": {
+   "process": "TH"
+  },
+  "materials": {
+   "aquifer": {
+    "label": "sand",
+    "hydraulic_conductivity": "1e-4 m/s",
+    "porosity": 0.3,
+    "thermal_conductivity": "2.0 W/m/K",
+    "solid_density": "2650 kg/m3",
+    "solid_specific_heat": "800 J/kg/K"
+   }
+  },
+  "boundary_conditions": [
+   {
+    "boundary": "left",
+    "variable": "head",
+    "value": "10.6 m"
+   },
+   {
+    "boundary": "right",
+    "variable": "head",
+    "value": "10 m"
+   },
+   {
+    "boundary": "left",
+    "variable": "temperature",
+    "value": "22 degC"
+   }
+  ],
+  "initial": {
+   "temperature": "12 degC",
+   "head": "10 m"
+  },
+  "mesh": {
+   "size": "0.5 m"
+  },
+  "study": {
+   "kind": "transient",
+   "end_time": "200 d",
+   "first_step": "1 d",
+   "output_times": [
+    "50 d",
+    "100 d"
+   ]
+  },
+  "probes": [
+   {
+    "name": "centre_line",
+    "line": [
+     [
+      0,
+      5
+     ],
+     [
+      60,
+      5
+     ]
+    ]
+   },
+   {
+    "name": "at_20m",
+    "point": [
+     20,
+     5
+    ]
+   }
+  ]
+ },
+ "adjustable": {
+  "inflow_temperature": {
+   "path": "boundary_conditions.left.temperature.value",
+   "unit": "degC"
+  },
+  "upstream_head": {
+   "path": "boundary_conditions.left.head.value",
+   "unit": "m"
+  },
+  "aquifer_conductivity": {
+   "path": "materials.aquifer.hydraulic_conductivity",
+   "unit": "m/s"
+  },
+  "porosity": {
+   "path": "materials.aquifer.porosity",
+   "unit": "-"
+  },
+  "duration": {
+   "path": "study.end_time",
+   "unit": "d"
+  }
+ }
+}

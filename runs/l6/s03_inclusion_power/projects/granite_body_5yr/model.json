@@ -1,0 +1,172 @@
+{
+ "schema_version": 1,
+ "name": "granite_body_5yr",
+ "geometry": {
+  "kind": "rect_inclusion",
+  "width": 40.0,
+  "height": 40.0,
+  "center": [
+   20.0,
+   20.0
+  ],
+  "radius": 1.0,
+  "matrix": "rock",
+  "inclusion": "body",
+  "plane": "vertical"
+ },
+ "materials": {
+  "rock": {
+   "label": "granite (typical)",
+   "permeability": null,
+   "hydraulic_conductivity": null,
+   "porosity": null,
+   "specific_storage": null,
+   "thermal_conductivity": 3.0,
+   "solid_density": null,
+   "solid_specific_heat": null,
+   "density": 2650.0,
+   "specific_heat": 850.0,
+   "longitudinal_dispersivity": null,
+   "transverse_dispersivity": null,
+   "youngs_modulus": null,
+   "poissons_ratio": null,
+   "biot_coefficient": null,
+   "thermal_expansion": null
+  },
+  "body": {
+   "label": "heat-releasing body",
+   "permeability": null,
+   "hydraulic_conductivity": null,
+   "porosity": null,
+   "specific_storage": null,
+   "thermal_conductivity": 15.0,
+   "solid_density": null,
+   "solid_specific_heat": null,
+   "density": 7800.0,
+   "specific_heat": 500.0,
+   "longitudinal_dispersivity": null,
+   "transverse_dispersivity": null,
+   "youngs_modulus": null,
+   "poissons_ratio": null,
+   "biot_coefficient": null,
+   "thermal_expansion": null
+  }
+ },
+ "physics": {
+  "process": "T",
+  "gravity": null,
+  "fluid": {
+   "density": 1000.0,
+   "viscosity": 0.001,
+   "specific_heat": 4180.0,
+   "thermal_conductivity": 0.6,
+   "thermal_expansion": 0.0004,
+   "density_increase_per_concentration": 0.0
+  },
+  "components": []
+ },
+ "boundary_conditions": [
+  {
+   "boundary": "left",
+   "variable": "temperature",
+   "kind": "fixed",
+   "value": 288.15,
+   "component": null,
+   "expression": null
+  },
+  {
+   "boundary": "right",
+   "variable": "temperature",
+   "kind": "fixed",
+   "value": 288.15,
+   "component": null,
+   "expression": null
+  },
+  {
+   "boundary": "bottom",
+   "variable": "temperature",
+   "kind": "fixed",
+   "value": 288.15,
+   "component": null,
+   "expression": null
+  },
+  {
+   "boundary": "top",
+   "variable": "temperature",
+   "kind": "fixed",
+   "value": 288.15,
+   "component": null,
+   "expression": null
+  }
+ ],
+ "heat_sources": [
+  {
+   "region": "body",
+   "kind": "power",
+   "value": 800.0
+  }
+ ],
+ "initial": {
+  "temperature": 288.15,
+  "head": null,
+  "pressure": null,
+  "concentration": null
+ },
+ "mesh": {
+  "element": "auto",
+  "size": 2.0,
+  "divisions": {},
+  "refinements": [
+   {
+    "target": "inclusion_boundary",
+    "size": 0.1,
+    "growth": 1.2
+   }
+  ]
+ },
+ "study": {
+  "kind": "transient",
+  "end_time": 157788000.0,
+  "first_step": 86400.0,
+  "max_step": 5184000.0,
+  "growth": 1.25,
+  "output_times": [
+   31557600.0
+  ]
+ },
+ "probes": [
+  {
+   "name": "radial_line",
+   "point": null,
+   "line": [
+    [
+     20.0,
+     20.0
+    ],
+    [
+     40.0,
+     20.0
+    ]
+   ],
+   "samples": 101
+  },
+  {
+   "name": "body_centre",
+   "point": [
+    20.0,
+    20.0
+   ],
+   "line": null,
+   "samples": 101
+  },
+  {
+   "name": "rock_2m",
+   "point": [
+    23.0,
+    20.0
+   ],
+   "line": null,
+   "samples": 101
+  }
+ ]
+}

@@ -1,0 +1,104 @@
+[
+ {
+  "run_id": "02deadfb532d",
+  "model_name": "surface_warming",
+  "created": "2026-10-30 19:32",
+  "rows": [
+   {
+    "label": "깊이 5 m 온도 상승",
+    "quantity": "temperature",
+    "aggregation": "change since start",
+    "location": "at_5m (50.0, 45.0) m",
+    "time": "10.0 yr",
+    "value": "8.64",
+    "unit": "K",
+    "value_si": 8.635449645835138,
+    "unit_si": "K"
+   },
+   {
+    "label": "깊이 5 m 최종 온도",
+    "quantity": "temperature",
+    "aggregation": "value",
+    "location": "at_5m (50.0, 45.0) m",
+    "time": "10.0 yr",
+    "value": "23.6",
+    "unit": "°C",
+    "value_si": 296.7854496458351,
+    "unit_si": "K"
+   },
+   {
+    "label": "격자 세분화 차이",
+    "quantity": "temperature",
+    "aggregation": "largest difference",
+    "location": "at_5m",
+    "time": "10.0 yr",
+    "value": "0.000450",
+    "unit": "K",
+    "value_si": 0.00044960029777030286,
+    "unit_si": "K"
+   },
+   {
+    "label": "초기 온도",
+    "quantity": "temperature",
+    "aggregation": "value",
+    "location": "at_5m (50.0, 45.0) m",
+    "time": "0 s",
+    "value": "15.0",
+    "unit": "°C",
+    "value_si": 288.15,
+    "unit_si": "K"
+   }
+  ],
+  "verification": {
+   "configuration": "T-2D",
+   "title": "heat conduction in 2D",
+   "demonstration": false,
+   "cases": [
+    {
+     "case": "V2a",
+     "status": "passed",
+     "worst_normalised_error": 0.002114665788383263,
+     "source": "release record",
+     "date": "2026-10-30 19:14"
+    },
+    {
+     "case": "V2a-tri",
+     "status": "passed",
+     "worst_normalised_error": 0.001141043320785684,
+     "source": "release record",
+     "date": "2026-10-30 19:14"
+    },
+    {
+     "case": "V2b",
+     "status": "passed",
+     "worst_normalised_error": 0.0006250000000691216,
+     "source": "release record",
+     "date": "2026-10-30 19:14"
+    },
+    {
+     "case": "V2b-power",
+     "status": "passed",
+     "worst_normalised_error": 6.912159733474254e-14,
+     "source": "release record",
+     "date": "2026-10-30 19:14"
+    },
+    {
+     "case": "V2d",
+     "status": "passed",
+     "worst_normalised_error": 0.0021874117532729265,
+     "source": "release record",
+     "date": "2026-10-30 19:14"
+    }
+   ]
+  },
+  "run_checks": {
+   "reached_end_time": true,
+   "finite_values": true,
+   "time_steps": 137,
+   "rejected_steps": 0,
+   "max_nonlinear_iterations": 1,
+   "energy_balance": "not checked"
+  },
+  "table": "Results of run 02deadfb532d (model surface_warming)\n\n| quantity | where | when | how | value |\n|---|---|---|---|---|\n| 깊이 5 m 온도 상승 | at_5m (50.0, 45.0) m | 10.0 yr | change since start | 8.64 K |\n| 깊이 5 m 최종 온도 | at_5m (50.0, 45.0) m | 10.0 yr | value | 23.6 °C |\n| 격자 세분화 차이 | at_5m | 10.0 yr | largest difference | 0.000450 K |\n| 초기 온도 | at_5m (50.0, 45.0) m | 0 s | value | 15.0 °C |\n\nVerified configuration T-2D: V2a passed (max error 0.21 %), V2a-tri passed (max error 0.11 %), V2b passed (max error 0.063 %), V2b-power passed (max error 6.9e-12 %), V2d passed (max error 0.22 %).\nThis run: reached end time True, finite values True, time steps 137, rejected steps 0, max nonlinear iterations 1, energy balance not checked."
+ }
+]

@@ -1,0 +1,73 @@
+[
+ {
+  "run_id": "344d5386be87",
+  "model_hash": "2b2ffb554df43513",
+  "model_name": "cs135_clay_sorption",
+  "created": "2026-10-30 18:27",
+  "rows": [
+   {
+    "label": "Cs-135 concentration at 0.2 m, 50000 yr, with sorption (R = 9976)",
+    "quantity": "cs135",
+    "aggregation": "value",
+    "location": "(0.2, 0.025) m",
+    "time": "50000 yr",
+    "value": "0.262",
+    "unit": "-",
+    "value_si": 0.26165273499511543,
+    "unit_si": "-"
+   },
+   {
+    "label": "Cs-135 concentration at 0.5 m, 50000 yr, with sorption (R = 9976)",
+    "quantity": "cs135",
+    "aggregation": "value",
+    "location": "(0.5, 0.025) m",
+    "time": "50000 yr",
+    "value": "0.00335",
+    "unit": "-",
+    "value_si": 0.003354555141676453,
+    "unit_si": "-"
+   },
+   {
+    "label": "largest concentration difference along 0-2 m, 50000 yr, with vs without sorption",
+    "quantity": "cs135",
+    "aggregation": "largest difference",
+    "location": "column",
+    "time": "50000 yr",
+    "value": "1.000",
+    "unit": "-",
+    "value_si": 0.9999522606654642,
+    "unit_si": "-"
+   }
+  ],
+  "verification": {
+   "configuration": "HC-2D",
+   "title": "solute transport (advection, dispersion, sorption, decay) in 2D",
+   "demonstration": false,
+   "cases": [
+    {
+     "case": "V6a",
+     "status": "passed",
+     "worst_normalised_error": 0.006813187999819781,
+     "source": "release record",
+     "date": "2026-10-30 17:37"
+    },
+    {
+     "case": "V6b",
+     "status": "passed",
+     "worst_normalised_error": 0.01404564933853214,
+     "source": "release record",
+     "date": "2026-10-30 17:37"
+    }
+   ]
+  },
+  "run_checks": {
+   "reached_end_time": true,
+   "finite_values": true,
+   "time_steps": 515,
+   "rejected_steps": 0,
+   "max_nonlinear_iterations": 3,
+   "energy_balance": "not checked"
+  },
+  "table": "Results of run 344d5386be87 (model cs135_clay_sorption, version 2b2ffb554df43513)\n\n| quantity | where | when | how | value |\n|---|---|---|---|---|\n| Cs-135 concentration at 0.2 m, 50000 yr, with sorption (R = 9976) | (0.2, 0.025) m | 50000 yr | value | 0.262 - |\n| Cs-135 concentration at 0.5 m, 50000 yr, with sorption (R = 9976) | (0.5, 0.025) m | 50000 yr | value | 0.00335 - |\n| largest concentration difference along 0-2 m, 50000 yr, with vs without sorption | column | 50000 yr | largest difference | 1.000 - |\n\nVerified configuration HC-2D: V6a passed (max error 0.68 %), V6b passed (max error 1.4 %).\nThis run: reached end time True, finite values True, time steps 515, rejected steps 0, max nonlinear iterations 3, energy balance not checked."
+ }
+]

@@ -1,0 +1,220 @@
+{
+ "schema_version": 1,
+ "name": "repository_canister",
+ "geometry": {
+  "kind": "axisym_source",
+  "outer_radius": 50.0,
+  "height": 50.0,
+  "symmetric": true,
+  "source": "canister",
+  "canister_radius": 0.51,
+  "canister_length": 4.83,
+  "buffer_radius": 0.875,
+  "buffer_length": 6.83,
+  "rock": "rock",
+  "canister": "canister",
+  "buffer": "buffer"
+ },
+ "materials": {
+  "rock": {
+   "label": "granite (typical)",
+   "permeability": 1e-18,
+   "hydraulic_conductivity": null,
+   "porosity": 0.005,
+   "specific_storage": null,
+   "thermal_conductivity": 3.0,
+   "solid_density": 2650.0,
+   "solid_specific_heat": 850.0,
+   "density": null,
+   "specific_heat": null,
+   "longitudinal_dispersivity": null,
+   "transverse_dispersivity": null,
+   "youngs_modulus": 50000000000.0,
+   "poissons_ratio": 0.25,
+   "biot_coefficient": 1.0,
+   "thermal_expansion": 0.00001
+  },
+  "buffer": {
+   "label": "saturated bentonite (linear poroelastic, no swelling)",
+   "permeability": 1e-20,
+   "hydraulic_conductivity": null,
+   "porosity": 0.44,
+   "specific_storage": null,
+   "thermal_conductivity": 1.2,
+   "solid_density": 2750.0,
+   "solid_specific_heat": 800.0,
+   "density": null,
+   "specific_heat": null,
+   "longitudinal_dispersivity": null,
+   "transverse_dispersivity": null,
+   "youngs_modulus": 300000000.0,
+   "poissons_ratio": 0.35,
+   "biot_coefficient": 1.0,
+   "thermal_expansion": 0.00001
+  },
+  "canister": {
+   "label": "canister (cast iron insert, homogenised)",
+   "permeability": 1e-22,
+   "hydraulic_conductivity": null,
+   "porosity": 0.01,
+   "specific_storage": null,
+   "thermal_conductivity": 40.0,
+   "solid_density": 7200.0,
+   "solid_specific_heat": 450.0,
+   "density": null,
+   "specific_heat": null,
+   "longitudinal_dispersivity": null,
+   "transverse_dispersivity": null,
+   "youngs_modulus": 170000000000.0,
+   "poissons_ratio": 0.3,
+   "biot_coefficient": 1.0,
+   "thermal_expansion": 0.000012
+  }
+ },
+ "physics": {
+  "process": "THM",
+  "gravity": null,
+  "fluid": {
+   "density": 1000.0,
+   "viscosity": 0.001,
+   "specific_heat": 4180.0,
+   "thermal_conductivity": 0.6,
+   "thermal_expansion": 0.0004,
+   "density_increase_per_concentration": 0.0
+  },
+  "components": []
+ },
+ "boundary_conditions": [
+  {
+   "boundary": "bottom",
+   "variable": "displacement",
+   "kind": "roller",
+   "value": 0.0,
+   "component": null,
+   "expression": null
+  },
+  {
+   "boundary": "outer",
+   "variable": "displacement",
+   "kind": "roller",
+   "value": 0.0,
+   "component": null,
+   "expression": null
+  },
+  {
+   "boundary": "top",
+   "variable": "displacement",
+   "kind": "roller",
+   "value": 0.0,
+   "component": null,
+   "expression": null
+  },
+  {
+   "boundary": "outer",
+   "variable": "temperature",
+   "kind": "fixed",
+   "value": 288.15,
+   "component": null,
+   "expression": null
+  },
+  {
+   "boundary": "top",
+   "variable": "temperature",
+   "kind": "fixed",
+   "value": 288.15,
+   "component": null,
+   "expression": null
+  },
+  {
+   "boundary": "outer",
+   "variable": "pressure",
+   "kind": "fixed",
+   "value": 0.0,
+   "component": null,
+   "expression": null
+  },
+  {
+   "boundary": "top",
+   "variable": "pressure",
+   "kind": "fixed",
+   "value": 0.0,
+   "component": null,
+   "expression": null
+  }
+ ],
+ "heat_sources": [
+  {
+   "region": "canister",
+   "kind": "power",
+   "value": 1000.0
+  }
+ ],
+ "initial": {
+  "temperature": 288.15,
+  "head": null,
+  "pressure": 0.0,
+  "concentration": null
+ },
+ "mesh": {
+  "element": "auto",
+  "size": 2.0,
+  "divisions": {},
+  "refinements": [
+   {
+    "target": "buffer_rock",
+    "size": 0.05,
+    "growth": 1.2
+   },
+   {
+    "target": "canister_surface",
+    "size": 0.05,
+    "growth": 1.2
+   }
+  ]
+ },
+ "study": {
+  "kind": "transient",
+  "end_time": 31557600.0,
+  "first_step": 3600.0,
+  "max_step": 864000.0,
+  "growth": 1.3,
+  "output_times": [
+   15778800.0
+  ]
+ },
+ "probes": [
+  {
+   "name": "midplane",
+   "point": null,
+   "line": [
+    [
+     0.0,
+     0.0
+    ],
+    [
+     10.0,
+     0.0
+    ]
+   ],
+   "samples": 101
+  },
+  {
+   "name": "canister_wall",
+   "point": [
+    0.51,
+    0.0
+   ],
+   "line": null,
+   "samples": 101
+  },
+  {
+   "name": "hole_wall",
+   "point": [
+    0.875,
+    0.0
+   ],
+   "line": null,
+   "samples": 101
+  }
+ ]
+}

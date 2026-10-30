@@ -1,0 +1,154 @@
+{
+ "schema_version": 1,
+ "name": "point_source_pressure",
+ "geometry": {
+  "kind": "axisym_source",
+  "outer_radius": 10.0,
+  "height": 10.0,
+  "symmetric": true,
+  "source": "point",
+  "canister_radius": null,
+  "canister_length": null,
+  "buffer_radius": null,
+  "buffer_length": null,
+  "rock": "rock",
+  "canister": "canister",
+  "buffer": "buffer"
+ },
+ "materials": {
+  "rock": {
+   "label": "porous rock (OGS benchmark values)",
+   "permeability": 2e-20,
+   "hydraulic_conductivity": null,
+   "porosity": 0.16,
+   "specific_storage": null,
+   "thermal_conductivity": 1.63992,
+   "solid_density": 2290.0,
+   "solid_specific_heat": 917.654,
+   "density": null,
+   "specific_heat": null,
+   "longitudinal_dispersivity": null,
+   "transverse_dispersivity": null,
+   "youngs_modulus": 5000000000.0,
+   "poissons_ratio": 0.3,
+   "biot_coefficient": 1.0,
+   "thermal_expansion": 0.000015
+  }
+ },
+ "physics": {
+  "process": "THM",
+  "gravity": null,
+  "fluid": {
+   "density": 999.1,
+   "viscosity": 0.001,
+   "specific_heat": 4280.0,
+   "thermal_conductivity": 0.6,
+   "thermal_expansion": 0.0004,
+   "density_increase_per_concentration": 0.0
+  },
+  "components": []
+ },
+ "boundary_conditions": [
+  {
+   "boundary": "bottom",
+   "variable": "displacement",
+   "kind": "roller",
+   "value": 0.0,
+   "component": null,
+   "expression": null
+  },
+  {
+   "boundary": "outer",
+   "variable": "temperature",
+   "kind": "fixed",
+   "value": 273.15,
+   "component": null,
+   "expression": null
+  },
+  {
+   "boundary": "top",
+   "variable": "temperature",
+   "kind": "fixed",
+   "value": 273.15,
+   "component": null,
+   "expression": null
+  },
+  {
+   "boundary": "outer",
+   "variable": "pressure",
+   "kind": "fixed",
+   "value": 0.0,
+   "component": null,
+   "expression": null
+  },
+  {
+   "boundary": "top",
+   "variable": "pressure",
+   "kind": "fixed",
+   "value": 0.0,
+   "component": null,
+   "expression": null
+  }
+ ],
+ "heat_sources": [
+  {
+   "region": "source",
+   "kind": "power",
+   "value": 300.0
+  }
+ ],
+ "initial": {
+  "temperature": 273.15,
+  "head": null,
+  "pressure": 0.0,
+  "concentration": null
+ },
+ "mesh": {
+  "element": "auto",
+  "size": 0.5,
+  "divisions": {},
+  "refinements": [
+   {
+    "target": "source",
+    "size": 0.01,
+    "growth": 1.1
+   }
+  ]
+ },
+ "study": {
+  "kind": "transient",
+  "end_time": 50000.0,
+  "first_step": 500.0,
+  "max_step": null,
+  "growth": 1.0,
+  "output_times": [
+   20000.0
+  ]
+ },
+ "probes": [
+  {
+   "name": "radial",
+   "point": null,
+   "line": [
+    [
+     0.25,
+     0.0
+    ],
+    [
+     5.0,
+     0.0
+    ]
+   ],
+   "samples": 101
+  },
+  {
+   "name": "at_0_5m",
+   "point": [
+    0.5,
+    0.0
+   ],
+   "line": null,
+   "samples": 101
+  }
+ ]
+}

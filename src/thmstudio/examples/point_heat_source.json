@@ -1,0 +1,134 @@
+{
+ "id": "point_heat_source",
+ "configuration": "THM-AX",
+ "verification_cases": [
+  "V5"
+ ],
+ "title": "Point heat source in saturated rock",
+ "title_ko": "포화 암반 속 점 열원",
+ "description": "A 300 W point source heats saturated low-permeability rock. The water expands more than the grains, so pore pressure rises around the source (thermal pressurisation) and then dissipates.",
+ "model": {
+  "name": "point_heat_source",
+  "geometry": {
+   "kind": "axisym_source",
+   "outer_radius": "10 m",
+   "height": "10 m",
+   "symmetric": true,
+   "source": "point"
+  },
+  "physics": {
+   "process": "THM",
+   "fluid": {
+    "density": "999.1 kg/m3",
+    "specific_heat": "4280 J/kg/K",
+    "thermal_expansion": "4e-4 1/K"
+   }
+  },
+  "materials": {
+   "rock": {
+    "label": "porous rock (OGS benchmark values)",
+    "permeability": "2e-20 m2",
+    "porosity": 0.16,
+    "youngs_modulus": "5 GPa",
+    "poissons_ratio": 0.3,
+    "biot_coefficient": 1.0,
+    "thermal_conductivity": "1.63992 W/m/K",
+    "solid_density": "2290 kg/m3",
+    "solid_specific_heat": "917.654 J/kg/K",
+    "thermal_expansion": "1.5e-5 1/K"
+   }
+  },
+  "boundary_conditions": [
+   {
+    "boundary": "bottom",
+    "variable": "displacement",
+    "kind": "roller"
+   },
+   {
+    "boundary": "outer",
+    "variable": "temperature",
+    "value": "0 degC"
+   },
+   {
+    "boundary": "top",
+    "variable": "temperature",
+    "value": "0 degC"
+   },
+   {
+    "boundary": "outer",
+    "variable": "pressure",
+    "value": "0 Pa"
+   },
+   {
+    "boundary": "top",
+    "variable": "pressure",
+    "value": "0 Pa"
+   }
+  ],
+  "heat_sources": [
+   {
+    "region": "source",
+    "kind": "power",
+    "value": "300 W"
+   }
+  ],
+  "initial": {
+   "temperature": "0 degC",
+   "pressure": "0 Pa"
+  },
+  "mesh": {
+   "size": "0.5 m",
+   "refinements": [
+    {
+     "target": "source",
+     "size": "0.01 m",
+     "growth": 1.1
+    }
+   ]
+  },
+  "study": {
+   "kind": "transient",
+   "end_time": "50000 s",
+   "first_step": "500 s",
+   "output_times": [
+    "20000 s"
+   ]
+  },
+  "probes": [
+   {
+    "name": "radial",
+    "line": [
+     [
+      0.25,
+      0
+     ],
+     [
+      5,
+      0
+     ]
+    ]
+   },
+   {
+    "name": "at_0_5m",
+    "point": [
+     0.5,
+     0
+    ]
+   }
+  ]
+ },
+ "adjustable": {
+  "source_power": {
+   "path": "heat_sources.source.value",
+   "unit": "W"
+  },
+  "permeability": {
+   "path": "materials.rock.permeability",
+   "unit": "m2"
+  },
+  "duration": {
+   "path": "study.end_time",
+   "unit": "s or d"
+  }
+ }
+}

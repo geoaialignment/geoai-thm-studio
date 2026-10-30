@@ -1,0 +1,50 @@
+[
+ {
+  "run_id": "4ef77d350628",
+  "model_name": "tracer_disp10",
+  "created": "2026-10-30 18:38",
+  "rows": [
+   {
+    "label": "tracer concentration at 5 m after 10 days, dispersivity 1 m (longitudinal)",
+    "quantity": "tracer",
+    "aggregation": "value",
+    "location": "at_5m (5.0, 0.5) m",
+    "time": "10.0 d",
+    "value": "0.373",
+    "unit": "-",
+    "value_si": 0.37317623297812946,
+    "unit_si": "-"
+   }
+  ],
+  "verification": {
+   "configuration": "HC-2D",
+   "title": "solute transport (advection, dispersion, sorption, decay) in 2D",
+   "demonstration": false,
+   "cases": [
+    {
+     "case": "V6a",
+     "status": "passed",
+     "worst_normalised_error": 0.006813187999819781,
+     "source": "release record",
+     "date": "2026-10-30 18:31"
+    },
+    {
+     "case": "V6b",
+     "status": "passed",
+     "worst_normalised_error": 0.01404564933853214,
+     "source": "release record",
+     "date": "2026-10-30 18:31"
+    }
+   ]
+  },
+  "run_checks": {
+   "reached_end_time": true,
+   "finite_values": true,
+   "time_steps": 150,
+   "rejected_steps": 0,
+   "max_nonlinear_iterations": 3,
+   "energy_balance": "not checked"
+  },
+  "table": "Results of run 4ef77d350628 (model tracer_disp10)\n\n| quantity | where | when | how | value |\n|---|---|---|---|---|\n| tracer concentration at 5 m after 10 days, dispersivity 1 m (longitudinal) | at_5m (5.0, 0.5) m | 10.0 d | value | 0.373 - |\n\nVerified configuration HC-2D: V6a passed (max error 0.68 %), V6b passed (max error 1.4 %).\nThis run: reached end time True, finite values True, time steps 150, rejected steps 0, max nonlinear iterations 3, energy balance not checked."
+ }
+]

@@ -1,0 +1,50 @@
+[
+ {
+  "run_id": "b86625a4a9e5",
+  "model_name": "sand_tracer_column",
+  "created": "2026-10-30 19:30",
+  "rows": [
+   {
+    "label": "tracer concentration at 5 m downstream after 10 days",
+    "quantity": "tracer",
+    "aggregation": "value",
+    "location": "(5.0, 0.5) m",
+    "time": "10.0 d",
+    "value": "0.0549",
+    "unit": "-",
+    "value_si": 0.05494688195551354,
+    "unit_si": "-"
+   }
+  ],
+  "verification": {
+   "configuration": "HC-2D",
+   "title": "solute transport (advection, dispersion, sorption, decay) in 2D",
+   "demonstration": false,
+   "cases": [
+    {
+     "case": "V6a",
+     "status": "passed",
+     "worst_normalised_error": 0.006813188000246662,
+     "source": "release record",
+     "date": "2026-10-30 19:14"
+    },
+    {
+     "case": "V6b",
+     "status": "passed",
+     "worst_normalised_error": 0.014045649338502497,
+     "source": "release record",
+     "date": "2026-10-30 19:14"
+    }
+   ]
+  },
+  "run_checks": {
+   "reached_end_time": true,
+   "finite_values": true,
+   "time_steps": 100,
+   "rejected_steps": 0,
+   "max_nonlinear_iterations": 3,
+   "energy_balance": "not checked"
+  },
+  "table": "Results of run b86625a4a9e5 (model sand_tracer_column)\n\n| quantity | where | when | how | value |\n|---|---|---|---|---|\n| tracer concentration at 5 m downstream after 10 days | (5.0, 0.5) m | 10.0 d | value | 0.0549 - |\n\nVerified configuration HC-2D: V6a passed (max error 0.68 %), V6b passed (max error 1.4 %).\nThis run: reached end time True, finite values True, time steps 100, rejected steps 0, max nonlinear iterations 3, energy balance not checked."
+ }
+]

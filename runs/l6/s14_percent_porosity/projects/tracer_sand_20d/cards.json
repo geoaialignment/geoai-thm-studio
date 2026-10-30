@@ -1,0 +1,50 @@
+[
+ {
+  "run_id": "7cbeec0c57c1",
+  "model_name": "tracer_sand_20d",
+  "created": "2026-10-30 18:37",
+  "rows": [
+   {
+    "label": "tracer concentration 3 m from inlet after 20 days",
+    "quantity": "tracer",
+    "aggregation": "value",
+    "location": "(3.0, 0.5) m",
+    "time": "20.0 d",
+    "value": "0.884",
+    "unit": "-",
+    "value_si": 0.884318875052058,
+    "unit_si": "-"
+   }
+  ],
+  "verification": {
+   "configuration": "HC-2D",
+   "title": "solute transport (advection, dispersion, sorption, decay) in 2D",
+   "demonstration": false,
+   "cases": [
+    {
+     "case": "V6a",
+     "status": "passed",
+     "worst_normalised_error": 0.006813187999819781,
+     "source": "release record",
+     "date": "2026-10-30 18:31"
+    },
+    {
+     "case": "V6b",
+     "status": "passed",
+     "worst_normalised_error": 0.01404564933853214,
+     "source": "release record",
+     "date": "2026-10-30 18:31"
+    }
+   ]
+  },
+  "run_checks": {
+   "reached_end_time": true,
+   "finite_values": true,
+   "time_steps": 200,
+   "rejected_steps": 0,
+   "max_nonlinear_iterations": 3,
+   "energy_balance": "not checked"
+  },
+  "table": "Results of run 7cbeec0c57c1 (model tracer_sand_20d)\n\n| quantity | where | when | how | value |\n|---|---|---|---|---|\n| tracer concentration 3 m from inlet after 20 days | (3.0, 0.5) m | 20.0 d | value | 0.884 - |\n\nVerified configuration HC-2D: V6a passed (max error 0.68 %), V6b passed (max error 1.4 %).\nThis run: reached end time True, finite values True, time steps 200, rejected steps 0, max nonlinear iterations 3, energy balance not checked."
+ }
+]

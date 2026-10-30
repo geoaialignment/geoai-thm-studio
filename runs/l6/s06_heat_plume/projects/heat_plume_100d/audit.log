@@ -1,0 +1,8 @@
+{"time": "2026-10-30T18:25:32", "tool": "start_from_example", "ok": true, "state": "DRAFT", "version": 1, "args": "{\"example_id\": \"aquifer_heat_plume\", \"changes\": [{\"name\": \"duration\", \"value\": \"100 d\"}], \"project_name\": \"heat_plume_100d\"}", "note": ""}
+{"time": "2026-10-30T18:25:34", "tool": "build_mesh", "ok": true, "state": "DRAFT", "version": 1, "args": "{}", "note": ""}
+{"time": "2026-10-30T18:25:35", "tool": "check_model", "ok": true, "state": "CHECKED", "version": 1, "args": "{}", "note": ""}
+{"time": "2026-10-30T18:25:35", "tool": "run", "ok": true, "state": "RUNNING", "version": 1, "args": "{}", "note": ""}
+{"time": "2026-10-30T18:25:39", "tool": "run_status", "ok": true, "state": "COMPUTED", "version": 1, "args": "{}", "note": ""}
+{"time": "2026-10-30T18:25:40", "tool": "show_results", "ok": true, "state": "COMPUTED", "version": 1, "args": "{\"field\": \"temperature\", \"kind\": \"map\"}", "note": ""}
+{"time": "2026-10-30T18:25:40", "tool": "show_model", "ok": true, "state": "COMPUTED", "version": 1, "args": "{}", "note": ""}
+{"time": "2026-10-30T18:25:43", "tool": "answer_card", "ok": true, "state": "REPORTED", "version": 1, "args": "{\"items\": [{\"label\": \"temperature rise at 10 m from inlet after 100 d\", \"kind\": \"change\", \"field\": \"temperature\", \"point\": [10, 5], \"probe\": \"at_20m\", \"time\": \"100 d\"}, {\"label\": \"temperature rise at 20 m from inlet after 100 d\", \"kind\": \"change\", \"field\": \"temperature\", \"point\": [20, 5], \"probe\": \"at_20m\", \"time\": \"100 d\"}, {\"label\": \"maximum temperature along centre line after 100 d\", \"kind\":...", "note": ""}

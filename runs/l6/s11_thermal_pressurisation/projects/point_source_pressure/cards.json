@@ -1,0 +1,66 @@
+[
+ {
+  "run_id": "827c12d2123e",
+  "model_hash": "ca202479f95ce027",
+  "model_name": "point_source_pressure",
+  "created": "2026-10-30 18:33",
+  "rows": [
+   {
+    "label": "pore pressure rise at 0.5 m from the source, at 50000 s",
+    "quantity": "pressure",
+    "aggregation": "change since start",
+    "location": "(0.5, 0.0) m",
+    "time": "50000 s",
+    "value": "0.974",
+    "unit": "MPa",
+    "value_si": 974383.4960100616,
+    "unit_si": "Pa"
+   },
+   {
+    "label": "pore pressure at 0.5 m, 50000 s (total)",
+    "quantity": "pressure",
+    "aggregation": "value",
+    "location": "(0.5, 0.0) m",
+    "time": "50000 s",
+    "value": "0.974",
+    "unit": "MPa",
+    "value_si": 974383.4960100616,
+    "unit_si": "Pa"
+   },
+   {
+    "label": "part of the pressure due to water thermal expansion",
+    "quantity": "pressure",
+    "aggregation": "largest difference",
+    "location": "at_0_5m",
+    "time": "50000 s",
+    "value": "0.844",
+    "unit": "MPa",
+    "value_si": 844006.5641735005,
+    "unit_si": "Pa"
+   }
+  ],
+  "verification": {
+   "configuration": "THM-AX",
+   "title": "point heat source in saturated rock (axisymmetric)",
+   "demonstration": false,
+   "cases": [
+    {
+     "case": "V5",
+     "status": "passed",
+     "worst_normalised_error": 0.011036729567631427,
+     "source": "release record",
+     "date": "2026-10-30 17:37"
+    }
+   ]
+  },
+  "run_checks": {
+   "reached_end_time": true,
+   "finite_values": true,
+   "time_steps": 100,
+   "rejected_steps": 0,
+   "max_nonlinear_iterations": 4,
+   "energy_balance": "not checked"
+  },
+  "table": "Results of run 827c12d2123e (model point_source_pressure, version ca202479f95ce027)\n\n| quantity | where | when | how | value |\n|---|---|---|---|---|\n| pore pressure rise at 0.5 m from the source, at 50000 s | (0.5, 0.0) m | 50000 s | change since start | 0.974 MPa |\n| pore pressure at 0.5 m, 50000 s (total) | (0.5, 0.0) m | 50000 s | value | 0.974 MPa |\n| part of the pressure due to water thermal expansion | at_0_5m | 50000 s | largest difference | 0.844 MPa |\n\nVerified configuration THM-AX: V5 passed (max error 1.1 %).\nThis run: reached end time True, finite values True, time steps 100, rejected steps 0, max nonlinear iterations 4, energy balance not checked."
+ }
+]

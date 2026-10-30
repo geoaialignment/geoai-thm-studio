@@ -1,0 +1,147 @@
+{
+ "id": "heated_inclusion",
+ "configuration": "T-2D",
+ "verification_cases": [
+  "V2d",
+  "V2b"
+ ],
+ "title": "Heat-releasing body in rock",
+ "title_ko": "암반 속 발열체",
+ "description": "A circular body (for example a waste package seen in cross-section) releases heat into the surrounding rock for 20 years. The outer boundary stays at the initial temperature.",
+ "model": {
+  "name": "heated_inclusion",
+  "geometry": {
+   "kind": "rect_inclusion",
+   "width": "40 m",
+   "height": "40 m",
+   "center": [
+    "20 m",
+    "20 m"
+   ],
+   "radius": "1 m",
+   "matrix": "rock",
+   "inclusion": "body"
+  },
+  "physics": {
+   "process": "T"
+  },
+  "materials": {
+   "rock": {
+    "label": "granite (typical)",
+    "thermal_conductivity": "3.0 W/m/K",
+    "density": "2650 kg/m3",
+    "specific_heat": "850 J/kg/K"
+   },
+   "body": {
+    "label": "heat-releasing body",
+    "thermal_conductivity": "15 W/m/K",
+    "density": "7800 kg/m3",
+    "specific_heat": "500 J/kg/K"
+   }
+  },
+  "boundary_conditions": [
+   {
+    "boundary": "left",
+    "variable": "temperature",
+    "value": "15 degC"
+   },
+   {
+    "boundary": "right",
+    "variable": "temperature",
+    "value": "15 degC"
+   },
+   {
+    "boundary": "bottom",
+    "variable": "temperature",
+    "value": "15 degC"
+   },
+   {
+    "boundary": "top",
+    "variable": "temperature",
+    "value": "15 degC"
+   }
+  ],
+  "heat_sources": [
+   {
+    "region": "body",
+    "kind": "power",
+    "value": "500 W"
+   }
+  ],
+  "initial": {
+   "temperature": "15 degC"
+  },
+  "mesh": {
+   "size": "2 m",
+   "refinements": [
+    {
+     "target": "inclusion_boundary",
+     "size": "0.1 m",
+     "growth": 1.2
+    }
+   ]
+  },
+  "study": {
+   "kind": "transient",
+   "end_time": "20 yr",
+   "first_step": "1 d",
+   "growth": 1.25,
+   "max_step": "60 d",
+   "output_times": [
+    "1 yr",
+    "5 yr"
+   ]
+  },
+  "probes": [
+   {
+    "name": "radial_line",
+    "line": [
+     [
+      20,
+      20
+     ],
+     [
+      40,
+      20
+     ]
+    ]
+   },
+   {
+    "name": "body_centre",
+    "point": [
+     20,
+     20
+    ]
+   },
+   {
+    "name": "rock_2m",
+    "point": [
+     23,
+     20
+    ]
+   }
+  ]
+ },
+ "adjustable": {
+  "heat_output": {
+   "path": "heat_sources.body.value",
+   "unit": "W (per m of length)"
+  },
+  "body_radius": {
+   "path": "geometry.radius",
+   "unit": "m"
+  },
+  "rock_conductivity": {
+   "path": "materials.rock.thermal_conductivity",
+   "unit": "W/m/K"
+  },
+  "initial_temperature": {
+   "path": "initial.temperature",
+   "unit": "degC or K"
+  },
+  "duration": {
+   "path": "study.end_time",
+   "unit": "yr"
+  }
+ }
+}

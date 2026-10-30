@@ -1,0 +1,258 @@
+{
+ "id": "E1a",
+ "configuration": "THM-AX-repository",
+ "title": "Small canister in homogeneous rock behaves as a point source",
+ "source": "homogeneous limit of the repository configuration compared with the point-source solution (V5) away from the canister",
+ "model": {
+  "name": "e1a",
+  "geometry": {
+   "kind": "axisym_source",
+   "outer_radius": 10,
+   "height": 10,
+   "symmetric": true,
+   "source": "canister",
+   "canister_radius": 0.05,
+   "canister_length": 0.1,
+   "buffer_radius": 0.1,
+   "buffer_length": 0.2
+  },
+  "physics": {
+   "process": "THM",
+   "fluid": {
+    "density": 999.1,
+    "viscosity": 0.001,
+    "specific_heat": 4280,
+    "thermal_conductivity": 0.6,
+    "thermal_expansion": 0.0004
+   }
+  },
+  "materials": {
+   "rock": {
+    "permeability": 2e-20,
+    "porosity": 0.16,
+    "youngs_modulus": 5000000000.0,
+    "poissons_ratio": 0.3,
+    "biot_coefficient": 1.0,
+    "thermal_conductivity": 1.63992,
+    "solid_density": 2290,
+    "solid_specific_heat": 917.654,
+    "thermal_expansion": 1.5e-05
+   },
+   "canister": {
+    "permeability": 2e-20,
+    "porosity": 0.16,
+    "youngs_modulus": 5000000000.0,
+    "poissons_ratio": 0.3,
+    "biot_coefficient": 1.0,
+    "thermal_conductivity": 1.63992,
+    "solid_density": 2290,
+    "solid_specific_heat": 917.654,
+    "thermal_expansion": 1.5e-05
+   },
+   "buffer": {
+    "permeability": 2e-20,
+    "porosity": 0.16,
+    "youngs_modulus": 5000000000.0,
+    "poissons_ratio": 0.3,
+    "biot_coefficient": 1.0,
+    "thermal_conductivity": 1.63992,
+    "solid_density": 2290,
+    "solid_specific_heat": 917.654,
+    "thermal_expansion": 1.5e-05
+   }
+  },
+  "boundary_conditions": [
+   {
+    "boundary": "bottom",
+    "variable": "displacement",
+    "kind": "roller"
+   },
+   {
+    "boundary": "outer",
+    "variable": "temperature",
+    "value": 273.15
+   },
+   {
+    "boundary": "top",
+    "variable": "temperature",
+    "value": 273.15
+   },
+   {
+    "boundary": "outer",
+    "variable": "pressure",
+    "value": 0.0
+   },
+   {
+    "boundary": "top",
+    "variable": "pressure",
+    "value": 0.0
+   }
+  ],
+  "heat_sources": [
+   {
+    "region": "canister",
+    "kind": "power",
+    "value": 300.0
+   }
+  ],
+  "initial": {
+   "temperature": 273.15,
+   "pressure": 0.0
+  },
+  "mesh": {
+   "size": 0.5,
+   "refinements": [
+    {
+     "target": "canister_surface",
+     "size": 0.01,
+     "growth": 1.08
+    }
+   ]
+  },
+  "study": {
+   "kind": "transient",
+   "end_time": 50000.0,
+   "first_step": 500
+  }
+ },
+ "reference": {
+  "type": "point_heat_source",
+  "center": [
+   0.0,
+   0.0
+  ],
+  "quantity": "temperature",
+  "params": {
+   "Q": 300.0,
+   "porosity": 0.16,
+   "permeability": 2e-20,
+   "viscosity": 0.001,
+   "E": 5000000000.0,
+   "nu": 0.3,
+   "rho_w": 999.1,
+   "c_w": 4280.0,
+   "lambda_w": 0.6,
+   "rho_s": 2290.0,
+   "c_s": 917.654,
+   "lambda_s": 1.838,
+   "alpha_s_linear": 1.5e-05,
+   "beta_w": 0.0004,
+   "T0": 273.15
+  },
+  "base": 273.15
+ },
+ "normalization": {
+  "type": "max"
+ },
+ "tolerance": {
+  "max_norm": 0.03,
+  "l2_rel": 0.03
+ },
+ "integrals": [
+  {
+   "label": "heat stored = power x time (half model)",
+   "time": 50000.0,
+   "power": 300.0,
+   "fraction": 0.5,
+   "tolerance": 0.01
+  }
+ ],
+ "observations": [
+  {
+   "field": "temperature",
+   "line": {
+    "from": [
+     0.3,
+     0.0
+    ],
+    "to": [
+     3.0,
+     0.0
+    ],
+    "n": 28
+   },
+   "label": "temperature beyond 0.3 m"
+  },
+  {
+   "field": "pressure",
+   "line": {
+    "from": [
+     0.3,
+     0.0
+    ],
+    "to": [
+     3.0,
+     0.0
+    ],
+    "n": 28
+   },
+   "label": "pore pressure beyond 0.3 m",
+   "reference": {
+    "type": "point_heat_source",
+    "center": [
+     0.0,
+     0.0
+    ],
+    "quantity": "pressure",
+    "params": {
+     "Q": 300.0,
+     "porosity": 0.16,
+     "permeability": 2e-20,
+     "viscosity": 0.001,
+     "E": 5000000000.0,
+     "nu": 0.3,
+     "rho_w": 999.1,
+     "c_w": 4280.0,
+     "lambda_w": 0.6,
+     "rho_s": 2290.0,
+     "c_s": 917.654,
+     "lambda_s": 1.838,
+     "alpha_s_linear": 1.5e-05,
+     "beta_w": 0.0004,
+     "T0": 273.15
+    }
+   }
+  },
+  {
+   "field": "displacement",
+   "component": 0,
+   "line": {
+    "from": [
+     0.3,
+     0.0
+    ],
+    "to": [
+     3.0,
+     0.0
+    ],
+    "n": 28
+   },
+   "label": "radial displacement beyond 0.3 m",
+   "reference": {
+    "type": "point_heat_source",
+    "center": [
+     0.0,
+     0.0
+    ],
+    "quantity": "radial_displacement",
+    "params": {
+     "Q": 300.0,
+     "porosity": 0.16,
+     "permeability": 2e-20,
+     "viscosity": 0.001,
+     "E": 5000000000.0,
+     "nu": 0.3,
+     "rho_w": 999.1,
+     "c_w": 4280.0,
+     "lambda_w": 0.6,
+     "rho_s": 2290.0,
+     "c_s": 917.654,
+     "lambda_s": 1.838,
+     "alpha_s_linear": 1.5e-05,
+     "beta_w": 0.0004,
+     "T0": 273.15
+    }
+   }
+  }
+ ]
+}

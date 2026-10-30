@@ -1,0 +1,43 @@
+[
+ {
+  "run_id": "f72ab3744810",
+  "model_name": "well_drawdown",
+  "created": "2026-10-30 19:28",
+  "rows": [
+   {
+    "label": "Head change at 50 m after one day",
+    "quantity": "head",
+    "aggregation": "change since start",
+    "location": "obs_well_50m (50.0, 5.0) m",
+    "time": "1.00 d",
+    "value": "-3.06",
+    "unit": "m",
+    "value_si": -3.0596328676949986,
+    "unit_si": "m"
+   }
+  ],
+  "verification": {
+   "configuration": "H-AX-well",
+   "title": "radial flow to a well (axisymmetric)",
+   "demonstration": false,
+   "cases": [
+    {
+     "case": "V1b",
+     "status": "passed",
+     "worst_normalised_error": 0.0196735374638941,
+     "source": "release record",
+     "date": "2026-10-30 19:14"
+    }
+   ]
+  },
+  "run_checks": {
+   "reached_end_time": true,
+   "finite_values": true,
+   "time_steps": 92,
+   "rejected_steps": 0,
+   "max_nonlinear_iterations": 1,
+   "energy_balance": "not checked"
+  },
+  "table": "Results of run f72ab3744810 (model well_drawdown)\n\n| quantity | where | when | how | value |\n|---|---|---|---|---|\n| Head change at 50 m after one day | obs_well_50m (50.0, 5.0) m | 1.00 d | change since start | -3.06 m |\n\nVerified configuration H-AX-well: V1b passed (max error 2.0 %).\nThis run: reached end time True, finite values True, time steps 92, rejected steps 0, max nonlinear iterations 1, energy balance not checked."
+ }
+]

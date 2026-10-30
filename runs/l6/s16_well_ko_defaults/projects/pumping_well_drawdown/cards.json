@@ -1,0 +1,65 @@
+[
+ {
+  "run_id": "ed588abc2119",
+  "model_name": "pumping_well_drawdown",
+  "created": "2026-10-30 18:38",
+  "rows": [
+   {
+    "label": "head change at 50 m from the well after 1 day",
+    "quantity": "head",
+    "aggregation": "change since start",
+    "location": "obs_well_50m (50.0, 5.0) m",
+    "time": "1.00 d",
+    "value": "-5.28",
+    "unit": "m",
+    "value_si": -5.283732479785201,
+    "unit_si": "m"
+   },
+   {
+    "label": "head change at 50 m from the well after 1000 s",
+    "quantity": "head",
+    "aggregation": "change since start",
+    "location": "obs_well_50m (50.0, 5.0) m",
+    "time": "1000 s",
+    "value": "-1.77",
+    "unit": "m",
+    "value_si": -1.7715358181870207,
+    "unit_si": "m"
+   },
+   {
+    "label": "minimum head along 0.1 to 500 m radial line after 1 day (near well)",
+    "quantity": "head",
+    "aggregation": "min",
+    "location": "along radial",
+    "time": "1.00 d",
+    "value": "-15.2",
+    "unit": "m",
+    "value_si": -15.159375851520073,
+    "unit_si": "m"
+   }
+  ],
+  "verification": {
+   "configuration": "H-AX-well",
+   "title": "radial flow to a well (axisymmetric)",
+   "demonstration": false,
+   "cases": [
+    {
+     "case": "V1b",
+     "status": "passed",
+     "worst_normalised_error": 0.018779685801362772,
+     "source": "release record",
+     "date": "2026-10-30 18:31"
+    }
+   ]
+  },
+  "run_checks": {
+   "reached_end_time": true,
+   "finite_values": true,
+   "time_steps": 92,
+   "rejected_steps": 0,
+   "max_nonlinear_iterations": 1,
+   "energy_balance": "not checked"
+  },
+  "table": "Results of run ed588abc2119 (model pumping_well_drawdown)\n\n| quantity | where | when | how | value |\n|---|---|---|---|---|\n| head change at 50 m from the well after 1 day | obs_well_50m (50.0, 5.0) m | 1.00 d | change since start | -5.28 m |\n| head change at 50 m from the well after 1000 s | obs_well_50m (50.0, 5.0) m | 1000 s | change since start | -1.77 m |\n| minimum head along 0.1 to 500 m radial line after 1 day (near well) | along radial | 1.00 d | min | -15.2 m |\n\nVerified configuration H-AX-well: V1b passed (max error 1.9 %).\nThis run: reached end time True, finite values True, time steps 92, rejected steps 0, max nonlinear iterations 1, energy balance not checked."
+ }
+]

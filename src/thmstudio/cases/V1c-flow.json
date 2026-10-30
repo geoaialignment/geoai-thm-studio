@@ -1,0 +1,136 @@
+{
+ "id": "V1c-flow",
+ "configuration": "H-3D",
+ "title": "Steady horizontal flow through a layered 3D box",
+ "source": "Darcy's law (head linear along the flow direction)",
+ "model": {
+  "name": "v1cflow",
+  "geometry": {
+   "kind": "box",
+   "length_x": 20,
+   "length_y": 5,
+   "layers": [
+    {
+     "name": "lower",
+     "thickness": 3
+    },
+    {
+     "name": "upper",
+     "thickness": 2
+    }
+   ]
+  },
+  "physics": {
+   "process": "H"
+  },
+  "materials": {
+   "lower": {
+    "permeability": 1e-12,
+    "porosity": 0.1
+   },
+   "upper": {
+    "permeability": 1e-11,
+    "porosity": 0.2
+   }
+  },
+  "boundary_conditions": [
+   {
+    "boundary": "left",
+    "variable": "head",
+    "value": 10
+   },
+   {
+    "boundary": "right",
+    "variable": "head",
+    "value": 9
+   }
+  ],
+  "initial": {
+   "head": 10
+  },
+  "mesh": {
+   "size": 1.0
+  },
+  "study": {
+   "kind": "steady"
+  }
+ },
+ "reference": {
+  "type": "linear_in",
+  "axis": 0,
+  "base": 10.0,
+  "slope": -0.05
+ },
+ "normalization": {
+  "type": "scale",
+  "scale": 1.0
+ },
+ "tolerance": {
+  "max_norm": 1e-06
+ },
+ "observations": [
+  {
+   "field": "head",
+   "line": {
+    "from": [
+     0,
+     2.5,
+     1
+    ],
+    "to": [
+     20,
+     2.5,
+     4
+    ],
+    "n": 41
+   },
+   "label": "head across both layers"
+  },
+  {
+   "field": "darcy_velocity",
+   "component": 0,
+   "points": [
+    [
+     10,
+     2.5,
+     1.5
+    ]
+   ],
+   "label": "Darcy flux in the lower layer",
+   "reference": {
+    "type": "constant",
+    "base": 4.905e-07
+   },
+   "normalization": {
+    "type": "scale",
+    "scale": 4.905e-07
+   },
+   "tolerance": {
+    "max_norm": 1e-06
+   }
+  },
+  {
+   "field": "darcy_velocity",
+   "component": 0,
+   "points": [
+    [
+     10,
+     2.5,
+     4.0
+    ]
+   ],
+   "label": "Darcy flux in the upper layer",
+   "reference": {
+    "type": "constant",
+    "base": 4.9050000000000005e-06
+   },
+   "normalization": {
+    "type": "scale",
+    "scale": 4.9050000000000005e-06
+   },
+   "tolerance": {
+    "max_norm": 1e-06
+   }
+  }
+ ]
+}

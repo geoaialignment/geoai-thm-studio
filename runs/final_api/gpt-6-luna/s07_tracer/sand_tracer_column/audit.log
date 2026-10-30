@@ -1,0 +1,22 @@
+{"time": "2026-10-30T19:28:57", "tool": "start_from_example", "ok": true, "state": "DRAFT", "version": 1, "args": "{\"example_id\": \"solute_front\", \"changes\": [{\"name\": \"darcy_flux\", \"value\": \"0.0864 m/day\"}, {\"name\": \"duration\", \"value\": \"10 days\"}], \"project_name\": \"sand_tracer_column\"}", "note": ""}
+{"time": "2026-10-30T19:29:02", "tool": "set_mesh", "ok": true, "state": "DRAFT", "version": 2, "args": "{\"size\": \"0.25 m\", \"element\": \"auto\", \"divisions\": null, \"refinements\": [{\"target\": \"left\", \"size\": \"0.1 m\", \"growth\": 1.2}]}", "note": ""}
+{"time": "2026-10-30T19:29:04", "tool": "build_mesh", "ok": true, "state": "DRAFT", "version": 2, "args": "{}", "note": ""}
+{"time": "2026-10-30T19:29:08", "tool": "show_mesh", "ok": true, "state": "DRAFT", "version": 2, "args": "{\"zoom\": null}", "note": ""}
+{"time": "2026-10-30T19:29:11", "tool": "check_model", "ok": true, "state": "CHECKED", "version": 2, "args": "{}", "note": ""}
+{"time": "2026-10-30T19:29:15", "tool": "go_to_step", "ok": true, "state": "DRAFT", "version": 2, "args": "{\"step\": \"mesh\"}", "note": ""}
+{"time": "2026-10-30T19:29:19", "tool": "set_mesh", "ok": true, "state": "DRAFT", "version": 3, "args": "{\"size\": \"0.15 m\", \"element\": \"auto\", \"divisions\": null, \"refinements\": [{\"target\": \"left\", \"size\": \"0.1 m\", \"growth\": 1.2}]}", "note": ""}
+{"time": "2026-10-30T19:29:21", "tool": "build_mesh", "ok": true, "state": "DRAFT", "version": 3, "args": "{}", "note": ""}
+{"time": "2026-10-30T19:29:26", "tool": "set_mesh", "ok": true, "state": "DRAFT", "version": 4, "args": "{\"size\": \"0.15 m\", \"element\": \"auto\", \"divisions\": [{\"name\": \"x\", \"elements\": 100}, {\"name\": \"y\", \"elements\": 2}], \"refinements\": [{\"target\": \"left\", \"size\": \"0.1 m\", \"growth\": 1.2}]}", "note": ""}
+{"time": "2026-10-30T19:29:29", "tool": "build_mesh", "ok": true, "state": "DRAFT", "version": 4, "args": "{}", "note": ""}
+{"time": "2026-10-30T19:29:32", "tool": "show_mesh", "ok": true, "state": "DRAFT", "version": 4, "args": "{\"zoom\": null}", "note": ""}
+{"time": "2026-10-30T19:29:36", "tool": "check_model", "ok": true, "state": "CHECKED", "version": 4, "args": "{}", "note": ""}
+{"time": "2026-10-30T19:29:41", "tool": "go_to_step", "ok": true, "state": "DRAFT", "version": 4, "args": "{\"step\": \"mesh\"}", "note": ""}
+{"time": "2026-10-30T19:29:44", "tool": "set_mesh", "ok": true, "state": "DRAFT", "version": 5, "args": "{\"size\": \"0.1 m\", \"element\": \"auto\", \"divisions\": [{\"name\": \"x\", \"elements\": 200}, {\"name\": \"y\", \"elements\": 2}], \"refinements\": [{\"target\": \"left\", \"size\": \"0.1 m\", \"growth\": 1.2}]}", "note": ""}
+{"time": "2026-10-30T19:29:46", "tool": "build_mesh", "ok": true, "state": "DRAFT", "version": 5, "args": "{}", "note": ""}
+{"time": "2026-10-30T19:29:50", "tool": "show_mesh", "ok": true, "state": "DRAFT", "version": 5, "args": "{\"zoom\": null}", "note": ""}
+{"time": "2026-10-30T19:29:53", "tool": "check_model", "ok": true, "state": "CHECKED", "version": 5, "args": "{}", "note": ""}
+{"time": "2026-10-30T19:29:57", "tool": "run", "ok": true, "state": "RUNNING", "version": 5, "args": "{}", "note": ""}
+{"time": "2026-10-30T19:29:59", "tool": "run_status", "ok": true, "state": "COMPUTED", "version": 5, "args": "{}", "note": ""}
+{"time": "2026-10-30T19:30:03", "tool": "show_results", "ok": false, "state": "COMPUTED", "version": 5, "args": "{\"field\": \"concentration\", \"component\": null, \"kind\": \"map\", \"time\": \"10 days\", \"probe\": null, \"point\": null, \"line\": null}", "note": "\"no field 'concentration' (available: darcy_velocity, pressure, tracer)\""}
+{"time": "2026-10-30T19:30:07", "tool": "show_results", "ok": true, "state": "COMPUTED", "version": 5, "args": "{\"field\": \"tracer\", \"component\": null, \"kind\": \"map\", \"time\": \"10 days\", \"probe\": null, \"point\": null, \"line\": null}", "note": ""}
+{"time": "2026-10-30T19:30:11", "tool": "answer_card", "ok": true, "state": "REPORTED", "version": 5, "args": "{\"items\": [{\"label\": \"tracer concentration at 5 m downstream after 10 days\", \"kind\": \"value\", \"field\": \"tracer\", \"component\": null, \"probe\": null, \"point\": [5, 0.5], \"time\": \"10 days\", \"comparison\": null}]}", "note": ""}

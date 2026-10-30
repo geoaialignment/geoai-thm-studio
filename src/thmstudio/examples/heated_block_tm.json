@@ -1,0 +1,120 @@
+{
+ "id": "heated_block_tm",
+ "configuration": "TM-2D",
+ "verification_cases": [
+  "V7a",
+  "V7b",
+  "V7c"
+ ],
+ "title": "Thermal stress in a confined rock block",
+ "title_ko": "구속된 암반 블록의 열응력",
+ "description": "A granite block confined on all sides is heated from the left; thermal expansion is held back, so compressive stress builds up (plane strain).",
+ "model": {
+  "name": "heated_block_tm",
+  "geometry": {
+   "kind": "rect",
+   "width": "10 m",
+   "layers": [
+    {
+     "name": "rock",
+     "thickness": "5 m"
+    }
+   ]
+  },
+  "physics": {
+   "process": "TM"
+  },
+  "materials": {
+   "rock": {
+    "label": "granite (typical)",
+    "thermal_conductivity": "3.0 W/m/K",
+    "density": "2650 kg/m3",
+    "specific_heat": "850 J/kg/K",
+    "youngs_modulus": "50 GPa",
+    "poissons_ratio": 0.25,
+    "thermal_expansion": "1e-5 1/K"
+   }
+  },
+  "boundary_conditions": [
+   {
+    "boundary": "left",
+    "variable": "displacement",
+    "kind": "roller"
+   },
+   {
+    "boundary": "right",
+    "variable": "displacement",
+    "kind": "roller"
+   },
+   {
+    "boundary": "bottom",
+    "variable": "displacement",
+    "kind": "roller"
+   },
+   {
+    "boundary": "top",
+    "variable": "displacement",
+    "kind": "roller"
+   },
+   {
+    "boundary": "left",
+    "variable": "temperature",
+    "value": "60 degC"
+   },
+   {
+    "boundary": "right",
+    "variable": "temperature",
+    "value": "15 degC"
+   }
+  ],
+  "initial": {
+   "temperature": "15 degC"
+  },
+  "mesh": {
+   "size": "0.25 m"
+  },
+  "study": {
+   "kind": "transient",
+   "end_time": "1 yr",
+   "first_step": "1 d",
+   "growth": 1.2,
+   "max_step": "15 d",
+   "output_times": [
+    "0.1 yr"
+   ]
+  },
+  "probes": [
+   {
+    "name": "centre_line",
+    "line": [
+     [
+      0,
+      2.5
+     ],
+     [
+      10,
+      2.5
+     ]
+    ]
+   }
+  ]
+ },
+ "adjustable": {
+  "heated_side_temperature": {
+   "path": "boundary_conditions.left.temperature.value",
+   "unit": "degC"
+  },
+  "youngs_modulus": {
+   "path": "materials.rock.youngs_modulus",
+   "unit": "GPa"
+  },
+  "thermal_expansion": {
+   "path": "materials.rock.thermal_expansion",
+   "unit": "1/K"
+  },
+  "duration": {
+   "path": "study.end_time",
+   "unit": "yr or d"
+  }
+ }
+}

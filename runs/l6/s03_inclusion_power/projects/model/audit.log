@@ -1,0 +1,2 @@
+{"time": "2026-10-30T18:23:53", "tool": "list_capabilities", "ok": true, "state": "EMPTY", "version": 0, "args": "{}", "note": ""}
+{"time": "2026-10-30T18:23:56", "tool": "start_from_example", "ok": false, "state": "EMPTY", "version": 0, "args": "{\"example_id\": \"heated_inclusion\", \"changes\": [{\"name\": \"body_radius\", \"value\": \"1 m\"}, {\"name\": \"heat_output\", \"value\": \"800 W/m\"}, {\"name\": \"duration\", \"value\": \"5 yr\"}], \"project_name\": \"granite_body_5yr\"}", "note": "the changed example is not valid"}

@@ -1,0 +1,72 @@
+[
+ {
+  "run_id": "74a31372dd75",
+  "model_name": "repository_canister",
+  "created": "2026-10-30 18:36",
+  "rows": [
+   {
+    "label": "highest buffer temperature after one year (canister surface, midplane)",
+    "quantity": "temperature",
+    "aggregation": "value",
+    "location": "canister_wall (0.51, 0.0) m",
+    "time": "1.00 yr",
+    "value": "43.5",
+    "unit": "°C",
+    "value_si": 316.69553961952477,
+    "unit_si": "K"
+   },
+   {
+    "label": "buffer temperature at the buffer-rock interface after one year",
+    "quantity": "temperature",
+    "aggregation": "value",
+    "location": "hole_wall (0.875, 0.0) m",
+    "time": "1.00 yr",
+    "value": "30.9",
+    "unit": "°C",
+    "value_si": 304.09430344350966,
+    "unit_si": "K"
+   },
+   {
+    "label": "temperature rise of the buffer at the canister surface over the first year",
+    "quantity": "temperature",
+    "aggregation": "change since start",
+    "location": "canister_wall (0.51, 0.0) m",
+    "time": "1.00 yr",
+    "value": "28.5",
+    "unit": "K",
+    "value_si": 28.54553961952479,
+    "unit_si": "K"
+   }
+  ],
+  "verification": {
+   "configuration": "THM-AX-repository",
+   "title": "heated canister in a buffer-filled hole in rock (axisymmetric; demonstration)",
+   "demonstration": true,
+   "cases": [
+    {
+     "case": "E1",
+     "status": "passed",
+     "worst_normalised_error": 0.007457421289368462,
+     "source": "release record",
+     "date": "2026-10-30 17:37"
+    },
+    {
+     "case": "E1a",
+     "status": "passed",
+     "worst_normalised_error": 0.017194088375358678,
+     "source": "release record",
+     "date": "2026-10-30 17:55"
+    }
+   ]
+  },
+  "run_checks": {
+   "reached_end_time": true,
+   "finite_values": true,
+   "time_steps": 55,
+   "rejected_steps": 0,
+   "max_nonlinear_iterations": 3,
+   "energy_balance": "not checked"
+  },
+  "table": "Results of run 74a31372dd75 (model repository_canister)\n\n| quantity | where | when | how | value |\n|---|---|---|---|---|\n| highest buffer temperature after one year (canister surface, midplane) | canister_wall (0.51, 0.0) m | 1.00 yr | value | 43.5 °C |\n| buffer temperature at the buffer-rock interface after one year | hole_wall (0.875, 0.0) m | 1.00 yr | value | 30.9 °C |\n| temperature rise of the buffer at the canister surface over the first year | canister_wall (0.51, 0.0) m | 1.00 yr | change since start | 28.5 K |\n\nVerified configuration THM-AX-repository (demonstration): E1 passed (max error 0.75 %), E1a passed (max error 1.7 %).\nThis run: reached end time True, finite values True, time steps 55, rejected steps 0, max nonlinear iterations 3, energy balance not checked."
+ }
+]

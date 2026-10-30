@@ -1,0 +1,110 @@
+{
+ "id": "V1c",
+ "configuration": "H-3D",
+ "title": "Hydrostatic pressure in a layered 3D box",
+ "source": "hydrostatics; OGS benchmark Parabolic/LiquidFlow/Verification/h1_3Dhydstat",
+ "model": {
+  "name": "v1c",
+  "geometry": {
+   "kind": "box",
+   "length_x": 10,
+   "length_y": 10,
+   "layers": [
+    {
+     "name": "lower",
+     "thickness": 5
+    },
+    {
+     "name": "upper",
+     "thickness": 5
+    }
+   ]
+  },
+  "physics": {
+   "process": "H"
+  },
+  "materials": {
+   "lower": {
+    "permeability": 1e-14,
+    "porosity": 0.1
+   },
+   "upper": {
+    "permeability": 1e-13,
+    "porosity": 0.2
+   }
+  },
+  "boundary_conditions": [
+   {
+    "boundary": "top",
+    "variable": "head",
+    "value": 10
+   }
+  ],
+  "initial": {
+   "head": 5
+  },
+  "mesh": {
+   "size": 1.0
+  },
+  "study": {
+   "kind": "steady"
+  }
+ },
+ "reference": {
+  "type": "constant",
+  "base": 10.0
+ },
+ "normalization": {
+  "type": "scale",
+  "scale": 10.0
+ },
+ "tolerance": {
+  "max_norm": 1e-06
+ },
+ "observations": [
+  {
+   "field": "head",
+   "line": {
+    "from": [
+     5,
+     5,
+     0
+    ],
+    "to": [
+     5,
+     5,
+     10
+    ],
+    "n": 21
+   },
+   "label": "head on the vertical centre line"
+  },
+  {
+   "field": "pressure",
+   "line": {
+    "from": [
+     2,
+     7,
+     0
+    ],
+    "to": [
+     2,
+     7,
+     10
+    ],
+    "n": 21
+   },
+   "label": "pressure p = rho g (10 - z)",
+   "reference": {
+    "type": "linear_in",
+    "axis": 2,
+    "base": 98100.0,
+    "slope": -9810.0
+   },
+   "normalization": {
+    "type": "scale",
+    "scale": 98100.0
+   }
+  }
+ ]
+}

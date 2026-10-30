@@ -1,0 +1,119 @@
+{
+ "id": "solute_front",
+ "configuration": "HC-2D",
+ "verification_cases": [
+  "V6a"
+ ],
+ "title": "Tracer front in steady groundwater flow",
+ "title_ko": "정상 지하수 흐름 속 추적자 전선",
+ "description": "A dissolved tracer enters a sand column with the flow from the left. Advection carries it; dispersion spreads the front.",
+ "model": {
+  "name": "solute_front",
+  "geometry": {
+   "kind": "rect",
+   "width": "10 m",
+   "layers": [
+    {
+     "name": "sand",
+     "thickness": "1 m"
+    }
+   ],
+   "plane": "horizontal"
+  },
+  "physics": {
+   "process": "HC",
+   "components": [
+    {
+     "name": "tracer",
+     "pore_diffusion": "1e-9 m2/s"
+    }
+   ]
+  },
+  "materials": {
+   "sand": {
+    "label": "sand",
+    "permeability": "1e-11 m2",
+    "porosity": 0.25,
+    "longitudinal_dispersivity": "0.1 m",
+    "transverse_dispersivity": "0.01 m"
+   }
+  },
+  "boundary_conditions": [
+   {
+    "boundary": "left",
+    "variable": "head",
+    "kind": "flux",
+    "value": "0.0864 m/d"
+   },
+   {
+    "boundary": "right",
+    "variable": "head",
+    "value": "0 m"
+   },
+   {
+    "boundary": "left",
+    "variable": "concentration",
+    "value": 1.0
+   }
+  ],
+  "initial": {
+   "head": "0 m",
+   "concentration": 0
+  },
+  "mesh": {
+   "size": "0.05 m",
+   "divisions": {
+    "y": 2
+   }
+  },
+  "study": {
+   "kind": "transient",
+   "end_time": "15 d",
+   "first_step": "0.1 d",
+   "output_times": [
+    "5 d",
+    "10 d"
+   ]
+  },
+  "probes": [
+   {
+    "name": "column",
+    "line": [
+     [
+      0,
+      0.5
+     ],
+     [
+      10,
+      0.5
+     ]
+    ]
+   },
+   {
+    "name": "at_5m",
+    "point": [
+     5,
+     0.5
+    ]
+   }
+  ]
+ },
+ "adjustable": {
+  "darcy_flux": {
+   "path": "boundary_conditions.left.head.value",
+   "unit": "m/d"
+  },
+  "porosity": {
+   "path": "materials.sand.porosity",
+   "unit": "-"
+  },
+  "dispersivity": {
+   "path": "materials.sand.longitudinal_dispersivity",
+   "unit": "m"
+  },
+  "duration": {
+   "path": "study.end_time",
+   "unit": "d"
+  }
+ }
+}

@@ -1,0 +1,54 @@
+[
+ {
+  "run_id": "9a34d7a7c52f",
+  "model_name": "pore_pressure_point_source",
+  "created": "2026-10-30 20:16",
+  "rows": [
+   {
+    "label": "간극수압 상승 (열원에서 0.5 m, 5e4초)",
+    "quantity": "pressure",
+    "aggregation": "change since start",
+    "location": "at_0_5m (0.5, 0.0) m",
+    "time": "50000 s",
+    "value": "0.998",
+    "unit": "MPa",
+    "value_si": 998387.9995998802,
+    "unit_si": "Pa"
+   },
+   {
+    "label": "물의 열팽창 효과 (간극수압 차이, 같은 위치·시간)",
+    "quantity": "pressure",
+    "aggregation": "largest difference",
+    "location": "at_0_5m",
+    "time": "50000 s",
+    "value": "0.865",
+    "unit": "MPa",
+    "value_si": 864777.8870488065,
+    "unit_si": "Pa"
+   }
+  ],
+  "verification": {
+   "configuration": "THM-AX",
+   "title": "point heat source in saturated rock (axisymmetric)",
+   "demonstration": false,
+   "cases": [
+    {
+     "case": "V5",
+     "status": "passed",
+     "worst_normalised_error": 0.011030876918178561,
+     "source": "release record",
+     "date": "2026-10-30 19:14"
+    }
+   ]
+  },
+  "run_checks": {
+   "reached_end_time": true,
+   "finite_values": true,
+   "time_steps": 22,
+   "rejected_steps": 0,
+   "max_nonlinear_iterations": 4,
+   "energy_balance": "not checked"
+  },
+  "table": "Results of run 9a34d7a7c52f (model pore_pressure_point_source)\n\n| quantity | where | when | how | value |\n|---|---|---|---|---|\n| 간극수압 상승 (열원에서 0.5 m, 5e4초) | at_0_5m (0.5, 0.0) m | 50000 s | change since start | 0.998 MPa |\n| 물의 열팽창 효과 (간극수압 차이, 같은 위치·시간) | at_0_5m | 50000 s | largest difference | 0.865 MPa |\n\nVerified configuration THM-AX: V5 passed (max error 1.1 %).\nThis run: reached end time True, finite values True, time steps 22, rejected steps 0, max nonlinear iterations 4, energy balance not checked."
+ }
+]

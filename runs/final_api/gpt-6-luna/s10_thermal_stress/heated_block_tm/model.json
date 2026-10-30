@@ -1,0 +1,139 @@
+{
+ "schema_version": 1,
+ "name": "heated_block_tm",
+ "geometry": {
+  "kind": "rect",
+  "width": 10.0,
+  "layers": [
+   {
+    "name": "rock",
+    "thickness": 5.0
+   }
+  ],
+  "plane": "vertical",
+  "segments": []
+ },
+ "materials": {
+  "rock": {
+   "label": "granite (typical)",
+   "permeability": null,
+   "hydraulic_conductivity": null,
+   "porosity": null,
+   "specific_storage": null,
+   "thermal_conductivity": 3.0,
+   "solid_density": null,
+   "solid_specific_heat": null,
+   "density": 2650.0,
+   "specific_heat": 850.0,
+   "longitudinal_dispersivity": null,
+   "transverse_dispersivity": null,
+   "youngs_modulus": 50000000000.0,
+   "poissons_ratio": 0.25,
+   "biot_coefficient": null,
+   "thermal_expansion": 0.00001
+  }
+ },
+ "physics": {
+  "process": "TM",
+  "gravity": null,
+  "fluid": {
+   "density": 1000.0,
+   "viscosity": 0.001,
+   "specific_heat": 4180.0,
+   "thermal_conductivity": 0.6,
+   "thermal_expansion": 0.0004,
+   "density_increase_per_concentration": 0.0
+  },
+  "components": []
+ },
+ "boundary_conditions": [
+  {
+   "boundary": "left",
+   "variable": "displacement",
+   "kind": "roller",
+   "value": 0.0,
+   "component": null,
+   "expression": null
+  },
+  {
+   "boundary": "right",
+   "variable": "displacement",
+   "kind": "roller",
+   "value": 0.0,
+   "component": null,
+   "expression": null
+  },
+  {
+   "boundary": "bottom",
+   "variable": "displacement",
+   "kind": "roller",
+   "value": 0.0,
+   "component": null,
+   "expression": null
+  },
+  {
+   "boundary": "top",
+   "variable": "displacement",
+   "kind": "roller",
+   "value": 0.0,
+   "component": null,
+   "expression": null
+  },
+  {
+   "boundary": "left",
+   "variable": "temperature",
+   "kind": "fixed",
+   "value": 333.15,
+   "component": null,
+   "expression": null
+  },
+  {
+   "boundary": "right",
+   "variable": "temperature",
+   "kind": "fixed",
+   "value": 288.15,
+   "component": null,
+   "expression": null
+  }
+ ],
+ "heat_sources": [],
+ "initial": {
+  "temperature": 288.15,
+  "head": null,
+  "pressure": null,
+  "concentration": null
+ },
+ "mesh": {
+  "element": "auto",
+  "size": 0.25,
+  "divisions": {},
+  "refinements": []
+ },
+ "study": {
+  "kind": "transient",
+  "end_time": 31557600.0,
+  "first_step": 86400.0,
+  "max_step": 1296000.0,
+  "growth": 1.2,
+  "output_times": [
+   3155760.0
+  ]
+ },
+ "probes": [
+  {
+   "name": "centre_line",
+   "point": null,
+   "line": [
+    [
+     0.0,
+     2.5
+    ],
+    [
+     10.0,
+     2.5
+    ]
+   ],
+   "samples": 101
+  }
+ ]
+}

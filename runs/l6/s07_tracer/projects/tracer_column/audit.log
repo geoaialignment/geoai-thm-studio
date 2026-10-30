@@ -1,0 +1,12 @@
+{"time": "2026-10-30T18:25:56", "tool": "start_from_example", "ok": true, "state": "DRAFT", "version": 1, "args": "{\"example_id\": \"solute_front\", \"changes\": [{\"name\": \"darcy_flux\", \"value\": \"1e-6 m/s\"}, {\"name\": \"duration\", \"value\": \"10 d\"}], \"project_name\": \"tracer_column\"}", "note": ""}
+{"time": "2026-10-30T18:25:58", "tool": "build_mesh", "ok": true, "state": "DRAFT", "version": 1, "args": "{}", "note": ""}
+{"time": "2026-10-30T18:25:58", "tool": "show_model", "ok": false, "state": "DRAFT", "version": 1, "args": "{}", "note": "'show_model' is not available in state DRAFT (step mesh). Next step: call check_model (or set_mesh and build_mesh again to change the mesh). Available now: set_mesh, build_mesh, show_mesh, check_model, go_to_step, ask_user."}
+{"time": "2026-10-30T18:25:59", "tool": "check_model", "ok": true, "state": "CHECKED", "version": 1, "args": "{}", "note": ""}
+{"time": "2026-10-30T18:25:59", "tool": "run", "ok": true, "state": "RUNNING", "version": 1, "args": "{}", "note": ""}
+{"time": "2026-10-30T18:26:00", "tool": "run_status", "ok": true, "state": "COMPUTED", "version": 1, "args": "{}", "note": ""}
+{"time": "2026-10-30T18:26:01", "tool": "show_model", "ok": true, "state": "COMPUTED", "version": 1, "args": "{}", "note": ""}
+{"time": "2026-10-30T18:26:03", "tool": "show_results", "ok": false, "state": "COMPUTED", "version": 1, "args": "{\"field\": \"concentration\", \"kind\": \"profile\", \"line\": [[0, 0.5], [10, 0.5]]}", "note": "\"no field 'concentration' (available: darcy_velocity, pressure, tracer)\""}
+{"time": "2026-10-30T18:26:03", "tool": "show_results", "ok": false, "state": "COMPUTED", "version": 1, "args": "{\"field\": \"concentration\", \"kind\": \"series\", \"probe\": \"at_5m\"}", "note": "\"no field 'concentration' (available: darcy_velocity, pressure, tracer)\""}
+{"time": "2026-10-30T18:26:04", "tool": "show_results", "ok": true, "state": "COMPUTED", "version": 1, "args": "{\"field\": \"tracer\", \"kind\": \"series\", \"probe\": \"at_5m\"}", "note": ""}
+{"time": "2026-10-30T18:26:04", "tool": "show_results", "ok": true, "state": "COMPUTED", "version": 1, "args": "{\"field\": \"tracer\", \"kind\": \"profile\", \"line\": [[0, 0.5], [10, 0.5]]}", "note": ""}
+{"time": "2026-10-30T18:26:06", "tool": "answer_card", "ok": true, "state": "REPORTED", "version": 1, "args": "{\"items\": [{\"label\": \"tracer concentration 5 m downstream after 10 days\", \"kind\": \"value\", \"field\": \"tracer\", \"probe\": \"at_5m\", \"time\": \"864000 s\"}]}", "note": ""}

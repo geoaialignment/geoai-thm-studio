@@ -1,0 +1,103 @@
+{
+ "id": "V2c-steady",
+ "configuration": "T-3D",
+ "title": "Steady conduction through two layers in a 3D box",
+ "source": "steady conduction through layers in series",
+ "model": {
+  "name": "v2csteady",
+  "geometry": {
+   "kind": "box",
+   "length_x": 5,
+   "length_y": 5,
+   "layers": [
+    {
+     "name": "lower",
+     "thickness": 10
+    },
+    {
+     "name": "upper",
+     "thickness": 10
+    }
+   ]
+  },
+  "physics": {
+   "process": "T"
+  },
+  "materials": {
+   "lower": {
+    "thermal_conductivity": 2.0,
+    "density": 2600,
+    "specific_heat": 900
+   },
+   "upper": {
+    "thermal_conductivity": 4.0,
+    "density": 2600,
+    "specific_heat": 900
+   }
+  },
+  "boundary_conditions": [
+   {
+    "boundary": "bottom",
+    "variable": "temperature",
+    "value": 300.0
+   },
+   {
+    "boundary": "top",
+    "variable": "temperature",
+    "value": 290.0
+   }
+  ],
+  "initial": {
+   "temperature": 295.0
+  },
+  "mesh": {
+   "size": 1.0
+  },
+  "study": {
+   "kind": "steady"
+  }
+ },
+ "reference": {
+  "type": "series_layers",
+  "axis": 2,
+  "params": {
+   "bounds": [
+    0,
+    10,
+    20
+   ],
+   "conductivities": [
+    2.0,
+    4.0
+   ],
+   "v0": 300.0,
+   "v1": 290.0
+  }
+ },
+ "normalization": {
+  "type": "scale",
+  "scale": 10.0
+ },
+ "tolerance": {
+  "max_norm": 1e-06
+ },
+ "observations": [
+  {
+   "field": "temperature",
+   "line": {
+    "from": [
+     2.5,
+     2.5,
+     0
+    ],
+    "to": [
+     2.5,
+     2.5,
+     20
+    ],
+    "n": 41
+   },
+   "label": "temperature along z"
+  }
+ ]
+}

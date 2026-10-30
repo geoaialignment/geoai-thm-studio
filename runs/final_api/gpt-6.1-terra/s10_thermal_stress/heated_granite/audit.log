@@ -1,0 +1,10 @@
+{"time": "2026-10-30T19:37:10", "tool": "start_from_example", "ok": true, "state": "DRAFT", "version": 1, "args": "{\"example_id\": \"heated_block_tm\", \"changes\": [{\"name\": \"heated_side_temperature\", \"value\": \"60 degC\"}], \"project_name\": \"heated_granite\"}", "note": ""}
+{"time": "2026-10-30T19:37:12", "tool": "build_mesh", "ok": true, "state": "DRAFT", "version": 1, "args": "{}", "note": ""}
+{"time": "2026-10-30T19:37:15", "tool": "show_mesh", "ok": true, "state": "DRAFT", "version": 1, "args": "{\"zoom\": null}", "note": ""}
+{"time": "2026-10-30T19:37:17", "tool": "check_model", "ok": true, "state": "CHECKED", "version": 1, "args": "{}", "note": ""}
+{"time": "2026-10-30T19:37:19", "tool": "run", "ok": true, "state": "RUNNING", "version": 1, "args": "{}", "note": ""}
+{"time": "2026-10-30T19:37:26", "tool": "run_status", "ok": true, "state": "COMPUTED", "version": 1, "args": "{}", "note": ""}
+{"time": "2026-10-30T19:37:28", "tool": "show_model", "ok": true, "state": "COMPUTED", "version": 1, "args": "{}", "note": ""}
+{"time": "2026-10-30T19:37:32", "tool": "show_results", "ok": true, "state": "COMPUTED", "version": 1, "args": "{\"field\": \"sigma\", \"component\": \"yy\", \"kind\": \"map\", \"time\": null, \"probe\": null, \"point\": null, \"line\": null}", "note": ""}
+{"time": "2026-10-30T19:37:42", "tool": "compare", "ok": true, "state": "COMPUTED", "version": 1, "args": "{\"comparison\": \"no_solid_thermal_expansion\", \"field\": \"sigma\", \"component\": \"yy\", \"probe\": \"centre_line\", \"time\": null}", "note": ""}
+{"time": "2026-10-30T19:37:48", "tool": "answer_card", "ok": true, "state": "REPORTED", "version": 1, "args": "{\"items\": [{\"label\": \"Most compressive vertical stress on centre line\", \"kind\": \"min\", \"field\": \"sigma\", \"component\": \"yy\", \"probe\": \"centre_line\", \"point\": null, \"time\": null, \"comparison\": null}, {\"label\": \"Least compressive vertical stress on centre line\", \"kind\": \"max\", \"field\": \"sigma\", \"component\": \"yy\", \"probe\": \"centre_line\", \"point\": null, \"time\": null, \"comparison\": null}, {\"label\": \"...", "note": ""}

@@ -1,0 +1,54 @@
+[
+ {
+  "run_id": "852178a03dd6",
+  "model_name": "pumping_well",
+  "created": "2026-10-30 19:34",
+  "rows": [
+   {
+    "label": "Head change at observation well",
+    "quantity": "head",
+    "aggregation": "change since start",
+    "location": "obs_well_50m (50.0, 5.0) m",
+    "time": "1.00 d",
+    "value": "-3.06",
+    "unit": "m",
+    "value_si": -3.063052983776201,
+    "unit_si": "m"
+   },
+   {
+    "label": "Mesh refinement difference",
+    "quantity": "head",
+    "aggregation": "largest difference",
+    "location": "obs_well_50m",
+    "time": "1.00 d",
+    "value": "0.00236",
+    "unit": "m",
+    "value_si": 0.0023609115392715374,
+    "unit_si": "m"
+   }
+  ],
+  "verification": {
+   "configuration": "H-AX-well",
+   "title": "radial flow to a well (axisymmetric)",
+   "demonstration": false,
+   "cases": [
+    {
+     "case": "V1b",
+     "status": "passed",
+     "worst_normalised_error": 0.0196735374638941,
+     "source": "release record",
+     "date": "2026-10-30 19:14"
+    }
+   ]
+  },
+  "run_checks": {
+   "reached_end_time": true,
+   "finite_values": true,
+   "time_steps": 92,
+   "rejected_steps": 0,
+   "max_nonlinear_iterations": 1,
+   "energy_balance": "not checked"
+  },
+  "table": "Results of run 852178a03dd6 (model pumping_well)\n\n| quantity | where | when | how | value |\n|---|---|---|---|---|\n| Head change at observation well | obs_well_50m (50.0, 5.0) m | 1.00 d | change since start | -3.06 m |\n| Mesh refinement difference | obs_well_50m | 1.00 d | largest difference | 0.00236 m |\n\nVerified configuration H-AX-well: V1b passed (max error 2.0 %).\nThis run: reached end time True, finite values True, time steps 92, rejected steps 0, max nonlinear iterations 1, energy balance not checked."
+ }
+]

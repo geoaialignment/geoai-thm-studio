@@ -1,0 +1,124 @@
+{
+ "schema_version": 1,
+ "name": "heat_plume_100d",
+ "geometry": {
+  "kind": "rect",
+  "width": 60.0,
+  "layers": [
+   {
+    "name": "aquifer",
+    "thickness": 10.0
+   }
+  ],
+  "plane": "horizontal",
+  "segments": []
+ },
+ "materials": {
+  "aquifer": {
+   "label": "sand",
+   "permeability": null,
+   "hydraulic_conductivity": 0.0001,
+   "porosity": 0.3,
+   "specific_storage": null,
+   "thermal_conductivity": 2.0,
+   "solid_density": 2650.0,
+   "solid_specific_heat": 800.0,
+   "density": null,
+   "specific_heat": null,
+   "longitudinal_dispersivity": null,
+   "transverse_dispersivity": null,
+   "youngs_modulus": null,
+   "poissons_ratio": null,
+   "biot_coefficient": null,
+   "thermal_expansion": null
+  }
+ },
+ "physics": {
+  "process": "TH",
+  "gravity": null,
+  "fluid": {
+   "density": 1000.0,
+   "viscosity": 0.001,
+   "specific_heat": 4180.0,
+   "thermal_conductivity": 0.6,
+   "thermal_expansion": 0.0004,
+   "density_increase_per_concentration": 0.0
+  },
+  "components": []
+ },
+ "boundary_conditions": [
+  {
+   "boundary": "left",
+   "variable": "head",
+   "kind": "fixed",
+   "value": 10.6,
+   "component": null,
+   "expression": null
+  },
+  {
+   "boundary": "right",
+   "variable": "head",
+   "kind": "fixed",
+   "value": 10.0,
+   "component": null,
+   "expression": null
+  },
+  {
+   "boundary": "left",
+   "variable": "temperature",
+   "kind": "fixed",
+   "value": 295.15,
+   "component": null,
+   "expression": null
+  }
+ ],
+ "heat_sources": [],
+ "initial": {
+  "temperature": 285.15,
+  "head": 10.0,
+  "pressure": null,
+  "concentration": null
+ },
+ "mesh": {
+  "element": "auto",
+  "size": 0.5,
+  "divisions": {},
+  "refinements": []
+ },
+ "study": {
+  "kind": "transient",
+  "end_time": 8640000.0,
+  "first_step": 86400.0,
+  "max_step": null,
+  "growth": 1.0,
+  "output_times": [
+   4320000.0
+  ]
+ },
+ "probes": [
+  {
+   "name": "centre_line",
+   "point": null,
+   "line": [
+    [
+     0.0,
+     5.0
+    ],
+    [
+     60.0,
+     5.0
+    ]
+   ],
+   "samples": 101
+  },
+  {
+   "name": "at_20m",
+   "point": [
+    20.0,
+    5.0
+   ],
+   "line": null,
+   "samples": 101
+  }
+ ]
+}

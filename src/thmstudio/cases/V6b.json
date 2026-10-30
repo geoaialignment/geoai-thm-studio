@@ -1,0 +1,141 @@
+{
+ "id": "V6b",
+ "configuration": "HC-2D",
+ "title": "Radionuclide migration with sorption and decay (135Cs in clay)",
+ "source": "analytical solution after van Genuchten and Alves (1982); OGS benchmark Parabolic/ComponentTransport/AdvectionDiffusionSorptionDecay",
+ "model": {
+  "name": "v6b",
+  "geometry": {
+   "kind": "strip",
+   "segments": [
+    {
+     "name": "clay",
+     "thickness": 20
+    }
+   ],
+   "width": 0.01
+  },
+  "physics": {
+   "process": "HC",
+   "components": [
+    {
+     "name": "cs",
+     "pore_diffusion": 8.333333333333333e-11,
+     "decay_rate": 9.556327352038599e-15,
+     "retardation": 9976.0
+    }
+   ]
+  },
+  "materials": {
+   "clay": {
+    "permeability": 1e-18,
+    "porosity": 0.12,
+    "longitudinal_dispersivity": 0,
+    "transverse_dispersivity": 0
+   }
+  },
+  "boundary_conditions": [
+   {
+    "boundary": "left",
+    "variable": "head",
+    "kind": "flux",
+    "value": 2e-11
+   },
+   {
+    "boundary": "right",
+    "variable": "pressure",
+    "value": 100000.0
+   },
+   {
+    "boundary": "left",
+    "variable": "concentration",
+    "value": 1.0
+   }
+  ],
+  "initial": {
+   "pressure": 100000.0,
+   "concentration": 0
+  },
+  "mesh": {
+   "size": 0.01
+  },
+  "study": {
+   "kind": "transient",
+   "end_time": 31536000000000.0,
+   "first_step": 31536000000.0,
+   "output_times": [
+    31536000000.0,
+    315360000000.0,
+    3153600000000.0
+   ]
+  }
+ },
+ "reference": {
+  "type": "advection_dispersion",
+  "axis": 0,
+  "params": {
+   "v": 1.6666666666666666e-10,
+   "D": 8.333333333333333e-11,
+   "R": 9976.0,
+   "decay": 9.556327352038599e-15
+  }
+ },
+ "normalization": {
+  "type": "scale",
+  "scale": 1.0
+ },
+ "tolerance": {
+  "max_norm": 0.02,
+  "l2_rel": 0.03
+ },
+ "observations": [
+  {
+   "field": "cs",
+   "time": 315360000000.0,
+   "line": {
+    "from": [
+     0,
+     0.005
+    ],
+    "to": [
+     2.0,
+     0.005
+    ],
+    "n": 101
+   },
+   "label": "profile at t = 3.1536e+11 s"
+  },
+  {
+   "field": "cs",
+   "time": 3153600000000.0,
+   "line": {
+    "from": [
+     0,
+     0.005
+    ],
+    "to": [
+     2.0,
+     0.005
+    ],
+    "n": 101
+   },
+   "label": "profile at t = 3.1536e+12 s"
+  },
+  {
+   "field": "cs",
+   "time": 31536000000000.0,
+   "line": {
+    "from": [
+     0,
+     0.005
+    ],
+    "to": [
+     2.0,
+     0.005
+    ],
+    "n": 101
+   },
+   "label": "profile at t = 3.1536e+13 s"
+  }
+ ]
+}

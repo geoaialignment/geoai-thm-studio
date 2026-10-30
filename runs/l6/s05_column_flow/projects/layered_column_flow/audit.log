@@ -1,0 +1,9 @@
+{"time": "2026-10-30T18:25:07", "tool": "start_from_example", "ok": true, "state": "DRAFT", "version": 1, "args": "{\"example_id\": \"layered_column_flow\", \"project_name\": \"layered_column_flow\", \"changes\": [{\"name\": \"bottom_head\", \"value\": \"12 m\"}, {\"name\": \"top_head\", \"value\": \"10 m\"}]}", "note": ""}
+{"time": "2026-10-30T18:25:09", "tool": "show_model", "ok": false, "state": "DRAFT", "version": 1, "args": "{}", "note": "'show_model' is not available in state DRAFT (step mesh). Next step: call build_mesh (set_mesh first if the default size is not wanted). Available now: set_mesh, build_mesh, show_mesh, check_model, go_to_step, ask_user."}
+{"time": "2026-10-30T18:25:11", "tool": "build_mesh", "ok": true, "state": "DRAFT", "version": 1, "args": "{}", "note": ""}
+{"time": "2026-10-30T18:25:12", "tool": "check_model", "ok": true, "state": "CHECKED", "version": 1, "args": "{}", "note": ""}
+{"time": "2026-10-30T18:25:12", "tool": "run", "ok": true, "state": "RUNNING", "version": 1, "args": "{}", "note": ""}
+{"time": "2026-10-30T18:25:13", "tool": "run_status", "ok": true, "state": "COMPUTED", "version": 1, "args": "{}", "note": ""}
+{"time": "2026-10-30T18:25:14", "tool": "show_model", "ok": true, "state": "COMPUTED", "version": 1, "args": "{}", "note": ""}
+{"time": "2026-10-30T18:25:15", "tool": "answer_card", "ok": true, "state": "REPORTED", "version": 1, "args": "{\"items\": [{\"label\": \"head at sand-clay interface\", \"kind\": \"value\", \"field\": \"head\", \"point\": [0.5, 5]}, {\"label\": \"head at bottom of column\", \"kind\": \"value\", \"field\": \"head\", \"point\": [0.5, 0]}, {\"label\": \"head at top of column\", \"kind\": \"value\", \"field\": \"head\", \"point\": [0.5, 10]}]}", "note": ""}
+{"time": "2026-10-30T18:25:19", "tool": "show_results", "ok": true, "state": "REPORTED", "version": 1, "args": "{\"field\": \"head\", \"kind\": \"profile\", \"line\": [[0.5, 0], [0.5, 10]]}", "note": ""}

@@ -1,0 +1,88 @@
+{
+ "schema_version": 1,
+ "name": "box_head_mid",
+ "geometry": {
+  "kind": "box",
+  "length_x": 20.0,
+  "length_y": 5.0,
+  "layers": [
+   {
+    "name": "block",
+    "thickness": 5.0
+   }
+  ]
+ },
+ "materials": {
+  "block": {
+   "label": "sand (library values)",
+   "permeability": null,
+   "hydraulic_conductivity": 0.0001,
+   "porosity": 0.3,
+   "specific_storage": 0.0001,
+   "thermal_conductivity": 2.0,
+   "solid_density": 2650.0,
+   "solid_specific_heat": 800.0,
+   "density": 2000.0,
+   "specific_heat": 1300.0,
+   "longitudinal_dispersivity": 0.1,
+   "transverse_dispersivity": 0.01,
+   "youngs_modulus": 50000000.0,
+   "poissons_ratio": 0.3,
+   "biot_coefficient": 1.0,
+   "thermal_expansion": 0.00001
+  }
+ },
+ "physics": {
+  "process": "H",
+  "gravity": null,
+  "fluid": {
+   "density": 1000.0,
+   "viscosity": 0.001,
+   "specific_heat": 4180.0,
+   "thermal_conductivity": 0.6,
+   "thermal_expansion": 0.0004,
+   "density_increase_per_concentration": 0.0
+  },
+  "components": []
+ },
+ "boundary_conditions": [
+  {
+   "boundary": "left",
+   "variable": "head",
+   "kind": "fixed",
+   "value": 10.0,
+   "component": null,
+   "expression": null
+  },
+  {
+   "boundary": "right",
+   "variable": "head",
+   "kind": "fixed",
+   "value": 9.0,
+   "component": null,
+   "expression": null
+  }
+ ],
+ "heat_sources": [],
+ "initial": {
+  "temperature": null,
+  "head": 9.5,
+  "pressure": null,
+  "concentration": null
+ },
+ "mesh": {
+  "element": "auto",
+  "size": 1.0,
+  "divisions": {},
+  "refinements": []
+ },
+ "study": {
+  "kind": "steady",
+  "end_time": null,
+  "first_step": null,
+  "max_step": null,
+  "growth": 1.0,
+  "output_times": []
+ },
+ "probes": []
+}

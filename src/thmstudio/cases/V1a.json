@@ -1,0 +1,127 @@
+{
+ "id": "V1a",
+ "configuration": "H-2D",
+ "title": "Steady upward flow through two layers in series",
+ "source": "Darcy's law, layers in series (exact for linear elements)",
+ "model": {
+  "name": "v1a",
+  "geometry": {
+   "kind": "rect",
+   "width": 1,
+   "layers": [
+    {
+     "name": "lower",
+     "thickness": 5.0
+    },
+    {
+     "name": "upper",
+     "thickness": 5.0
+    }
+   ]
+  },
+  "physics": {
+   "process": "H"
+  },
+  "materials": {
+   "lower": {
+    "hydraulic_conductivity": 1e-05,
+    "porosity": 0.3
+   },
+   "upper": {
+    "hydraulic_conductivity": 1e-06,
+    "porosity": 0.3
+   }
+  },
+  "boundary_conditions": [
+   {
+    "boundary": "bottom",
+    "variable": "head",
+    "value": 12
+   },
+   {
+    "boundary": "top",
+    "variable": "head",
+    "value": 10
+   }
+  ],
+  "initial": {
+   "head": 10
+  },
+  "mesh": {
+   "size": 0.25,
+   "divisions": {
+    "x": 2
+   }
+  },
+  "study": {
+   "kind": "steady"
+  }
+ },
+ "reference": {
+  "type": "series_layers",
+  "axis": 1,
+  "params": {
+   "bounds": [
+    0,
+    5.0,
+    10.0
+   ],
+   "conductivities": [
+    1e-05,
+    1e-06
+   ],
+   "v0": 12,
+   "v1": 10
+  }
+ },
+ "normalization": {
+  "type": "scale",
+  "scale": 2.0
+ },
+ "tolerance": {
+  "max_norm": 1e-06
+ },
+ "observations": [
+  {
+   "field": "head",
+   "line": {
+    "from": [
+     0.5,
+     0
+    ],
+    "to": [
+     0.5,
+     10
+    ],
+    "n": 41
+   },
+   "label": "head along the column"
+  },
+  {
+   "field": "darcy_velocity",
+   "component": 1,
+   "points": [
+    [
+     0.5,
+     2.5
+    ],
+    [
+     0.5,
+     7.5
+    ]
+   ],
+   "label": "Darcy flux in each layer",
+   "reference": {
+    "type": "constant",
+    "base": 3.6363636363636366e-07
+   },
+   "normalization": {
+    "type": "scale",
+    "scale": 3.6363636363636366e-07
+   },
+   "tolerance": {
+    "max_norm": 1e-06
+   }
+  }
+ ]
+}

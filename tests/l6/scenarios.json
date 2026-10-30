@@ -1,0 +1,188 @@
+[
+ {
+  "id": "s01_surface_heating_ko",
+  "request": "암반 지표가 10년 동안 10도 더 따뜻해지면 땅속 5 m 깊이 온도가 얼마나 오르는지 초기 모델을 만들어 계산해 줘. 나머지는 알아서 해.",
+  "expect": {
+   "computed": true,
+   "example": "surface_heating"
+  }
+ },
+ {
+  "id": "s02_out_of_scope",
+  "request": "Model reactive transport of uranium with mineral precipitation in a 3D fractured granite site model.",
+  "expect": {
+   "refused": true
+  }
+ },
+ {
+  "id": "s03_inclusion_power",
+  "request": "A heat-releasing body of 1 m radius in granite gives off 800 W per metre. What is the temperature at its centre after 5 years? Use sensible defaults.",
+  "expect": {
+   "computed": true,
+   "example": "heated_inclusion"
+  }
+ },
+ {
+  "id": "s04_pumping_well",
+  "request": "A well pumps 500 m3 per day from a 10 m thick sandy aquifer. How much does the water level drop 50 m away after one day?",
+  "expect": {
+   "computed": true,
+   "example": "pumping_well"
+  }
+ },
+ {
+  "id": "s05_column_flow",
+  "request": "Water flows up through 5 m of sand and 5 m of clay, with heads of 12 m at the bottom and 10 m at the top. What is the head at the sand-clay boundary?",
+  "expect": {
+   "computed": true,
+   "example": "layered_column_flow"
+  }
+ },
+ {
+  "id": "s06_heat_plume",
+  "request": "지하수가 흐르는 모래 대수층으로 10도 더 따뜻한 물이 들어올 때 100일 뒤 열이 얼마나 퍼지는지 보여줘.",
+  "expect": {
+   "computed": true,
+   "example": "aquifer_heat_plume"
+  }
+ },
+ {
+  "id": "s07_tracer",
+  "request": "A tracer enters a sand column with the groundwater at 0.0864 m per day. What is the concentration 5 m downstream after 10 days?",
+  "expect": {
+   "computed": true,
+   "example": "solute_front"
+  }
+ },
+ {
+  "id": "s08_sorption_effect",
+  "request": "For cesium-135 migrating through clay, how much does sorption slow it down? Compare with and without sorption after 50000 years.",
+  "expect": {
+   "computed": true,
+   "example": "radionuclide_clay",
+   "tools": [
+    "compare"
+   ]
+  }
+ },
+ {
+  "id": "s09_consolidation",
+  "request": "A 10 m soft clay layer is loaded with 50 kPa at the surface. How much does the surface settle after one year?",
+  "expect": {
+   "computed": true,
+   "example": "consolidation_column"
+  }
+ },
+ {
+  "id": "s10_thermal_stress",
+  "request": "A confined granite block is heated to 60 C on one side. How large is the thermal stress, and how much of it comes from thermal expansion?",
+  "expect": {
+   "computed": true,
+   "example": "heated_block_tm",
+   "tools": [
+    "compare"
+   ]
+  }
+ },
+ {
+  "id": "s11_thermal_pressurisation",
+  "request": "포화된 저투수 암반에 300 W 점 열원이 있을 때 간극수압이 얼마나 오르는지, 그리고 물의 열팽창 때문에 생기는 부분이 얼마인지 알려줘.",
+  "expect": {
+   "computed": true,
+   "example": "point_heat_source",
+   "tools": [
+    "compare"
+   ]
+  }
+ },
+ {
+  "id": "s12_repository",
+  "request": "A waste canister releasing 1 kW sits in a bentonite-filled deposition hole in granite. What is the highest buffer temperature after one year?",
+  "expect": {
+   "computed": true,
+   "example": "repository_canister"
+  }
+ },
+ {
+  "id": "s13_from_scratch",
+  "request": "Build from scratch (no example): a 2D vertical section 20 m wide with two layers, 4 m of clay (thermal conductivity 1.5 W/m/K) over 6 m of sandstone (2.5 W/m/K). Bottom at 30 C, top at 10 C, steady state. What is the temperature at the layer boundary?",
+  "expect": {
+   "computed": true,
+   "tools": [
+    "new_project",
+    "set_geometry",
+    "set_materials"
+   ]
+  }
+ },
+ {
+  "id": "s14_percent_porosity",
+  "request": "Make a solute transport model in sand with porosity 25 and dispersivity 0.1 m; the tracer enters at 0.05 m/day. Concentration 3 m from the inlet after 20 days?",
+  "expect": {
+   "computed": true
+  }
+ },
+ {
+  "id": "s15_box_flow",
+  "request": "3D: water flows through a 20 m by 5 m block, 5 m thick, from a head of 10 m on one side to 9 m on the other. What is the head in the middle?",
+  "expect": {
+   "computed": true
+  }
+ },
+ {
+  "id": "s16_well_ko_defaults",
+  "request": "양수정 주변 수위 강하를 계산해 줘. 알아서 해.",
+  "expect": {
+   "computed": true,
+   "example": "pumping_well"
+  }
+ },
+ {
+  "id": "s17_swelling_refused",
+  "request": "Compute the swelling pressure of unsaturated bentonite as it takes up water from the rock over 50 years.",
+  "expect": {
+   "refused": true
+  }
+ },
+ {
+  "id": "s18_followup_change",
+  "request": "Run the tracer example, then run it again with a dispersivity ten times larger, and tell me how the concentration 5 m from the inlet changes after 10 days.",
+  "expect": {
+   "computed": true,
+   "min_runs": 2
+  }
+ },
+ {
+  "id": "s19_gravity_mechanics",
+  "request": "Model consolidation of a clay layer under its own weight with gravity switched on.",
+  "expect": {
+   "explains": [
+    "gravity",
+    "중력"
+   ],
+   "forbidden": "gravity_mechanics"
+  }
+ },
+ {
+  "id": "s20_steady_transport",
+  "request": "Give me the steady-state solute concentration profile in a sand column with constant inflow.",
+  "expect": {
+   "explains": [
+    "transient",
+    "not support",
+    "not verified",
+    "does not compute",
+    "지원하지",
+    "과도"
+   ],
+   "forbidden": "steady_transport"
+  }
+ },
+ {
+  "id": "s21_elder_from_text",
+  "request": "Solve the Elder problem (density-driven flow with Darcy's law, like the COMSOL example): a 600 m wide, 150 m deep saturated layer; salt water (concentration 1, density 1200 kg/m3 versus 1000 for fresh water) enters through the top between x = 150 m and 450 m; the bottom is held at concentration 0; pressure is fixed only at the upper corners. Porosity 0.1, permeability 4.845e-13 m2, viscosity 1e-3 Pa s, diffusion 3.57e-6 m2/s, no dispersion. Show how the salt plume looks after 2 years.",
+  "expect": {
+   "computed": true
+  }
+ }
+]

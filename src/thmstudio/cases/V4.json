@@ -1,0 +1,240 @@
+{
+ "id": "V4",
+ "configuration": "HM-2D-column",
+ "title": "One-dimensional consolidation of a loaded column (Terzaghi)",
+ "source": "Terzaghi (1925); OGS benchmarks HydroMechanics/Verification/hm2_1D1bt and Linear/Confined_Compression",
+ "model": {
+  "name": "v4",
+  "geometry": {
+   "kind": "rect",
+   "width": 1,
+   "layers": [
+    {
+     "name": "soil",
+     "thickness": 10.0
+    }
+   ]
+  },
+  "physics": {
+   "process": "HM"
+  },
+  "materials": {
+   "soil": {
+    "permeability": 1e-14,
+    "porosity": 0.3,
+    "youngs_modulus": 100000000.0,
+    "poissons_ratio": 0.25,
+    "biot_coefficient": 1.0,
+    "solid_density": 2650
+   }
+  },
+  "boundary_conditions": [
+   {
+    "boundary": "left",
+    "variable": "displacement",
+    "kind": "roller"
+   },
+   {
+    "boundary": "right",
+    "variable": "displacement",
+    "kind": "roller"
+   },
+   {
+    "boundary": "bottom",
+    "variable": "displacement",
+    "kind": "roller"
+   },
+   {
+    "boundary": "top",
+    "variable": "displacement",
+    "kind": "load",
+    "value": 100000.0
+   },
+   {
+    "boundary": "top",
+    "variable": "pressure",
+    "value": 0.0
+   }
+  ],
+  "initial": {
+   "pressure": 0.0
+  },
+  "mesh": {
+   "size": 0.25,
+   "divisions": {
+    "x": 2
+   },
+   "refinements": [
+    {
+     "target": "top",
+     "size": 0.02,
+     "growth": 1.15
+    }
+   ]
+  },
+  "study": {
+   "kind": "transient",
+   "end_time": 41666.666667,
+   "first_step": 1.0,
+   "growth": 1.15,
+   "max_step": 416.66666670000006,
+   "output_times": [
+    4166.666667,
+    16666.666667
+   ]
+  }
+ },
+ "reference": {
+  "type": "terzaghi_pressure",
+  "axis": 1,
+  "origin": 10.0,
+  "sign": -1.0,
+  "params": {
+   "load": 100000.0,
+   "cv": 0.0012,
+   "H": 10.0
+  }
+ },
+ "normalization": {
+  "type": "scale",
+  "scale": 100000.0
+ },
+ "tolerance": {
+  "max_norm": 0.02,
+  "l2_rel": 0.02
+ },
+ "observations": [
+  {
+   "field": "pressure",
+   "time": 4166.666667,
+   "line": {
+    "from": [
+     0.5,
+     0
+    ],
+    "to": [
+     0.5,
+     10.0
+    ],
+    "n": 41
+   },
+   "label": "excess pressure at Tv = 0.05"
+  },
+  {
+   "field": "pressure",
+   "time": 16666.666667,
+   "line": {
+    "from": [
+     0.5,
+     0
+    ],
+    "to": [
+     0.5,
+     10.0
+    ],
+    "n": 41
+   },
+   "label": "excess pressure at Tv = 0.2"
+  },
+  {
+   "field": "pressure",
+   "time": 41666.666667,
+   "line": {
+    "from": [
+     0.5,
+     0
+    ],
+    "to": [
+     0.5,
+     10.0
+    ],
+    "n": 41
+   },
+   "label": "excess pressure at Tv = 0.5"
+  },
+  {
+   "field": "displacement",
+   "component": 1,
+   "time": 4166.666667,
+   "points": [
+    [
+     0.5,
+     10.0
+    ]
+   ],
+   "label": "settlement at Tv = 0.05",
+   "reference": {
+    "type": "terzaghi_settlement",
+    "params": {
+     "load": 100000.0,
+     "cv": 0.0012,
+     "H": 10.0,
+     "M": 120000000.0
+    }
+   },
+   "normalization": {
+    "type": "scale",
+    "scale": 0.008333333333333333
+   },
+   "tolerance": {
+    "max_norm": 0.02
+   }
+  },
+  {
+   "field": "displacement",
+   "component": 1,
+   "time": 16666.666667,
+   "points": [
+    [
+     0.5,
+     10.0
+    ]
+   ],
+   "label": "settlement at Tv = 0.2",
+   "reference": {
+    "type": "terzaghi_settlement",
+    "params": {
+     "load": 100000.0,
+     "cv": 0.0012,
+     "H": 10.0,
+     "M": 120000000.0
+    }
+   },
+   "normalization": {
+    "type": "scale",
+    "scale": 0.008333333333333333
+   },
+   "tolerance": {
+    "max_norm": 0.02
+   }
+  },
+  {
+   "field": "displacement",
+   "component": 1,
+   "time": 41666.666667,
+   "points": [
+    [
+     0.5,
+     10.0
+    ]
+   ],
+   "label": "settlement at Tv = 0.5",
+   "reference": {
+    "type": "terzaghi_settlement",
+    "params": {
+     "load": 100000.0,
+     "cv": 0.0012,
+     "H": 10.0,
+     "M": 120000000.0
+    }
+   },
+   "normalization": {
+    "type": "scale",
+    "scale": 0.008333333333333333
+   },
+   "tolerance": {
+    "max_norm": 0.02
+   }
+  }
+ ]
+}

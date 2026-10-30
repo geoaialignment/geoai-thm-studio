@@ -1,0 +1,116 @@
+[
+ {
+  "run_id": "a177f21288a3",
+  "model_name": "aquifer_heat_100d",
+  "created": "2026-10-30 19:35",
+  "rows": [
+   {
+    "label": "6 m 지점 온도 상승",
+    "quantity": "temperature",
+    "aggregation": "change since start",
+    "location": "(6.0, 5.0) m",
+    "time": "100 d",
+    "value": "9.85",
+    "unit": "K",
+    "value_si": 9.845236124077815,
+    "unit_si": "K"
+   },
+   {
+    "label": "12 m 지점 온도 상승",
+    "quantity": "temperature",
+    "aggregation": "change since start",
+    "location": "(12.0, 5.0) m",
+    "time": "100 d",
+    "value": "6.67",
+    "unit": "K",
+    "value_si": 6.6744644504660755,
+    "unit_si": "K"
+   },
+   {
+    "label": "18 m 지점 온도 상승",
+    "quantity": "temperature",
+    "aggregation": "change since start",
+    "location": "(18.0, 5.0) m",
+    "time": "100 d",
+    "value": "1.22",
+    "unit": "K",
+    "value_si": 1.2239561513225112,
+    "unit_si": "K"
+   },
+   {
+    "label": "24 m 지점 온도 상승",
+    "quantity": "temperature",
+    "aggregation": "change since start",
+    "location": "(24.0, 5.0) m",
+    "time": "100 d",
+    "value": "0.0386",
+    "unit": "K",
+    "value_si": 0.03857274533010013,
+    "unit_si": "K"
+   },
+   {
+    "label": "격자 세분화 시 중심선의 최대 온도 차이",
+    "quantity": "temperature",
+    "aggregation": "largest difference",
+    "location": "centre_line",
+    "time": "100 d",
+    "value": "0.00281",
+    "unit": "K",
+    "value_si": 0.0028121892059971287,
+    "unit_si": "K"
+   },
+   {
+    "label": "초기 대수층 온도",
+    "quantity": "temperature",
+    "aggregation": "value",
+    "location": "at_20m (20.0, 5.0) m",
+    "time": "0 s",
+    "value": "12.0",
+    "unit": "°C",
+    "value_si": 285.15,
+    "unit_si": "K"
+   },
+   {
+    "label": "유입 경계 온도",
+    "quantity": "temperature",
+    "aggregation": "value",
+    "location": "(0.0, 5.0) m",
+    "time": "100 d",
+    "value": "22.0",
+    "unit": "°C",
+    "value_si": 295.14999999999986,
+    "unit_si": "K"
+   }
+  ],
+  "verification": {
+   "configuration": "TH-2D",
+   "title": "heat transport by groundwater flow in 2D",
+   "demonstration": false,
+   "cases": [
+    {
+     "case": "V3",
+     "status": "passed",
+     "worst_normalised_error": 0.009735528544410954,
+     "source": "release record",
+     "date": "2026-10-30 19:14"
+    },
+    {
+     "case": "V3-water",
+     "status": "passed",
+     "worst_normalised_error": 0.004458001783518739,
+     "source": "release record",
+     "date": "2026-10-30 19:14"
+    }
+   ]
+  },
+  "run_checks": {
+   "reached_end_time": true,
+   "finite_values": true,
+   "time_steps": 100,
+   "rejected_steps": 0,
+   "max_nonlinear_iterations": 3,
+   "energy_balance": "not checked"
+  },
+  "table": "Results of run a177f21288a3 (model aquifer_heat_100d)\n\n| quantity | where | when | how | value |\n|---|---|---|---|---|\n| 6 m 지점 온도 상승 | (6.0, 5.0) m | 100 d | change since start | 9.85 K |\n| 12 m 지점 온도 상승 | (12.0, 5.0) m | 100 d | change since start | 6.67 K |\n| 18 m 지점 온도 상승 | (18.0, 5.0) m | 100 d | change since start | 1.22 K |\n| 24 m 지점 온도 상승 | (24.0, 5.0) m | 100 d | change since start | 0.0386 K |\n| 격자 세분화 시 중심선의 최대 온도 차이 | centre_line | 100 d | largest difference | 0.00281 K |\n| 초기 대수층 온도 | at_20m (20.0, 5.0) m | 0 s | value | 12.0 °C |\n| 유입 경계 온도 | (0.0, 5.0) m | 100 d | value | 22.0 °C |\n\nVerified configuration TH-2D: V3 passed (max error 0.97 %), V3-water passed (max error 0.45 %).\nThis run: reached end time True, finite values True, time steps 100, rejected steps 0, max nonlinear iterations 3, energy balance not checked."
+ }
+]

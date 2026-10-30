@@ -1,0 +1,61 @@
+[
+ {
+  "run_id": "f83b69d8d377",
+  "model_name": "clay_consolidation_gravity",
+  "created": "2026-10-30 18:39",
+  "rows": [
+   {
+    "label": "surface settlement at 2 yr (change of vertical displacement)",
+    "quantity": "displacement",
+    "aggregation": "change since start",
+    "location": "surface (0.5, 10.0) m",
+    "time": "2.00 yr",
+    "value": "-37.1",
+    "unit": "mm",
+    "value_si": -0.03714285714285711,
+    "unit_si": "m"
+   },
+   {
+    "label": "peak excess pore pressure after 36.5 d",
+    "quantity": "pressure",
+    "aggregation": "max",
+    "location": "along column",
+    "time": "36.5 d",
+    "value": "0.0179",
+    "unit": "MPa",
+    "value_si": 17946.428205716198,
+    "unit_si": "Pa"
+   }
+  ],
+  "verification": {
+   "configuration": "HM-2D",
+   "title": "consolidation of saturated ground under load (plane strain; verified with a 1D column)",
+   "demonstration": false,
+   "cases": [
+    {
+     "case": "V4",
+     "status": "passed",
+     "worst_normalised_error": 0.008110210488268203,
+     "source": "release record",
+     "date": "2026-10-30 17:37"
+    },
+    {
+     "case": "V4b",
+     "status": "passed",
+     "worst_normalised_error": 0.008136143440429237,
+     "source": "release record",
+     "date": "2026-10-30 18:18"
+    }
+   ]
+  },
+  "run_checks": {
+   "reached_end_time": true,
+   "finite_values": true,
+   "time_steps": 106,
+   "rejected_steps": 0,
+   "max_nonlinear_iterations": 2,
+   "energy_balance": "not checked"
+  },
+  "table": "Results of run f83b69d8d377 (model clay_consolidation_gravity)\n\n| quantity | where | when | how | value |\n|---|---|---|---|---|\n| surface settlement at 2 yr (change of vertical displacement) | surface (0.5, 10.0) m | 2.00 yr | change since start | -37.1 mm |\n| peak excess pore pressure after 36.5 d | along column | 36.5 d | max | 0.0179 MPa |\n\nVerified configuration HM-2D: V4 passed (max error 0.81 %), V4b passed (max error 0.81 %).\nThis run: reached end time True, finite values True, time steps 106, rejected steps 0, max nonlinear iterations 2, energy balance not checked."
+ }
+]
