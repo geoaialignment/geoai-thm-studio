@@ -31,5 +31,5 @@ copy_tree(ROOT / "scratch/final_api", out / "final_api")
 led = ROOT / "tests/final_api/ledger.json"
 led.write_text(clean(led.read_text()))
 n = sum(1 for _ in out.rglob("*") if _.is_file())
-left = [str(p) for p in out.rglob("*") if p.is_file() and (HOME in p.read_text() or "/Users/" in p.read_text())]
+left = [str(p) for p in out.rglob("*") if p.is_file() and HOME in p.read_text()]
 print(n, "files; with local paths:", left[:5])

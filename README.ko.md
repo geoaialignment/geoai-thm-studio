@@ -63,7 +63,7 @@ OpenGeoSys 판에서 모두 통과했을 때만 계산합니다. 사례 27개 �
 Apple Silicon의 macOS 15 이상, 또는 Linux x86_64. Python 3.12. Windows는 지원하지 않습니다.
 
 ```bash
-pip install "geoai-thm-studio[mesh-gmsh] @ git+https://github.com/geoaialignment/geoai-thm-studio"
+pip install "geoai-thm-studio[mesh-gmsh] @ git+https://github.com/geoaialignment/geoai-thm-studio@v0.1.0"
 ```
 
 `mesh-gmsh`는 원형 포함체와 삼각형 격자에 쓰는 gmsh를 설치합니다. gmsh는 별도 프로그램으로 실행됩니다.
@@ -118,7 +118,7 @@ OpenAI API를 쓰지 않았습니다.
   그 뒤 열원 요소 크기를 바꿔 가며 계산해 보니(`results/point_source_sweep.json`) 4분의 1에서도 오차가 약 6 % 남아,
   공개판 `check_model`은 8분의 1보다 큰 요소를 거절합니다. 이 크기는 예제를 검증 사례의 허용 오차 3 % 안에 둡니다.
   두 모델은 계산한 14번 가운데 9번 예제 격자를 바꿨지만 다른 시나리오에서는 영향이 없었고, 다시 계산한 값은 2.3 %
-  안에서(하나를 빼면 0.8 % 안에서) 같았습니다. 또 `thmstudio chat`이 두 번째 질문마다 실패하던 결함(event loop
+  안에서(23개 가운데 20개는 0.2 % 안에서) 같았습니다. 또 `thmstudio chat`이 두 번째 질문마다 실패하던 결함(event loop
   오류)을 찾아 고쳤습니다.
 - **Linux**는 에뮬레이션(Apple Silicon의 Docker)에서만 시험했습니다. 설치, 사각형 격자 예제, 검증 사례는 통과했고
   삼각형 격자는 통과하지 못했습니다(설치 참고).

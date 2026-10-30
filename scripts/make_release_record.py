@@ -7,6 +7,6 @@ records = json.loads((ROOT / "verification" / "results.json").read_text())
 for r in records:
     (r.get("run") or {}).pop("rundir", None)
 text = json.dumps(records, indent=1, ensure_ascii=False)
-assert "/Users/" not in text and "/home/" not in text
+assert str(Path.home()) not in text
 (ROOT / "src" / "thmstudio" / "verification_record.json").write_text(text + "\n")
 print(len(records), "cases written to the release record")

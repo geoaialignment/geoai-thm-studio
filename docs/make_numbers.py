@@ -26,7 +26,8 @@ if hv.exists():
     tr = [r["ratio"] for r in H["cases"] if not r["steady"]]
     st = [r for r in H["cases"] if r["steady"]]
     N["halving_n"], N["halving_min"], N["halving_max"] = len(tr), round(min(tr), 2), round(max(tr), 2)
-    N["halving_median"] = round(sorted(tr)[len(tr) // 2], 2)
+    import statistics
+    N["halving_median"] = round(statistics.median(tr), 2)
     st_txt = "; in the steady case refined with them, " + st[0]["id"] + f", it fell to {st[0]['ratio']:.2f}" if st else ""
     N["halving_sentence"] = (f"Halving the element size and the time step together in {len(tr)} transient cases reduced their "
                              f"largest errors to {N['halving_min']:.2f}–{N['halving_max']:.2f} of their values (median "
@@ -83,6 +84,7 @@ audit = json.loads((ROOT / "results/api_mesh_audit.json").read_text())
 other = [a for a in audit if not a["scenario"].startswith("s11")]
 N["audit_other_n"] = len(other)
 N["audit_other_max_pct"] = round(max(a["diff_pct"] for a in other), 1)
+N["audit_other_within_02"] = sum(a["diff_pct"] <= 0.2 for a in other)
 N["audit_other_second_pct"] = round(sorted(a["diff_pct"] for a in other)[-2], 1)
 N["audit"] = audit
 from thmstudio.schema import Model  # noqa: E402

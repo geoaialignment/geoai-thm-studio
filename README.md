@@ -69,7 +69,7 @@ about twenty tools; a translator turns the tree into OpenGeoSys input.
 macOS 15 or later on Apple Silicon, or Linux x86_64. Python 3.12. Windows is not supported.
 
 ```bash
-pip install "geoai-thm-studio[mesh-gmsh] @ git+https://github.com/geoaialignment/geoai-thm-studio"
+pip install "geoai-thm-studio[mesh-gmsh] @ git+https://github.com/geoaialignment/geoai-thm-studio@v0.1.0"
 ```
 
 The `mesh-gmsh` extra installs gmsh for circular inclusions and triangle meshes; gmsh runs as a separate program.
@@ -126,7 +126,7 @@ and testing used no OpenAI API.
   source element size (`results/point_source_sweep.json`) then showed that a quarter still leaves errors of about 6 %,
   so the released `check_model` refuses elements larger than an eighth, which keeps the example within the 3 %
   tolerance of its verification case. The models changed the example mesh in 9 of 14 computed runs; in the other
-  scenarios this did not matter, and the recomputed values agree within 2.3 % (all but one within 0.8 %). The check
+  scenarios this did not matter, and the recomputed values agree within 2.3 % (20 of 23 within 0.2 %). The check
   also found that `thmstudio chat` failed on every second turn (an event-loop error), which is fixed.
 - **Linux** was tested only under emulation (Docker on Apple Silicon): installation, the quadrilateral examples and
   the verification cases pass there; triangle meshes did not (see Install).

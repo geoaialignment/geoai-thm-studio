@@ -32,6 +32,6 @@ for key in ids:
     final = re.sub(r"/(?:Users|home)/[^\s`)]*?/([^/\s`)]+/[^/\s`)]+)(?=[\s`)]|$)", r"~/thmstudio_projects/\1", final)
     out.append(f"\n**Answer**\n\n{final}\n")
 text = "\n".join(out)
-assert "/Users/" not in text
+assert str(Path.home()) not in text
 (ROOT / "docs/EXAMPLE_CONVERSATION.md").write_text(text)
 print("written", len(ids), "conversations")

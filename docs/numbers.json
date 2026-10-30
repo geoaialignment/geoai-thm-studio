@@ -39,9 +39,9 @@
  "halving_n": 10,
  "halving_min": 0.44,
  "halving_max": 0.63,
- "halving_median": 0.51,
- "halving_sentence": "Halving the element size and the time step together in 10 transient cases reduced their largest errors to 0.44–0.63 of their values (median 0.51), as first-order time stepping leads one to expect; in the steady case refined with them, V2d, it fell to 0.27; the refined run of the point-source case did not finish within the run-time limit.",
- "halving_sentence_ko": "요소 크기와 시간 간격을 함께 절반으로 줄이자 비정상 사례 10개의 최대 오차가 원래의 0.44–0.63배(중앙값 0.51배)로 줄었으며, 이는 1차 시간 적분에서 기대되는 결과이다. 함께 세분한 정상 사례 V2d에서는 0.27배로 줄었다. 점 열원 사례의 세분 계산은 실행 시간 상한 안에 끝나지 않았다.",
+ "halving_median": 0.5,
+ "halving_sentence": "Halving the element size and the time step together in 10 transient cases reduced their largest errors to 0.44–0.63 of their values (median 0.50), as first-order time stepping leads one to expect; in the steady case refined with them, V2d, it fell to 0.27; the refined run of the point-source case did not finish within the run-time limit.",
+ "halving_sentence_ko": "요소 크기와 시간 간격을 함께 절반으로 줄이자 비정상 사례 10개의 최대 오차가 원래의 0.44–0.63배(중앙값 0.50배)로 줄었으며, 이는 1차 시간 적분에서 기대되는 결과이다. 함께 세분한 정상 사례 V2d에서는 0.27배로 줄었다. 점 열원 사례의 세분 계산은 실행 시간 상한 안에 끝나지 않았다.",
  "l6_n": 21,
  "l6_passed": 20,
  "l6_failed": [
@@ -169,6 +169,7 @@
  "luna_steps_MPa": 0.884,
  "audit_other_n": 23,
  "audit_other_max_pct": 2.3,
+ "audit_other_within_02": 20,
  "audit_other_second_pct": 0.8,
  "audit": [
   {
