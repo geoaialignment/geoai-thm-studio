@@ -129,7 +129,7 @@ OpenAI API를 쓰지 않았습니다.
 
 - 기술노트: [한국어](docs/technical_note/GeoAI-THM-Studio-v0.1.0_technical_note_ko.pdf),
   [영어](docs/technical_note/GeoAI-THM-Studio-v0.1.0_technical_note_en.pdf)
-- 프리프린트(ESS Open Archive 제출): [PDF](docs/preprint/GeoAI-THM-Studio_preprint.pdf)
+- 프리프린트(ESS Open Archive 제출용): [PDF](docs/preprint/GeoAI-THM-Studio_preprint.pdf)
 - 검증 표: [docs/VERIFICATION.md](docs/VERIFICATION.md)
 
 인용: Park, E., Kim, T., & Park, J. (2026). *GeoAI-THM Studio* (Version 0.1.0) [Software]. GeoAI Alignment, Inc.

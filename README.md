@@ -137,7 +137,7 @@ The conversations are in [docs/EXAMPLE_CONVERSATION.md](docs/EXAMPLE_CONVERSATIO
 
 - Technical note: [English](docs/technical_note/GeoAI-THM-Studio-v0.1.0_technical_note_en.pdf),
   [Korean](docs/technical_note/GeoAI-THM-Studio-v0.1.0_technical_note_ko.pdf)
-- Preprint (submitted to the ESS Open Archive): [PDF](docs/preprint/GeoAI-THM-Studio_preprint.pdf)
+- Preprint (prepared for the ESS Open Archive): [PDF](docs/preprint/GeoAI-THM-Studio_preprint.pdf)
 - Verification tables: [docs/VERIFICATION.md](docs/VERIFICATION.md)
 
 Cite as: Park, E., Kim, T., & Park, J. (2026). *GeoAI-THM Studio* (Version 0.1.0) [Software]. GeoAI Alignment, Inc.

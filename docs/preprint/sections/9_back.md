@@ -16,7 +16,7 @@
 
 # Open Research
 
-GeoAI-THM Studio 0.1.0, with its verification cases and record, the scenarios, the scripts that rescore the stand-in runs, recompute the answers and run the source-element sweep, and the result files and run records behind every number in this paper (`results/`, `runs/` and `tests/final_api/ledger.json`, with local paths removed), is archived at Zenodo (Park et al., 2026; https://doi.org/{{doi}}) and available at https://github.com/geoaialignment/geoai-thm-studio. The code is licensed under the PolyForm Noncommercial License 1.0.0 and the documentation under CC BY-NC 4.0; commercial use is not permitted. OpenGeoSys 6.5.8 is available under the BSD 3-Clause license (Bilke et al., 2026), and the official benchmark inputs used by four verification cases are part of its test data.
+GeoAI-THM Studio 0.1.0, with its verification cases and record, the scenarios, the scripts that rescore the stand-in runs, recompute the answers and run the source-element sweep, and the result files and run records behind every number in this paper (`results/`, `runs/` and `tests/final_api/ledger.json`, with local paths removed), is archived at Zenodo (Park et al., 2026; https://doi.org/{{doi}}) and available at https://github.com/geoaialignment/geoai-thm-studio. The code is licensed under the PolyForm Noncommercial License 1.0.0 and the documentation under CC BY-NC 4.0; commercial use is not permitted. OpenGeoSys 6.5.8 is available under the BSD 3-Clause license (Bilke et al., 2026), and the official inputs and outputs used by four verification cases (the three official-input baselines and the Elder comparison) are part of its test data.
 
 # Acknowledgments
 

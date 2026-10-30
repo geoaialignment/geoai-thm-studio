@@ -106,7 +106,7 @@ def table2():
 
 
 def table3():
-    ex = N["s11_exact_MPa"]
+    ex = json.loads((ROOT / "results/point_source_sweep.json").read_text())["exact_MPa"]  # unrounded
     rows = [("gpt-6-luna, no rule", "0.2", "far field 1 m", -0.507), ("gpt-6.1-terra, no rule", "0.1", "as example", 0.635),
             ("gpt-6-luna, rule ℓ/2", "0.05", "100 × 100 elements, steps ≤ 5,000 s", 0.998),
             ("gpt-6.1-terra, rule ℓ/2", "0.05", "as example", 0.887),
