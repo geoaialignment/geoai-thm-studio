@@ -8,7 +8,20 @@ GeoAI-THM Studio는 다중물리 해석 프로그램에서 엔지니어가 밟�
 프로그램이 계산한 수치를 검증 근거와 함께 보고합니다.
 
 v0.1(미리보기). 비상업적 이용은 무료입니다. OpenGeoSys 기반. 박은규, 김태유, 박장원(GeoAI Alignment, Inc.).
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23806977.svg)](https://doi.org/10.5281/zenodo.23806977)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23833219.svg)](https://doi.org/10.5281/zenodo.23833219)
+
+
+![Elder 문제의 소금물 손가락: GeoAI-THM Studio(위)와 OpenGeoSys 공식 벤치마크(아래)](docs/images/elder.png)
+
+## 0.1.1에서 바뀐 것
+
+- **요청으로 만든 격자를 기술노트에 실었습니다.** gpt-6.1-terra와 나눈 대화 기록에서, 벤토나이트 완충재 속 발열 처분 용기를
+  요청하자 에이전트가 용기와 완충재–암반 경계 쪽으로 조밀한 격자를 만들었습니다(기술노트 그림 2, 기록
+  `tests/final_api/nl_mesh_ledger.json`).
+- **그림을 다듬었습니다.** 결과 분포도, 선 위 분포, 시간 변화, 격자 미리보기가 한 가지 양식을 씁니다. 글자를 키우고
+  200 dpi로 저장하며, 물리량마다 한 색조의 색 척도를 쓰고, 범례와 색 막대가 그림을 가리지 않으며, 경계와 계면 선이 잘
+  보입니다.
+- 계산, 검증 사례, 검사는 0.1.0과 같습니다.
 
 ## 계산하는 것
 
@@ -67,7 +80,7 @@ Windows는 지원하지 않습니다.
 사용자 계정에 청구합니다. 다른 MCP 클라이언트에서 도구를 쓸 때는 그 클라이언트 모델의 이용 조건을 따릅니다.
 
 ```bash
-pip install "geoai-thm-studio[mesh-gmsh] @ git+https://github.com/geoaialignment/geoai-thm-studio@v0.1.0"
+pip install "geoai-thm-studio[mesh-gmsh] @ git+https://github.com/geoaialignment/geoai-thm-studio@v0.1.1"
 ```
 
 `mesh-gmsh`는 원형 포함체와 삼각형 격자에 쓰는 gmsh를 설치합니다. gmsh는 별도 프로그램으로 실행됩니다.
@@ -129,15 +142,30 @@ OpenAI API를 쓰지 않았습니다.
 
 대화 기록은 [docs/EXAMPLE_CONVERSATION.md](docs/EXAMPLE_CONVERSATION.md)에 있습니다.
 
+## 시연: 공개판 너머
+
+같은 엔진(OpenGeoSys 6.5.8)으로 GeoAI Alignment가 만든 두 계산입니다. 이번 공개판이 검증한 구성 밖이며, 다른 코드나 현장
+자료와 대조하지 않았습니다. 이런 해석은 서비스로 제공합니다.
+
+![덮개암 아래에서 손가락 모양으로 가라앉는 녹은 CO2](docs/images/showcase_ccs.png)
+
+*CO2 저장: 덮개암 아래 CO2가 염수에 녹으면 염수가 약 1 % 무거워져 손가락 모양으로 가라앉습니다. 투수율 2×10⁻¹² m²(±10 %
+불균질), 확산과 분산을 합친 계수 10⁻⁷ m²/s. 광물 반응과 기체 상의 흐름은 계산하지 않았습니다.*
+
+![처분 패널의 열이 바꾼 지하수 흐름](docs/images/showcase_hlw.png)
+
+*고준위 방폐장: 깊이 500 m 처분 패널의 붕괴열(5 W/m², SKB 기준 사용후핵연료처럼 감소)이 물을 가볍고 묽게 만들어, 흐름의
+변화(c)에 두 개의 순환이 생깁니다. 투수율 10⁻¹⁵ m². 2D 단면의 패널 평균이며 처분 용기·완충재 계산이 아닙니다.*
+
 ## 문서와 인용
 
-- 기술노트: [한국어](docs/technical_note/GeoAI-THM-Studio-v0.1.0_technical_note_ko.pdf),
-  [영어](docs/technical_note/GeoAI-THM-Studio-v0.1.0_technical_note_en.pdf)
-- 프리프린트(ESS Open Archive 제출용): [PDF](docs/preprint/GeoAI-THM-Studio_preprint.pdf)
+- 기술노트: [한국어](docs/technical_note/GeoAI-THM-Studio-v0.1.1_technical_note_ko.pdf),
+  [영어](docs/technical_note/GeoAI-THM-Studio-v0.1.1_technical_note_en.pdf)
+- 프리프린트(ESS Open Archive 제출됨, 심사 중): [PDF](docs/preprint/GeoAI-THM-Studio_preprint.pdf)
 - 검증 표: [docs/VERIFICATION.md](docs/VERIFICATION.md)
 
-인용: Park, E., Kim, T., & Park, J. (2026). *GeoAI-THM Studio* (Version 0.1.0) [Software]. GeoAI Alignment, Inc.
-Zenodo. https://doi.org/10.5281/zenodo.23806977
+인용: Park, E., Kim, T., & Park, J. (2026). *GeoAI-THM Studio* (Version 0.1.1) [Software]. GeoAI Alignment, Inc.
+Zenodo. https://doi.org/10.5281/zenodo.23833219
 
 ## 라이선스
 

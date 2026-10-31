@@ -10,7 +10,20 @@ agent asks at most a few questions, assembles the model through its tools, check
 behind them.
 
 Version 0.1 (preview). Free for noncommercial use. Built on OpenGeoSys. By Eungyu Park, Taeyu Kim and Jangwon Park,
-GeoAI Alignment, Inc. [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23806977.svg)](https://doi.org/10.5281/zenodo.23806977)
+GeoAI Alignment, Inc. [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23833219.svg)](https://doi.org/10.5281/zenodo.23833219)
+
+
+![Salt water sinking in fingers in the Elder problem: GeoAI-THM Studio (top) and the official OpenGeoSys benchmark (bottom)](docs/images/elder.png)
+
+## What is new in 0.1.1
+
+- **Meshes from a request, shown in the technical note.** A recorded conversation with gpt-6.1-terra turns a request
+  for a heated canister in a bentonite buffer into a mesh refined towards the canister and the buffer–rock interface
+  (technical note, Figure 2; record in `tests/final_api/nl_mesh_ledger.json`).
+- **Clearer figures.** Result maps, profiles, time series and mesh previews share one style: larger text, 200 dpi,
+  a one-hue colour scale per quantity, legends and colour bars that never cover the plot, boundary and interface lines
+  that stay visible.
+- Computation, verification cases and checks are unchanged from 0.1.0.
 
 ## What it computes
 
@@ -73,7 +86,7 @@ The software is free for noncommercial use, but the chat agent calls the OpenAI 
 bills those calls to your account; when the tools are used from another MCP client, that client's own model terms apply.
 
 ```bash
-pip install "geoai-thm-studio[mesh-gmsh] @ git+https://github.com/geoaialignment/geoai-thm-studio@v0.1.0"
+pip install "geoai-thm-studio[mesh-gmsh] @ git+https://github.com/geoaialignment/geoai-thm-studio@v0.1.1"
 ```
 
 The `mesh-gmsh` extra installs gmsh for circular inclusions and triangle meshes; gmsh runs as a separate program.
@@ -137,15 +150,32 @@ and testing used no OpenAI API.
 
 The conversations are in [docs/EXAMPLE_CONVERSATION.md](docs/EXAMPLE_CONVERSATION.md).
 
+## Showcase: beyond the release
+
+Two computations made by GeoAI Alignment with the same engine (OpenGeoSys 6.5.8), outside the configurations verified
+in this release and not compared with other codes or field data. Analyses of this kind are offered as a service.
+
+![Dissolved CO2 sinking in fingers below a caprock](docs/images/showcase_ccs.png)
+
+*CO2 storage: CO2 under the caprock dissolves into the brine, which becomes about 1 % denser and sinks in fingers.
+Permeability 2×10⁻¹² m² (±10 % heterogeneity); diffusion and dispersion lumped as 10⁻⁷ m²/s; mineral reactions and
+gas-phase flow are not computed.*
+
+![Heat from a repository panel changes the groundwater flow](docs/images/showcase_hlw.png)
+
+*High-level waste repository: decay heat from a panel at 500 m depth (5 W/m², decaying like SKB reference spent fuel)
+makes the water lighter and less viscous; the change of the flow (c) forms two circulation cells. Permeability
+10⁻¹⁵ m²; a panel average in a 2D section, not a canister or buffer calculation.*
+
 ## Documents and citation
 
-- Technical note: [English](docs/technical_note/GeoAI-THM-Studio-v0.1.0_technical_note_en.pdf),
-  [Korean](docs/technical_note/GeoAI-THM-Studio-v0.1.0_technical_note_ko.pdf)
-- Preprint (prepared for the ESS Open Archive): [PDF](docs/preprint/GeoAI-THM-Studio_preprint.pdf)
+- Technical note: [English](docs/technical_note/GeoAI-THM-Studio-v0.1.1_technical_note_en.pdf),
+  [Korean](docs/technical_note/GeoAI-THM-Studio-v0.1.1_technical_note_ko.pdf)
+- Preprint (submitted to the ESS Open Archive, in moderation): [PDF](docs/preprint/GeoAI-THM-Studio_preprint.pdf)
 - Verification tables: [docs/VERIFICATION.md](docs/VERIFICATION.md)
 
-Cite as: Park, E., Kim, T., & Park, J. (2026). *GeoAI-THM Studio* (Version 0.1.0) [Software]. GeoAI Alignment, Inc.
-Zenodo. https://doi.org/10.5281/zenodo.23806977
+Cite as: Park, E., Kim, T., & Park, J. (2026). *GeoAI-THM Studio* (Version 0.1.1) [Software]. GeoAI Alignment, Inc.
+Zenodo. https://doi.org/10.5281/zenodo.23833219
 
 ## Licence
 

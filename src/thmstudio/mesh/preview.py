@@ -9,6 +9,7 @@ from .contract import CORNERS, MeshBundle
 
 REGION_COLOURS = ["#cfe3f2", "#f6dcc0", "#d9ead3", "#eadcf2", "#f9e79f", "#d5d8dc", "#f5cba7", "#c8e6c9"]
 BASE_BOUNDARIES = {"left", "right", "bottom", "top", "well", "outer", "front", "back", "axis"}
+INTERFACE_COLOURS = ["#3E1F5A", "#B03A2E", "#1B4F72", "#7D6608"]
 LINE_COLOURS = ["#1f77b4", "#d62728", "#2ca02c", "#9467bd", "#ff7f0e", "#8c564b", "#e377c2", "#17becf"]
 
 
@@ -20,14 +21,13 @@ def _polys(m):
 
 def render_2d(bundle: MeshBundle, path: Path, zoom: tuple[float, float, float, float] | None = None,
               title: str = "", max_edges: int = 40_000) -> Path:
-    import matplotlib
-    matplotlib.use("Agg")
-    import matplotlib.pyplot as plt
+    from ..plotstyle import WIDTH, pyplot
+    plt = pyplot()
     from matplotlib.collections import LineCollection, PolyCollection
 
     polys = _polys(bundle.bulk)
     mats = np.asarray(bundle.bulk.cell_data["MaterialIDs"])
-    fig, ax = plt.subplots(figsize=(8, 6), dpi=150)
+    fig, ax = plt.subplots(figsize=(WIDTH, 4.8))
     face = [REGION_COLOURS[m % len(REGION_COLOURS)] for m in mats]
     show_edges = bundle.bulk.n_cells <= max_edges or zoom is not None
     ax.add_collection(PolyCollection(polys, facecolors=face, edgecolors="#444444" if show_edges else "none",
@@ -41,12 +41,14 @@ def render_2d(bundle: MeshBundle, path: Path, zoom: tuple[float, float, float, f
     for i, name in enumerate(sorted(main)):
         m = bundle.boundaries[name]
         segs = m.points[m.cell_connectivity.reshape(m.n_cells, -1)[:, :2]][:, :, :2]
-        lc = LineCollection(segs, colors=LINE_COLOURS[i % len(LINE_COLOURS)], linewidths=2.2, label=name)
+        lc = LineCollection(segs, colors=LINE_COLOURS[i % len(LINE_COLOURS)], linewidths=3.0, label=name,
+                            zorder=4, capstyle="butt")
         ax.add_collection(lc)
         handles.append(lc)
     for name, m in bundle.interfaces.items():
         segs = m.points[m.cell_connectivity.reshape(m.n_cells, -1)[:, :2]][:, :, :2]
-        lc = LineCollection(segs, colors="k", linewidths=1.2, linestyles="--", label=f"{name} (interface)")
+        lc = LineCollection(segs, colors=INTERFACE_COLOURS[len(handles) % len(INTERFACE_COLOURS)], linewidths=2.0,
+                            linestyles=(0, (4, 2)), label=f"{name} (interface)", zorder=5)
         ax.add_collection(lc)
         handles.append(lc)
     lo, hi = bundle.bulk.points.min(0), bundle.bulk.points.max(0)
@@ -59,9 +61,10 @@ def render_2d(bundle: MeshBundle, path: Path, zoom: tuple[float, float, float, f
     ax.set_xlabel("r (m)" if bundle.axisymmetric else "x (m)")
     ax.set_ylabel("z (m)" if bundle.axisymmetric else "y (m)")
     s = bundle.summary()
-    ax.set_title(title or f"{s['elements']} {s['element_type']} elements, {s['nodes']} nodes ({s['engine']})",
-                 fontsize=10)
-    ax.legend(handles=handles, loc="upper left", bbox_to_anchor=(1.01, 1.0), fontsize=8, frameon=False)
+    ax.set_title(title or f"{s['elements']} {s['element_type']} elements, {s['nodes']} nodes ({s['engine']})")
+    for side in ("top", "right"):
+        ax.spines[side].set_visible(True)
+    ax.legend(handles=handles, loc="upper left", bbox_to_anchor=(1.02, 1.0), frameon=False, handlelength=1.6)
     fig.savefig(path, bbox_inches="tight")
     plt.close(fig)
     return path

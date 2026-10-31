@@ -5,9 +5,10 @@ set -e
 cd "$(dirname "$0")"
 PY=python3  # needs python-docx
 SOFFICE=/Applications/LibreOffice.app/Contents/MacOS/soffice
+VERSION=0.1.1  # technical notes; the preprint stays the v0.1.0 text submitted to ESSOAr
 cd technical_note
 for L in en ko; do
-  OUT=GeoAI-THM-Studio-v0.1.0_technical_note_$L
+  OUT=GeoAI-THM-Studio-v${VERSION}_technical_note_$L
   pandoc GeoAI-THM-Studio_technical_note_$L.md -o $OUT.docx --resource-path=.:..
   $PY - "$OUT.docx" "$L" <<'PYEOF'
 import sys
@@ -56,6 +57,8 @@ d.save(path)
 PYEOF
   $SOFFICE --headless --convert-to pdf $OUT.docx >/dev/null 2>&1
 done
+ls -la *.pdf
+[ "$1" = "--with-preprint" ] || exit 0
 cd ../preprint
 pandoc draft.md -o GeoAI-THM-Studio_preprint.docx --resource-path=.:..
 $PY ~/.claude/skills/paper-writing/scripts/format_docx.py GeoAI-THM-Studio_preprint.docx --lines

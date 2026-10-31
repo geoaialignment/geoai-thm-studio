@@ -1,8 +1,8 @@
 cff-version: 1.2.0
 message: "If you use GeoAI-THM Studio, please cite it as below."
 title: "GeoAI-THM Studio: an agent for subsurface thermo-hydro-mechanical and transport models, built on OpenGeoSys"
-version: 0.1.0
-doi: 10.5281/zenodo.23806977
+version: 0.1.1
+doi: 10.5281/zenodo.23833219
 date-released: 2026-10-31
 authors:
   - family-names: Park
