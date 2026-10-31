@@ -66,7 +66,11 @@ about twenty tools; a translator turns the tree into OpenGeoSys input.
 
 ## Install
 
-macOS 15 or later on Apple Silicon, or Linux x86_64. Python 3.12. Windows is not supported.
+Supported: macOS 15 or later on Apple Silicon, Python 3.12. Experimental: Linux x86_64, tested so far only under
+emulation (see below). Windows is not supported.
+
+The software is free for noncommercial use, but the chat agent calls the OpenAI API with your own key, and OpenAI
+bills those calls to your account; when the tools are used from another MCP client, that client's own model terms apply.
 
 ```bash
 pip install "geoai-thm-studio[mesh-gmsh] @ git+https://github.com/geoaialignment/geoai-thm-studio@v0.1.0"

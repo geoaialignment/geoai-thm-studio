@@ -60,7 +60,11 @@ OpenGeoSys 판에서 모두 통과했을 때만 계산합니다. 사례 27개 �
 
 ## 설치
 
-Apple Silicon의 macOS 15 이상, 또는 Linux x86_64. Python 3.12. Windows는 지원하지 않습니다.
+지원: Apple Silicon의 macOS 15 이상, Python 3.12. 실험적 지원: Linux x86_64(지금까지 에뮬레이션에서만 시험, 아래 참고).
+Windows는 지원하지 않습니다.
+
+소프트웨어는 비상업적 이용에 무료이지만, 대화 에이전트는 사용자의 키로 OpenAI API를 호출하며 그 사용료는 OpenAI가
+사용자 계정에 청구합니다. 다른 MCP 클라이언트에서 도구를 쓸 때는 그 클라이언트 모델의 이용 조건을 따릅니다.
 
 ```bash
 pip install "geoai-thm-studio[mesh-gmsh] @ git+https://github.com/geoaialignment/geoai-thm-studio@v0.1.0"
