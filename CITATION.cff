@@ -19,6 +19,18 @@ license: "PolyForm-Noncommercial-1.0.0"
 repository-code: "https://github.com/geoaialignment/geoai-thm-studio"
 url: "https://geoaialign.ai"
 references:
+  - type: article
+    title: "Language-Model Agents Running Verified Subsurface Multiphysics Simulations: Traced Numbers and the Modeling Choices That Still Need Checks"
+    authors:
+      - family-names: Park
+        given-names: Eungyu
+      - family-names: Kim
+        given-names: Taeyu
+      - family-names: Park
+        given-names: Jangwon
+    year: 2026
+    journal: "ESS Open Archive"
+    doi: "10.22541/essoar.15011821/v1"
   - type: software
     title: OpenGeoSys
     version: 6.5.8

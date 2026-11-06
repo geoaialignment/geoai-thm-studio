@@ -171,7 +171,7 @@ makes the water lighter and less viscous; the change of the flow (c) forms two c
 
 - Technical note: [English](docs/technical_note/GeoAI-THM-Studio-v0.1.1_technical_note_en.pdf),
   [Korean](docs/technical_note/GeoAI-THM-Studio-v0.1.1_technical_note_ko.pdf)
-- Preprint (submitted to the ESS Open Archive, in moderation): [PDF](docs/preprint/GeoAI-THM-Studio_preprint.pdf)
+- Preprint (ESS Open Archive, 2026): [doi:10.22541/essoar.15011821/v1](https://doi.org/10.22541/essoar.15011821/v1), [PDF](docs/preprint/GeoAI-THM-Studio_preprint.pdf)
 - Verification tables: [docs/VERIFICATION.md](docs/VERIFICATION.md)
 
 Cite as: Park, E., Kim, T., & Park, J. (2026). *GeoAI-THM Studio* (Version 0.1.1) [Software]. GeoAI Alignment, Inc.
